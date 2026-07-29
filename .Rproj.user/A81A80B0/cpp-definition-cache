@@ -1,0 +1,2106 @@
+[
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2.cpp",
+        "file_last_write": 1731649159.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#S2_#S2_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv(List, List, List, List, List, arma::mat, arma::vec, arma::vec, arma::vec, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2.cpp",
+                "line": 6,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv(List, List, List, arma::mat, arma::vec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2.cpp",
+                "line": 43,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA.cpp",
+        "file_last_write": 1772941564.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv_noX#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#S3_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv_noX(List, List, List, List, const arma::mat &, const arma::vec &, const arma::vec &, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA.cpp",
+                "line": 19,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv_noX#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv_noX(List, List, const arma::mat &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA.cpp",
+                "line": 90,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA_tv.cpp",
+        "file_last_write": 1775063165.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv_noX_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv_noX_tv(List, List, List, List, const arma::mat &, const arma::vec &, List, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 23,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv_noX_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#&1$@N@arma@S@Mat>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv_noX_tv(List, List, const arma::mat &, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 77,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eetaphi_lla_tv#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi_lla_tv(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 123,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Setaphi_lla_tv#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi_lla_tv(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 185,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Hetaphi_lla_tv#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Hetaphi_lla_tv(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 214,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_tv.cpp",
+        "file_last_write": 1733112804.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#S2_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv_tv(List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_tv.cpp",
+                "line": 6,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#$@N@arma@S@Mat>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv_tv(List, List, List, arma::mat, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/Calc_mu_Sigma2_tv.cpp",
+                "line": 44,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/EM_update_funs_LLA.cpp",
+        "file_last_write": 1771432172.0,
+        "definitions": [
+            {
+                "usr": "c:@F@subtract_one_from_uvec#$@N@arma@S@Col>#i#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "subtract_one_from_uvec(arma::uvec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/EM_update_funs_LLA.cpp",
+                "line": 10,
+                "column": 12,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_inv_omega_kernel#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#$@N@arma@S@Col>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_inv_omega_kernel(List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/EM_update_funs_LLA.cpp",
+                "line": 29,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma_longK#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma_longK(List, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/EM_update_funs_LLA.cpp",
+                "line": 84,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_mu_longK_noX#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_longK_noX(List, List, List, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/EM_update_funs_LLA.cpp",
+                "line": 122,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Ee_kernel#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Ee_kernel(List, List, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/EM_update_funs_LLA.cpp",
+                "line": 176,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_M2_Hadamard.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_M2_Hadamard#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_M2_Hadamard(Eigen::Map<Eigen::ArrayXd> &, const Eigen::Map<Eigen::ArrayXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_M2_Hadamard.cpp",
+                "line": 8,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_M2_Hadamard_a.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_M2_Hadamard_a#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_M2_Hadamard_a(Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::VectorXd> &, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_M2_Hadamard_a.cpp",
+                "line": 9,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_M2_M3_Hadamard.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_M2_M3_Hadamard#&$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#S4_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_M2_M3_Hadamard(Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::VectorXi> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_M2_M3_Hadamard.cpp",
+                "line": 9,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_a_M2_Hadamard.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_a_M2_Hadamard#&$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#d#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_a_M2_Hadamard(Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const double, const Eigen::Map<Eigen::VectorXi> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1_a_M2_Hadamard.cpp",
+                "line": 9,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1timesM2v.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1timesM2v#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1timesM2v(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::ArrayXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M1timesM2v.cpp",
+                "line": 8,
+                "column": 19,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_MVND.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_MVND#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_MVND(const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_MVND.cpp",
+                "line": 7,
+                "column": 8,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M_v.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M_v#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M_v(const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_M_v.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_VB.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_VB#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_VB(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_VB.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_VY.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_VY#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_VY(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_VY.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_bi_st.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_bi_st#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_bi_st(const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_bi_st.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_expM2.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_expM2#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_expM2(Eigen::Map<Eigen::ArrayXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_expM2.cpp",
+                "line": 8,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_muB.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_muB#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#S0_#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_muB(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::VectorXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_muB.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_muBMult.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_muBMult#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_muBMult(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::VectorXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_muBMult.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_mult_rowsum1.cpp",
+        "file_last_write": 1497776686.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mult_rowsum1#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mult_rowsum1(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::ArrayXXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_mult_rowsum1.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_mult_rowsum2.cpp",
+        "file_last_write": 1497776918.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mult_rowsum2#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#S4_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mult_rowsum2(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::ArrayXXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_mult_rowsum2.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_mult_rowsum3.cpp",
+        "file_last_write": 1497777246.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mult_rowsum3#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#S4_#S4_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mult_rowsum3(const Eigen::Map<Eigen::ArrayXi> &, const Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::ArrayXXd> &, const double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_mult_rowsum3.cpp",
+                "line": 7,
+                "column": 12,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_rowsum.cpp",
+        "file_last_write": 1497776218.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_rowsum#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_rowsum(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_rowsum.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_rowsum_mult.cpp",
+        "file_last_write": 1497776210.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_rowsum_mult#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_rowsum_mult(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_rowsum_mult.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_tapply_vect_sum.cpp",
+        "file_last_write": 1737255828.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_tapply_vect_sum#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_tapply_vect_sum(const Eigen::Map<Eigen::ArrayXd> &, const Eigen::Map<Eigen::ArrayXi> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_tapply_vect_sum.cpp",
+                "line": 8,
+                "column": 16,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_v_a.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_v_a#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_v_a(Eigen::Map<Eigen::ArrayXd> &, const double &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/calc_v_a.cpp",
+                "line": 9,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+        "file_last_write": 1776628318.0,
+        "definitions": [
+            {
+                "usr": "c:@F@Esurv#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 30,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_exp#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_exp(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 76,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@EetaphiPrecomp",
+                "kind": 3,
+                "parent_name": "",
+                "name": "EetaphiPrecomp",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 126,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:etaphiRcpp.cpp@F@build_precomp#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#&1$@N@arma@S@Mat>#d#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "build_precomp(const List &, const List &, const List &, const List &, const arma::mat &, const List &, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 135,
+                "column": 23,
+                "hidden": false
+            },
+            {
+                "usr": "c:etaphiRcpp.cpp@F@Eetaphi_fast#&1$@N@arma@S@Col>#d#&1$@S@EetaphiPrecomp#S0_#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#S0_#S0_#S4_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi_fast(const arma::vec &, const EetaphiPrecomp &, const arma::vec &, const List &, const arma::vec &, int, const arma::vec &, const arma::vec &, const List &, const List &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 208,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:etaphiRcpp.cpp@F@Setaphi_core#&1$@N@arma@S@Col>#d#&1$@S@EetaphiPrecomp#S0_#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#S0_#S0_#S4_#S4_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi_core(const arma::vec &, const EetaphiPrecomp &, const arma::vec &, const List &, const arma::vec &, int, const arma::vec &, const arma::vec &, const List &, const List &, double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 267,
+                "column": 18,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eetaphi#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 301,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Setaphi#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 322,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Hetaphi#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Hetaphi(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp.cpp",
+                "line": 343,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+        "file_last_write": 1737259591.0,
+        "definitions": [
+            {
+                "usr": "c:@F@scaleMatricesByEta#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "scaleMatricesByEta(const List &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 12,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@createResultMatrix#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "createResultMatrix(const arma::mat &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 38,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@etaBBs_compute#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#&1$@N@arma@S@Col>#d#S2_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "etaBBs_compute(const List &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 87,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_tv#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_tv(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 105,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_exp_tv#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_exp_tv(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 160,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_exp_t#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_exp_t(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 216,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eetaphi_t#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi_t(arma::vec, List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 280,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Setaphi_t#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi_t(arma::vec, List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 339,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Hetaphi_t#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Hetaphi_t(arma::vec, List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/etaphiRcpp_tv.cpp",
+                "line": 365,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/fast_lapply_length.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@fast_lapply_length#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "fast_lapply_length(const Rcpp::List, const Rcpp::List, const Rcpp::NumericVector)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/fast_lapply_length.cpp",
+                "line": 9,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/fast_rbind_lapply_outerprod.cpp",
+        "file_last_write": 1469219770.0,
+        "definitions": [
+            {
+                "usr": "c:@F@fast_rbind_lapply_outerprod#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "fast_rbind_lapply_outerprod(const Rcpp::List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/fast_rbind_lapply_outerprod.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll.cpp",
+        "file_last_write": 1737233356.0,
+        "definitions": [
+            {
+                "usr": "c:@F@ll#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S2_#S0_#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::rowvec, const arma::vec, const arma::vec, const arma::vec, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll.cpp",
+                "line": 8,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S2_#S0_#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::rowvec, const arma::vec, const arma::vec, const arma::vec, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll.cpp",
+                "line": 26,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S1_#S1_#$@N@arma@S@Row>#d#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll(arma::vec, const arma::mat, const arma::mat, const arma::mat, const arma::rowvec, const arma::vec, const arma::vec, const arma::vec, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll.cpp",
+                "line": 46,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla.cpp",
+        "file_last_write": 1772937667.0,
+        "definitions": [
+            {
+                "usr": "c:@F@logdet_spd#&1$@N@arma@S@Mat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "logdet_spd(const arma::mat &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla.cpp",
+                "line": 31,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@ll_lla#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll_lla(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla.cpp",
+                "line": 41,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll_lla#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll_lla(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla.cpp",
+                "line": 149,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll_lla#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S2_#S2_#&1$@N@arma@S@Row>#d#S0_#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll_lla(const arma::vec &, const arma::mat &, const arma::mat &, const arma::mat &, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla.cpp",
+                "line": 207,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla_tv.cpp",
+        "file_last_write": 1775063032.0,
+        "definitions": [
+            {
+                "usr": "c:@F@logdet_spd_tv#&1$@N@arma@S@Mat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "logdet_spd_tv(const arma::mat &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla_tv.cpp",
+                "line": 26,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@ll_lla_tv#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S2_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll_lla_tv(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::mat &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla_tv.cpp",
+                "line": 36,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll_lla_tv#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S2_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll_lla_tv(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::mat &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla_tv.cpp",
+                "line": 125,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll_lla_tv#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S2_#S2_#&1$@N@arma@S@Row>#d#S0_#S0_#S2_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll_lla_tv(const arma::vec &, const arma::mat &, const arma::mat &, const arma::mat &, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::mat &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/ll_lla_tv.cpp",
+                "line": 189,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/lltv.cpp",
+        "file_last_write": 1737233379.0,
+        "definitions": [
+            {
+                "usr": "c:@F@ll_tv#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S0_#S0_#S0_#S1_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll_tv(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::colvec, const arma::vec, const arma::vec, const arma::mat, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/lltv.cpp",
+                "line": 9,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@elementwise_multiply#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "elementwise_multiply(const arma::mat, const arma::vec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/lltv.cpp",
+                "line": 66,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll_tv#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S0_#S0_#S0_#S1_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll_tv(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::colvec, const arma::vec, const arma::vec, const arma::mat, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/lltv.cpp",
+                "line": 78,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll_tv#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S1_#S1_#$@N@arma@S@Row>#d#S0_#S0_#S1_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll_tv(arma::vec, const arma::mat, const arma::mat, const arma::mat, const arma::rowvec, const arma::vec, const arma::vec, const arma::mat, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/lltv.cpp",
+                "line": 134,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+        "file_last_write": 1737233672.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rcpp_e#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S1_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rcpp_e(const arma::colvec, const arma::mat, const arma::mat, const arma::vec, const arma::vec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+                "line": 8,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Ee#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#$@N@arma@S@Mat>#d#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Ee(const Rcpp::List, const Rcpp::List, const Rcpp::List, const arma::mat, const Rcpp::List, const Rcpp::List, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+                "line": 43,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eb#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eb(const List, const List, const List, const List, const arma::mat, const arma::vec, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+                "line": 84,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@covb#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#$@N@arma@S@Mat>#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "covb(const List, const List, const arma::mat, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+                "line": 100,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@EbbT#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EbbT(const List, const List, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+                "line": 112,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@betaRHS#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "betaRHS(const List, const List, const List, const List, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/mvlme.cpp",
+                "line": 124,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/update_lambda.cpp",
+        "file_last_write": 1732678208.0,
+        "definitions": [
+            {
+                "usr": "c:@F@update_lambda#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "update_lambda(NumericVector, List, NumericVector, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/update_lambda.cpp",
+                "line": 5,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/update_lambda_tv.cpp",
+        "file_last_write": 1732678216.0,
+        "definitions": [
+            {
+                "usr": "c:@F@update_lambda_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "update_lambda_tv(List, NumericVector, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_1.2/src/update_lambda_tv.cpp",
+                "line": 5,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#S2_#S2_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv(List, List, List, List, List, arma::mat, arma::vec, arma::vec, arma::vec, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2.cpp",
+                "line": 6,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv(List, List, List, arma::mat, arma::vec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2.cpp",
+                "line": 43,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA.cpp",
+        "file_last_write": 1777690359.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv_noX#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#S3_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv_noX(List, List, List, List, const arma::mat &, const arma::vec &, const arma::vec &, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA.cpp",
+                "line": 19,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv_noX#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv_noX(List, List, const arma::mat &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA.cpp",
+                "line": 90,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA_tv.cpp",
+        "file_last_write": 1777690359.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv_noX_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv_noX_tv(List, List, List, List, const arma::mat &, const arma::vec &, List, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 23,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv_noX_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#&1$@N@arma@S@Mat>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv_noX_tv(List, List, const arma::mat &, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 77,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eetaphi_lla_tv#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi_lla_tv(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 123,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Setaphi_lla_tv#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi_lla_tv(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 185,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Hetaphi_lla_tv#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Hetaphi_lla_tv(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_LLA_tv.cpp",
+                "line": 214,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_tv.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mu_surv_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#S2_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_surv_tv(List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_tv.cpp",
+                "line": 6,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma2_surv_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#$@N@arma@S@Mat>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma2_surv_tv(List, List, List, arma::mat, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/Calc_mu_Sigma2_tv.cpp",
+                "line": 44,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/EM_update_funs_LLA.cpp",
+        "file_last_write": 1777690359.0,
+        "definitions": [
+            {
+                "usr": "c:@F@subtract_one_from_uvec#$@N@arma@S@Col>#i#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "subtract_one_from_uvec(arma::uvec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/EM_update_funs_LLA.cpp",
+                "line": 10,
+                "column": 12,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_inv_omega_kernel#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#$@N@arma@S@Col>#d#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_inv_omega_kernel(List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/EM_update_funs_LLA.cpp",
+                "line": 29,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Sigma_longK#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Sigma_longK(List, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/EM_update_funs_LLA.cpp",
+                "line": 84,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_mu_longK_noX#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mu_longK_noX(List, List, List, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/EM_update_funs_LLA.cpp",
+                "line": 122,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@calc_Ee_kernel#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_Ee_kernel(List, List, List, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/EM_update_funs_LLA.cpp",
+                "line": 176,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_M2_Hadamard.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_M2_Hadamard#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_M2_Hadamard(Eigen::Map<Eigen::ArrayXd> &, const Eigen::Map<Eigen::ArrayXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_M2_Hadamard.cpp",
+                "line": 8,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_M2_Hadamard_a.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_M2_Hadamard_a#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_M2_Hadamard_a(Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::VectorXd> &, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_M2_Hadamard_a.cpp",
+                "line": 9,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_M2_M3_Hadamard.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_M2_M3_Hadamard#&$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#S4_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_M2_M3_Hadamard(Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::VectorXi> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_M2_M3_Hadamard.cpp",
+                "line": 9,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_a_M2_Hadamard.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1_a_M2_Hadamard#&$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1S1_#d#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1_a_M2_Hadamard(Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const double, const Eigen::Map<Eigen::VectorXi> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1_a_M2_Hadamard.cpp",
+                "line": 9,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1timesM2v.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M1timesM2v#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M1timesM2v(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::ArrayXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M1timesM2v.cpp",
+                "line": 8,
+                "column": 19,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_MVND.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_MVND#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_MVND(const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_MVND.cpp",
+                "line": 7,
+                "column": 8,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M_v.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_M_v#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_M_v(const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_M_v.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_VB.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_VB#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_VB(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_VB.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_VY.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_VY#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_VY(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_VY.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_bi_st.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_bi_st#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_bi_st(const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_bi_st.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_expM2.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_expM2#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_expM2(Eigen::Map<Eigen::ArrayXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_expM2.cpp",
+                "line": 8,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_muB.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_muB#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#S0_#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_muB(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::VectorXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_muB.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_muBMult.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_muBMult#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#S0_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_muBMult(const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::VectorXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_muBMult.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_mult_rowsum1.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mult_rowsum1#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mult_rowsum1(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::ArrayXXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_mult_rowsum1.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_mult_rowsum2.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mult_rowsum2#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#S4_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mult_rowsum2(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::MatrixXd> &, const Eigen::Map<Eigen::ArrayXXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_mult_rowsum2.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_mult_rowsum3.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_mult_rowsum3#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#S4_#S4_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_mult_rowsum3(const Eigen::Map<Eigen::ArrayXi> &, const Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::ArrayXXd> &, const Eigen::Map<Eigen::ArrayXXd> &, const double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_mult_rowsum3.cpp",
+                "line": 7,
+                "column": 12,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_rowsum.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_rowsum#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_rowsum(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_rowsum.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_rowsum_mult.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_rowsum_mult#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Matrix>#d#VI-1#VI-1#VI0#VI-1#VI-1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_rowsum_mult(const Eigen::Map<Eigen::VectorXi> &, const Eigen::Map<Eigen::VectorXd> &, const Eigen::Map<Eigen::MatrixXd> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_rowsum_mult.cpp",
+                "line": 7,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_tapply_vect_sum.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_tapply_vect_sum#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#I#VI-1#VI1#VI0#VI-1#VI1#VI0#S3_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_tapply_vect_sum(const Eigen::Map<Eigen::ArrayXd> &, const Eigen::Map<Eigen::ArrayXi> &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_tapply_vect_sum.cpp",
+                "line": 8,
+                "column": 16,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_v_a.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@calc_v_a#&$@N@Eigen@S@Map>#$@N@Eigen@S@Array>#d#VI-1#VI1#VI0#VI-1#VI1#VI0#$@N@Eigen@S@Stride>#VI0#VI0#&1d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "calc_v_a(Eigen::Map<Eigen::ArrayXd> &, const double &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/calc_v_a.cpp",
+                "line": 9,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+        "file_last_write": 1777690359.0,
+        "definitions": [
+            {
+                "usr": "c:@F@Esurv#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 30,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_exp#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_exp(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 76,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@EetaphiPrecomp",
+                "kind": 3,
+                "parent_name": "",
+                "name": "EetaphiPrecomp",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 126,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:etaphiRcpp.cpp@F@build_precomp#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#&1$@N@arma@S@Mat>#d#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "build_precomp(const List &, const List &, const List &, const List &, const arma::mat &, const List &, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 135,
+                "column": 23,
+                "hidden": false
+            },
+            {
+                "usr": "c:etaphiRcpp.cpp@F@Eetaphi_fast#&1$@N@arma@S@Col>#d#&1$@S@EetaphiPrecomp#S0_#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#S0_#S0_#S4_#S4_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi_fast(const arma::vec &, const EetaphiPrecomp &, const arma::vec &, const List &, const arma::vec &, int, const arma::vec &, const arma::vec &, const List &, const List &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 208,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:etaphiRcpp.cpp@F@Setaphi_core#&1$@N@arma@S@Col>#d#&1$@S@EetaphiPrecomp#S0_#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#S0_#S0_#S4_#S4_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi_core(const arma::vec &, const EetaphiPrecomp &, const arma::vec &, const List &, const arma::vec &, int, const arma::vec &, const arma::vec &, const List &, const List &, double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 267,
+                "column": 18,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eetaphi#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 301,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Setaphi#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 322,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Hetaphi#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#d#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Hetaphi(arma::vec, List, List, List, List, arma::mat, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, double, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp.cpp",
+                "line": 343,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@scaleMatricesByEta#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "scaleMatricesByEta(const List &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 12,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@createResultMatrix#&1$@N@arma@S@Mat>#d#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "createResultMatrix(const arma::mat &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 38,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@etaBBs_compute#&1$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#&1$@N@arma@S@Col>#d#S2_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "etaBBs_compute(const List &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 87,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_tv#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_tv(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 105,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_exp_tv#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_exp_tv(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 160,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Esurv_exp_t#$@N@arma@S@Col>#d#S0_#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S0_#S1_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Esurv_exp_t(arma::vec, arma::vec, List, List, List, List, arma::vec, List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 216,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eetaphi_t#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eetaphi_t(arma::vec, List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 280,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Setaphi_t#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Setaphi_t(arma::vec, List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 339,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Hetaphi_t#$@N@arma@S@Col>#d#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S1_#S1_#S1_#$@N@arma@S@Mat>#d#S0_#S0_#S1_#S0_#I#S0_#S0_#S1_#S1_#&1S1_#&1S0_#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Hetaphi_t(arma::vec, List, List, List, List, List, arma::mat, arma::vec, arma::vec, List, arma::vec, int, arma::vec, arma::vec, List, List, const List &, const arma::vec &, double)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/etaphiRcpp_tv.cpp",
+                "line": 365,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/fast_lapply_length.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@fast_lapply_length#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "fast_lapply_length(const Rcpp::List, const Rcpp::List, const Rcpp::NumericVector)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/fast_lapply_length.cpp",
+                "line": 9,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/fast_rbind_lapply_outerprod.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@fast_rbind_lapply_outerprod#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "fast_rbind_lapply_outerprod(const Rcpp::List)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/fast_rbind_lapply_outerprod.cpp",
+                "line": 8,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@ll#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S2_#S0_#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::rowvec, const arma::vec, const arma::vec, const arma::vec, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll.cpp",
+                "line": 8,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S2_#S0_#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::rowvec, const arma::vec, const arma::vec, const arma::vec, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll.cpp",
+                "line": 26,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S1_#S1_#$@N@arma@S@Row>#d#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll(arma::vec, const arma::mat, const arma::mat, const arma::mat, const arma::rowvec, const arma::vec, const arma::vec, const arma::vec, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll.cpp",
+                "line": 46,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla.cpp",
+        "file_last_write": 1778393962.0,
+        "definitions": [
+            {
+                "usr": "c:@F@logdet_spd#&1$@N@arma@S@Mat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "logdet_spd(const arma::mat &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla.cpp",
+                "line": 31,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@inv_logdet_spd_robust#&1$@N@arma@S@Mat>#d#&S1_#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "inv_logdet_spd_robust(const arma::mat &, arma::mat &, double &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla.cpp",
+                "line": 41,
+                "column": 13,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@ll_lla#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll_lla(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla.cpp",
+                "line": 62,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll_lla#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll_lla(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla.cpp",
+                "line": 172,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll_lla#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S2_#S2_#&1$@N@arma@S@Row>#d#S0_#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll_lla(const arma::vec &, const arma::mat &, const arma::mat &, const arma::mat &, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla.cpp",
+                "line": 234,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla_tv.cpp",
+        "file_last_write": 1778393915.0,
+        "definitions": [
+            {
+                "usr": "c:@F@logdet_spd_tv#&1$@N@arma@S@Mat>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "logdet_spd_tv(const arma::mat &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla_tv.cpp",
+                "line": 26,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@inv_logdet_spd_robust_tv#&1$@N@arma@S@Mat>#d#&S1_#&d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "inv_logdet_spd_robust_tv(const arma::mat &, arma::mat &, double &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla_tv.cpp",
+                "line": 41,
+                "column": 13,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@ll_lla_tv#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S2_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll_lla_tv(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::mat &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla_tv.cpp",
+                "line": 62,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll_lla_tv#&1$@N@arma@S@Col>#d#S0_#&1$@N@arma@S@Mat>#d#S2_#S2_#I#&1$@N@arma@S@Row>#d#I#d#S4_#S0_#S2_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll_lla_tv(const arma::vec &, const arma::colvec &, const arma::mat &, const arma::mat &, const arma::mat &, const int, const arma::rowvec &, const int, const double, const arma::rowvec &, const arma::vec &, const arma::mat &, const arma::vec &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla_tv.cpp",
+                "line": 153,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll_lla_tv#&1$@N@arma@S@Col>#d#&1$@N@arma@S@Mat>#d#S2_#S2_#&1$@N@arma@S@Row>#d#S0_#S0_#S2_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll_lla_tv(const arma::vec &, const arma::mat &, const arma::mat &, const arma::mat &, const arma::rowvec &, const arma::vec &, const arma::vec &, const arma::mat &, const arma::vec &)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/ll_lla_tv.cpp",
+                "line": 220,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/lltv.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@ll_tv#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S0_#S0_#S0_#S1_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ll_tv(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::colvec, const arma::vec, const arma::vec, const arma::mat, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/lltv.cpp",
+                "line": 9,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@elementwise_multiply#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "elementwise_multiply(const arma::mat, const arma::vec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/lltv.cpp",
+                "line": 66,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@gradll_tv#$@N@arma@S@Col>#d#S0_#$@N@arma@S@Mat>#d#S1_#S1_#S1_#I#$@N@arma@S@Row>#d#I#d#S0_#S0_#S0_#S1_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "gradll_tv(arma::vec, const arma::colvec, const arma::mat, const arma::mat, const arma::mat, const arma::mat, int, const arma::rowvec, const int, const double, const arma::colvec, const arma::vec, const arma::vec, const arma::mat, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/lltv.cpp",
+                "line": 78,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@sdll_tv#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S1_#S1_#$@N@arma@S@Row>#d#S0_#S0_#S1_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sdll_tv(arma::vec, const arma::mat, const arma::mat, const arma::mat, const arma::rowvec, const arma::vec, const arma::vec, const arma::mat, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/lltv.cpp",
+                "line": 134,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rcpp_e#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#S1_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rcpp_e(const arma::colvec, const arma::mat, const arma::mat, const arma::vec, const arma::vec)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+                "line": 8,
+                "column": 8,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Ee#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#$@N@arma@S@Mat>#d#S0_#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Ee(const Rcpp::List, const Rcpp::List, const Rcpp::List, const arma::mat, const Rcpp::List, const Rcpp::List, const int, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+                "line": 43,
+                "column": 15,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@Eb#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#$@N@arma@S@Mat>#d#$@N@arma@S@Col>#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "Eb(const List, const List, const List, const List, const arma::mat, const arma::vec, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+                "line": 84,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@covb#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#$@N@arma@S@Mat>#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "covb(const List, const List, const arma::mat, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+                "line": 100,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@EbbT#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "EbbT(const List, const List, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+                "line": 112,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@betaRHS#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "betaRHS(const List, const List, const List, const List, const int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/mvlme.cpp",
+                "line": 124,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/update_lambda.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@update_lambda#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "update_lambda(NumericVector, List, NumericVector, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/update_lambda.cpp",
+                "line": 5,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/update_lambda_tv.cpp",
+        "file_last_write": 1777690358.0,
+        "definitions": [
+            {
+                "usr": "c:@F@update_lambda_tv#$@N@Rcpp@S@Vector>#VI19#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "update_lambda_tv(List, NumericVector, int)",
+                "file": "/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.0/src/update_lambda_tv.cpp",
+                "line": 5,
+                "column": 6,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    }
+]

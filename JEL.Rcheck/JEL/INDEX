@@ -1,0 +1,14 @@
+AUCdyn                  Dynamic Area Under the Curve (AUC) Calculation
+JEL1                    Jointly Estimated Landmarking (JEL) for a
+                        Singular Longitudinal Process
+JEL_dat                 Create landmarked longitudinal and survival
+                        datasets for JEL/LLAJEL
+LLAJEL                  Fit an LLA-based Jointly Estimated Landmarking
+                        (LLAJEL) model
+PEdyn                   Dynamic Prediction Error (PE) Calculation
+confBands.JEL           Confidence Bands for Time-Varying Coefficients
+                        in JEL Models
+predict.JEL             Predict Conditional Survival Probabilities
+                        Using JEL Models
+select_h_longitudinal   Longitudinal LSCV bandwidth selection for
+                        LLAJEL

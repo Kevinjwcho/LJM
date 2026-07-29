@@ -1,0 +1,425 @@
+* installing *source* package ‘JEL’ ...
+** this is package ‘JEL’ version ‘2.2’
+** using staged installation
+** libs
+using C++ compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c Calc_mu_Sigma2.cpp -o Calc_mu_Sigma2.o
+In file included from Calc_mu_Sigma2.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c Calc_mu_Sigma2_LLA.cpp -o Calc_mu_Sigma2_LLA.o
+In file included from Calc_mu_Sigma2_LLA.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c Calc_mu_Sigma2_LLA_tv.cpp -o Calc_mu_Sigma2_LLA_tv.o
+In file included from Calc_mu_Sigma2_LLA_tv.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c Calc_mu_Sigma2_tv.cpp -o Calc_mu_Sigma2_tv.o
+In file included from Calc_mu_Sigma2_tv.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c EM_update_funs_LLA.cpp -o EM_update_funs_LLA.o
+In file included from EM_update_funs_LLA.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c RcppExports.cpp -o RcppExports.o
+In file included from RcppExports.cpp:4:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_M1_M2_Hadamard.cpp -o calc_M1_M2_Hadamard.o
+In file included from calc_M1_M2_Hadamard.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_M1_M2_Hadamard_a.cpp -o calc_M1_M2_Hadamard_a.o
+In file included from calc_M1_M2_Hadamard_a.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_M1_M2_M3_Hadamard.cpp -o calc_M1_M2_M3_Hadamard.o
+In file included from calc_M1_M2_M3_Hadamard.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_M1_a_M2_Hadamard.cpp -o calc_M1_a_M2_Hadamard.o
+In file included from calc_M1_a_M2_Hadamard.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_M1timesM2v.cpp -o calc_M1timesM2v.o
+In file included from calc_M1timesM2v.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_MVND.cpp -o calc_MVND.o
+In file included from calc_MVND.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_M_v.cpp -o calc_M_v.o
+In file included from calc_M_v.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_VB.cpp -o calc_VB.o
+In file included from calc_VB.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_VY.cpp -o calc_VY.o
+In file included from calc_VY.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_bi_st.cpp -o calc_bi_st.o
+In file included from calc_bi_st.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_expM2.cpp -o calc_expM2.o
+In file included from calc_expM2.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_muB.cpp -o calc_muB.o
+In file included from calc_muB.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_muBMult.cpp -o calc_muBMult.o
+In file included from calc_muBMult.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_mult_rowsum1.cpp -o calc_mult_rowsum1.o
+In file included from calc_mult_rowsum1.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_mult_rowsum2.cpp -o calc_mult_rowsum2.o
+In file included from calc_mult_rowsum2.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_mult_rowsum3.cpp -o calc_mult_rowsum3.o
+In file included from calc_mult_rowsum3.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_rowsum.cpp -o calc_rowsum.o
+In file included from calc_rowsum.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_rowsum_mult.cpp -o calc_rowsum_mult.o
+In file included from calc_rowsum_mult.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_tapply_vect_sum.cpp -o calc_tapply_vect_sum.o
+In file included from calc_tapply_vect_sum.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c calc_v_a.cpp -o calc_v_a.o
+In file included from calc_v_a.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c etaphiRcpp.cpp -o etaphiRcpp.o
+In file included from etaphiRcpp.cpp:18:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c etaphiRcpp_tv.cpp -o etaphiRcpp_tv.o
+In file included from etaphiRcpp_tv.cpp:3:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c fast_lapply_length.cpp -o fast_lapply_length.o
+In file included from fast_lapply_length.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c fast_rbind_lapply_outerprod.cpp -o fast_rbind_lapply_outerprod.o
+In file included from fast_rbind_lapply_outerprod.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigen.h:25:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppEigen/include/RcppEigenForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c ll.cpp -o ll.o
+In file included from ll.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c ll_lla.cpp -o ll_lla.o
+In file included from ll_lla.cpp:23:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c ll_lla_tv.cpp -o ll_lla_tv.o
+In file included from ll_lla_tv.cpp:18:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c lltv.cpp -o lltv.o
+In file included from lltv.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c mvlme.cpp -o mvlme.o
+In file included from mvlme.cpp:2:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo.h:29:
+In file included from /opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include/RcppArmadillo/interface/RcppArmadilloForward.h:26:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c update_lambda.cpp -o update_lambda.o
+In file included from update_lambda.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp.h:27:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -I"/opt/homebrew/Cellar/r/4.5.1/lib/R/include" -DNDEBUG  -I'/opt/homebrew/lib/R/4.5/site-library/Rcpp/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppArmadillo/include' -I'/opt/homebrew/lib/R/4.5/site-library/RcppEigen/include' -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2   -c update_lambda_tv.cpp -o update_lambda_tv.o
+In file included from update_lambda_tv.cpp:1:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp.h:27:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/RcppCommon.h:30:
+In file included from /opt/homebrew/lib/R/4.5/site-library/Rcpp/include/Rcpp/r/headers.h:71:
+In file included from /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R.h:70:
+/opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+   62 | #  pragma clang diagnostic ignored "-Wfixed-enum-extension"
+      |                                    ^
+1 warning generated.
+clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.5.1/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o JEL.so Calc_mu_Sigma2.o Calc_mu_Sigma2_LLA.o Calc_mu_Sigma2_LLA_tv.o Calc_mu_Sigma2_tv.o EM_update_funs_LLA.o RcppExports.o calc_M1_M2_Hadamard.o calc_M1_M2_Hadamard_a.o calc_M1_M2_M3_Hadamard.o calc_M1_a_M2_Hadamard.o calc_M1timesM2v.o calc_MVND.o calc_M_v.o calc_VB.o calc_VY.o calc_bi_st.o calc_expM2.o calc_muB.o calc_muBMult.o calc_mult_rowsum1.o calc_mult_rowsum2.o calc_mult_rowsum3.o calc_rowsum.o calc_rowsum_mult.o calc_tapply_vect_sum.o calc_v_a.o etaphiRcpp.o etaphiRcpp_tv.o fast_lapply_length.o fast_rbind_lapply_outerprod.o ll.o ll_lla.o ll_lla_tv.o lltv.o mvlme.o update_lambda.o update_lambda_tv.o -L/opt/homebrew/Cellar/r/4.5.1/lib/R/lib -lR
+installing to /Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.1/JEL.Rcheck/00LOCK-JEL/00new/JEL/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (JEL)

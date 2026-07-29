@@ -1,0 +1,229 @@
+* using log directory ‘/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.1/JEL.Rcheck’
+* using R version 4.5.1 (2025-06-13)
+* using platform: aarch64-apple-darwin24.4.0
+* R was compiled by
+    Apple clang version 17.0.0 (clang-1700.0.13.3)
+    GNU Fortran (Homebrew GCC 15.1.0) 15.1.0
+* running under: macOS Tahoe 26.5.2
+* using session charset: UTF-8
+* checking for file ‘JEL/DESCRIPTION’ ... OK
+* this is package ‘JEL’ version ‘2.2’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘JEL’ can be installed ... WARNING
+Found the following significant warnings:
+  /opt/homebrew/Cellar/r/4.5.1/lib/R/include/R_ext/Boolean.h:62:36: warning: unknown warning group '-Wfixed-enum-extension', ignored [-Wunknown-warning-option]
+See ‘/Users/jinwoocho/Library/CloudStorage/Dropbox/Projects/Dynamic_prediction/Package_working/JEL_2.1/JEL.Rcheck/00install.out’ for details.
+* used C++ compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+* used SDK: ‘MacOSX26.5.sdk’
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... WARNING
+'::' or ':::' import not declared from: ‘Matrix’
+Namespaces in Imports field not imported from:
+  ‘RcppArmadillo’ ‘RcppEigen’
+  All declared Imports should be used.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+getKi: warning in matrix(mm[i, ], nr = 1): partial argument match of
+  'nr' to 'nrow'
+getYi: warning in matrix(Yi, nc = 1): partial argument match of 'nc' to
+  'ncol'
+mvlme: warning in matrix(beta, nr = K, byrow = T): partial argument
+  match of 'nr' to 'nrow'
+mvlme : <anonymous>: warning in matrix(x, nc = 2, byrow = T): partial
+  argument match of 'nc' to 'ncol'
+mvlme: warning in matrix(c(beta), nr = K, byrow = T): partial argument
+  match of 'nr' to 'nrow'
+surv.mod: warning in matrix(NA, nr = length(uids), nc = 2): partial
+  argument match of 'nr' to 'nrow'
+surv.mod: warning in matrix(NA, nr = length(uids), nc = 2): partial
+  argument match of 'nc' to 'ncol'
+AUCdyn: no visible binding for global variable ‘.’
+AUCdyn: no visible global function definition for ‘combn’
+AUCdyn: no visible binding for global variable ‘time’
+JEL1 : <anonymous>: no visible global function definition for
+  ‘as.formula’
+JEL1: no visible global function definition for ‘as.formula’
+JEL_dat: no visible global function definition for ‘:=’
+JEL_dat: no visible binding for global variable ‘start’
+LLAJEL: no visible binding for global variable ‘id’
+PEdyn: no visible binding for global variable ‘.’
+PEdyn: no visible binding for global variable ‘time’
+Predict_BLUP_Multi : <anonymous>: no visible global function definition
+  for ‘model.response’
+RefinedfastEM_LLA_tv: no visible global function definition for
+  ‘predict’
+RefinedfastEM_tv: no visible global function definition for ‘predict’
+RefinedfastEM_tv: no visible global function definition for
+  ‘calc_inv_omega’
+RefinedfastEM_tv: no visible global function definition for
+  ‘calc_XometX’
+RefinedfastEM_tv: no visible global function definition for
+  ‘calc_mu_longK’
+RefinedfastEM_tv: no visible global function definition for
+  ‘calc_beta_rhs’
+RefinedfastEM_tv: no visible global function definition for ‘calc_Ee’
+confBands.JEL: no visible global function definition for ‘predict’
+confBands.JEL: no visible global function definition for ‘qchisq’
+fitJEL: no visible global function definition for ‘model.response’
+fitJEL: no visible global function definition for ‘predict’
+fitMultiJEL_tv : <anonymous>: no visible global function definition for
+  ‘model.response’
+fitMultiJEL_tv: no visible binding for global variable ‘n_eta’
+getXi: no visible binding for global variable ‘id’
+kernel_weight: no visible global function definition for ‘dnorm’
+pred_surv_compute : <anonymous>: no visible binding for global variable
+  ‘quantile’
+pred_surv_compute_LLA : <anonymous>: no visible global function
+  definition for ‘predict’
+pred_surv_compute_LLA: no visible binding for global variable
+  ‘quantile’
+pred_surv_compute_LLA: no visible global function definition for ‘ave’
+prep_LLA_landmark : <anonymous>: no visible global function definition
+  for ‘complete.cases’
+score_JEL_tv: no visible global function definition for
+  ‘calc_inv_omega’
+surv.mod: no visible binding for global variable ‘id’
+Undefined global functions or variables:
+  . := as.formula ave calc_Ee calc_XometX calc_beta_rhs calc_inv_omega
+  calc_mu_longK combn complete.cases dnorm id model.response n_eta
+  predict qchisq quantile start time
+Consider adding
+  importFrom("stats", "as.formula", "ave", "complete.cases", "dnorm",
+             "model.response", "predict", "qchisq", "quantile", "start",
+             "time")
+  importFrom("utils", "combn")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... WARNING
+Undocumented code objects:
+  ‘pbc2’
+Undocumented data sets:
+  ‘pbc2’
+All user-level objects in a package should have documentation entries.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in Rd file 'JEL1.Rd'
+  ‘time_var’
+
+Undocumented arguments in Rd file 'predict.JEL.Rd'
+  ‘fitLLAJEL’ ‘rho’ ‘bLLA_new’
+Documented arguments not in \usage in Rd file 'predict.JEL.Rd':
+  ‘JEL_models’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking compiled code ... OK
+* checking examples ... ERROR
+Running examples in ‘JEL-Ex.R’ failed
+The error most likely occurred in:
+
+> ### Name: JEL1
+> ### Title: Jointly Estimated Landmarking (JEL) for a Singular Longitudinal
+> ###   Process
+> ### Aliases: JEL1
+> 
+> ### ** Examples
+> 
+> # Load example dataset
+> data("pbc2")
+> str(pbc2)
+'data.frame':	1945 obs. of  20 variables:
+ $ id          : Factor w/ 312 levels "1","2","3","4",..: 1 1 2 2 2 2 2 2 2 2 ...
+ $ years       : num  1.1 1.1 14.2 14.2 14.2 ...
+ $ status      : Factor w/ 3 levels "alive","transplanted",..: 3 3 1 1 1 1 1 1 1 1 ...
+ $ drug        : Factor w/ 2 levels "placebo","D-penicil": 2 2 2 2 2 2 2 2 2 2 ...
+ $ age         : num  58.8 58.8 56.4 56.4 56.4 ...
+ $ sex         : Factor w/ 2 levels "male","female": 2 2 2 2 2 2 2 2 2 2 ...
+ $ year        : num  0 0.526 0 0.498 0.999 ...
+ $ ascites     : Factor w/ 2 levels "No","Yes": 2 2 1 1 1 1 2 2 2 2 ...
+ $ hepatomegaly: Factor w/ 2 levels "No","Yes": 2 2 2 2 2 2 2 2 2 2 ...
+ $ spiders     : Factor w/ 2 levels "No","Yes": 2 2 2 2 2 2 2 2 2 2 ...
+ $ edema       : Factor w/ 3 levels "No edema","edema no diuretics",..: 3 3 1 1 1 1 2 3 3 3 ...
+ $ serBilir    : num  14.5 21.3 1.1 0.8 1 1.9 2.6 3.6 4.2 3.6 ...
+ $ serChol     : int  261 NA 302 NA NA NA 230 NA NA 244 ...
+ $ albumin     : num  2.6 2.94 4.14 3.6 3.55 3.92 3.32 2.92 2.73 2.8 ...
+ $ alkaline    : int  1718 1612 7395 2107 1711 1365 1110 996 860 779 ...
+ $ SGOT        : num  138 6.2 113.5 139.5 144.2 ...
+ $ platelets   : int  190 183 221 188 161 122 135 100 103 113 ...
+ $ prothrombin : num  12.2 11.2 10.6 11 11.6 10.6 11.3 11.5 11.5 11.5 ...
+ $ histologic  : int  4 4 3 3 3 3 3 3 3 3 ...
+ $ status2     : num  1 1 0 0 0 0 0 0 0 0 ...
+> 
+> # Specify landmarking parameters
+> s <- 5
+> u <- 3
+> tau <- 2
+> 
+> # Example 1: JEL with rho = 0 (Cox proportional hazards model)
+> testJEL1 <- JEL1(
++   pbc2, land_time = s, u = u,
++   lme_fixed = list(log(serBilir) ~ year),
++   lme_random = list(~ year | id),
++   cox_formula = Surv(years, status2) ~ drug,
++   Bs = NULL,
++   rho = 0
++ )
+Error in JEL1(pbc2, land_time = s, u = u, lme_fixed = list(log(serBilir) ~  : 
+  argument "time_var" is missing, with no default
+Execution halted
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... ERROR
+  Running ‘testthat.R’
+Running the tests in ‘tests/testthat.R’ failed.
+Last 13 lines of output:
+  ── Error ('test-updates.R:35:3'): update_c re-estimates the random-effect mean c (M-step) ──
+  <Rcpp::exception/C++Error/error/condition>
+  Error: ll_lla: V must be mi x mi.
+  Backtrace:
+      ▆
+   1. ├─JEL::LLAJEL(...) at test-updates.R:35:3
+   2. │ └─JEL:::RefinedfastEM_LLA(...)
+   3. │   └─base::mapply(...)
+   4. │     └─JEL (local) `<fn>`(...)
+   5. │       └─ucminf::ucminf(...)
+   6. └─JEL (local) fn(.x, ...)
+  
+  [ FAIL 2 | WARN 1 | SKIP 0 | PASS 3 ]
+  Error: Test failures
+  Execution halted
+* checking PDF version of manual ... OK
+* DONE
+Status: 2 ERRORs, 4 WARNINGs, 1 NOTE
