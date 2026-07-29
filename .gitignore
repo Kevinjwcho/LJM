@@ -1,0 +1,20 @@
+# R build artifacts
+*.Rcheck/
+*.tar.gz
+*.Rproj
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# compiled objects
+src/*.o
+src/*.so
+src/*.dll
+
+# OS
+.DS_Store
+
+# dev-only (not part of the package)
+experiments/
+finalize_package.sh
