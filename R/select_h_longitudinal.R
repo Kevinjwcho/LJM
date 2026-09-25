@@ -1,14 +1,14 @@
-#' Longitudinal LSCV bandwidth selection for JEL
+#' Longitudinal LSCV bandwidth selection for LJM
 #'
 #' Selects the kernel bandwidth \code{h} for the Local Linear Approximation
-#' (LLA) step of \code{JEL} by leave-one-observation-out cross-validation on
+#' (LLA) step of \code{LJM} by leave-one-observation-out cross-validation on
 #' the longitudinal data, evaluated via the PRESS leverage identity (no
 #' obs-by-obs refit required).
 #'
 #' The criterion is GLOBAL: every longitudinal observation enters the LOO-CV
 #' (there is no window around the landmark), so candidate bandwidths are compared
 #' on the full observation set.  Population covariance \code{D} and noise variance
-#' \code{var.e} are taken from a single baseline \code{JEL} fit at
+#' \code{var.e} are taken from a single baseline \code{LJM} fit at
 #' \code{baseline_h} (default \code{median(h_grid)}); the centering \code{c}
 #' (\code{cLLA}) is refreshed at every candidate \code{h}.  For each subject
 #' \eqn{i} and candidate \code{h}, the BLUP precision is
@@ -38,14 +38,14 @@
 #' @param var_list Named list with at least \code{id} and \code{time} pointing to
 #'   the corresponding column names in \code{LMM_dat} / \code{Surv_dat}.
 #' @param baseline_h Bandwidth used for the one-shot baseline EM fit
-#'   (\code{JEL}).  Defaults to \code{median(h_grid)}.
-#' @param fit Optional pre-fitted \code{"JEL"} object (the output of
-#'   \code{\link{JEL}}) at \code{baseline_h}.  If supplied, the baseline EM is
+#'   (\code{LJM}).  Defaults to \code{median(h_grid)}.
+#' @param fit Optional pre-fitted \code{"LJM"} object (the output of
+#'   \code{\link{LJM}}) at \code{baseline_h}.  If supplied, the baseline EM is
 #'   skipped and \code{D}, \code{var.e} are taken from this object.
 #' @param train_dataset Training-dataset list of the form expected by
-#'   \code{\link{JEL}}.  Required when \code{fit} is \code{NULL}.
+#'   \code{\link{LJM}}.  Required when \code{fit} is \code{NULL}.
 #' @param base_terms,Bs,gh.nodes,max.iter,tol Passed through to
-#'   \code{\link{JEL}} when running the baseline EM.
+#'   \code{\link{LJM}} when running the baseline EM.
 #' @param verbose Logical; if \code{TRUE}, prints per-h CV values during the
 #'   sweep.
 #' @param ... Ignored; absorbs deprecated arguments (e.g. the former \code{W}
@@ -66,10 +66,10 @@
 #'   \item{\code{W}}{Always \code{Inf} (criterion is global; window removed).}
 #'   \item{\code{ker}}{Kernel used.}
 #'   \item{\code{baseline_h}}{Bandwidth at which the baseline EM was run.}
-#'   \item{\code{baseline_fit}}{The baseline \code{"JEL"} fit object.}
+#'   \item{\code{baseline_fit}}{The baseline \code{"LJM"} fit object.}
 #' }
 #'
-#' @seealso \code{\link{JEL}}
+#' @seealso \code{\link{LJM}}
 #'
 #' @export
 select_h_longitudinal <- function(
@@ -108,7 +108,7 @@ select_h_longitudinal <- function(
     if (is.null(baseline_h)) baseline_h <- stats::median(h_grid)
     if (verbose) message(sprintf("[select_h] baseline EM at h = %.3f ...",
                                  baseline_h))
-    fit <- JEL(
+    fit <- LJM(
       train_dataset = train_dataset,
       y_vars        = y_vars,
       s             = s,

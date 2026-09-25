@@ -1,10 +1,10 @@
-#' Predict Conditional Survival Probabilities Using JEL Models
+#' Predict Conditional Survival Probabilities Using LJM Models
 #'
-#' This function predicts conditional survival probabilities using JEL (Joint Estimation with Landmarks) models.
+#' This function predicts conditional survival probabilities using local joint model (LJM) models.
 #'
-#' @param object A fitted \code{"JEL"} object from \code{\link{JEL}}, including:
+#' @param object A fitted \code{"LJM"} object from \code{\link{LJM}}, including:
 #'
-#'   - \code{fitJEL}: The fitted Joint Estimation Landmarking (JEL) model.
+#'   - \code{fitJEL}: The fitted local joint model (LJM) model.
 #'
 #'   - \code{fitLME_list}: A list of fitted longitudinal linear mixed-effects (LME) models.
 #'
@@ -23,6 +23,7 @@
 #'
 #'     - \code{var_list}: A list of variable names for identification (\code{id}), time (\code{time}), survival event time (\code{EvTime}), and event indicator (\code{event}).
 #' @param testdat An optional data frame containing new data for prediction. If \code{NULL}, the training dataset stored in \code{object} is used (default: \code{NULL}).
+#' @param newdata_past_only Logical; if \code{TRUE} (default), longitudinal rows of \code{testdat} observed after the landmark time \code{s} are dropped before computing the BLUPs, so that dynamic predictions condition only on the history up to \code{s} (the standard dynamic-prediction protocol). Set to \code{FALSE} only for diagnostic use; it has no effect when \code{testdat} is \code{NULL}.
 #' @param tau A numeric value specifying the prediction time horizon. If \code{NULL}, the full conditional survival probabilities are returned (default: \code{NULL}).
 #' @param CI A logical value indicating whether to compute confidence intervals for the predicted survival probabilities (default: \code{FALSE}). The confidence interval is obtained using Monte Carlo approach.
 #' @param MC An integer specifying the number of Monte Carlo simulations for confidence interval estimation (default: 100).
@@ -34,11 +35,11 @@
 #' @param ... Currently unused; included for S3 generic compatibility.
 #'
 #' @details
-#' This function computes conditional survival probabilities for individuals using the components of a JEL model. It estimates the Best Linear Unbiased Predictors (BLUPs) for random effects based on the new or training dataset and combines them with survival predictions from the fitted Cox model. If a prediction time horizon (`tau`) is specified, the function filters the results to include survival probabilities at or before the specified time horizon.
+#' This function computes conditional survival probabilities for individuals using the components of an LJM model. It estimates the Best Linear Unbiased Predictors (BLUPs) for random effects based on the new or training dataset and combines them with survival predictions from the fitted Cox model. If a prediction time horizon (`tau`) is specified, the function filters the results to include survival probabilities at or before the specified time horizon.
 #'
 #' The workflow involves:
 #'
-#' 1. BLUP Estimation: Predicts the random effects for new data using the fitted JEL and LME models.
+#' 1. BLUP Estimation: Predicts the random effects for new data using the fitted LJM and LME models.
 #'
 #' 2. Survival Probability Computation: Uses the Cox model and the estimated BLUPs to calculate conditional survival probabilities.
 #'
@@ -53,34 +54,37 @@
 #'
 #' @examples
 #' \dontrun{
-#' ## `fit` is a fitted JEL object (see ?JEL)
+#' ## `fit` is a fitted LJM object (see ?LJM)
 #' pr <- predict(fit, testdat = mydata, tau = 2)   # conditional risk within tau = 2
 #' }
 #'
-#' @seealso \code{\link{JEL}} to fit the model; \code{\link{AUCdyn}},
+#' @seealso \code{\link{LJM}} to fit the model; \code{\link{AUCdyn}},
 #'   \code{\link{PEdyn}} to evaluate the predictions.
 #'
 #' @export
 
-predict.JEL <- function(object,
+predict.LJM <- function(object,
                            testdat = NULL,
+                           newdata_past_only = TRUE,
                            tau = NULL,
                            CI = FALSE,
                            MC = 100,
                            alpha = 0.05,
-                           rho = 0,
+                           rho = NULL,
                            b_new = NULL,
                            ...) {
   fitLLAJEL <- object   # internal alias (S3 generic uses `object`)
+  # Predict with the transformation used in the fit unless overridden.
+  if (is.null(rho)) rho <- if (!is.null(fitLLAJEL$rho)) fitLLAJEL$rho else 0
 
   # -----------------------------
   # Checks
   # -----------------------------
   if (is.null(fitLLAJEL$fitCOX)) stop("fitLLAJEL must contain $fitCOX.")
-  if (is.null(fitLLAJEL$prep)) stop("fitLLAJEL must contain $prep (from JEL).")
+  if (is.null(fitLLAJEL$prep)) stop("the fitted object must contain $prep (from LJM()).")
   if (is.null(fitLLAJEL$dataset)) {
     # 너 fitLLAJEL 리턴에서 dataset 저장 안 했으면 여기서 안내
-    # (JEL() 리턴에 dataset=train_dataset 넣으면 가장 깔끔)
+    # (LJM() 리턴에 dataset=train_dataset 넣으면 가장 깔끔)
     if (is.null(testdat)) stop("fitLLAJEL$dataset is missing. Provide testdat explicitly.")
   }
   
@@ -95,8 +99,22 @@ predict.JEL <- function(object,
     # testdat = raw long+surv merged data.frame
     if (is.null(fitLLAJEL$dataset$var_list)) stop("fitLLAJEL$dataset$var_list is missing.")
     if (is.null(fitLLAJEL$dataset$s)) stop("fitLLAJEL$dataset$s is missing (landmark).")
-    
-    test_ds <- JEL_dat(
+
+    # Dynamic prediction uses only data observed by the landmark time s:
+    # by default, drop longitudinal rows with time > s so that held-out
+    # predictions never condition on post-landmark measurements.
+    # (Estimation/training keeps the symmetric kernel window; this filter
+    # affects prediction for new data only.)
+    if (isTRUE(newdata_past_only)) {
+      .time_var <- fitLLAJEL$dataset$var_list[["time"]]
+      if (is.null(.time_var) || !(.time_var %in% names(testdat)))
+        stop("newdata_past_only=TRUE requires var_list$time to name a column of testdat.")
+      testdat <- testdat[testdat[[.time_var]] <= fitLLAJEL$dataset$s, , drop = FALSE]
+      if (nrow(testdat) == 0L)
+        stop("No testdat rows at or before the landmark time s; cannot predict.")
+    }
+
+    test_ds <- LJM_dat(
       data = testdat,
       s = fitLLAJEL$dataset$s,
       var_list = fitLLAJEL$dataset$var_list

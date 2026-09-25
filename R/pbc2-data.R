@@ -3,7 +3,7 @@
 #' Longitudinal follow-up of patients from the Mayo Clinic trial of
 #' D-penicillamine for primary biliary cirrhosis (PBC), in the long format used
 #' by joint-modelling packages: one row per longitudinal visit per subject.
-#' Used throughout the examples and tests of the JEL package. The columns used by
+#' Used throughout the examples and tests of the LJM package. The columns used by
 #' the package are the subject id (\code{id}), the measurement time (\code{year}),
 #' the event/censoring time (\code{years}), the event indicator (\code{status2}),
 #' the treatment group (\code{drug}), and the biomarkers serum bilirubin

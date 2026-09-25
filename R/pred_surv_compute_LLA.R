@@ -1,6 +1,6 @@
 ############################################################
 ## pred_surv_compute_LLA.R
-## - Survival prediction for JEL fitted objects
+## - Survival prediction for LJM fitted objects
 ## - Uses fitLLAJEL$fitCOX (already stored inside fitLLAJEL)
 ## - Uses subject-level bLLA (no LME BLUPs)
 ## - Supports both "Fixed" and "TimeVar" (B-spline eta) models.

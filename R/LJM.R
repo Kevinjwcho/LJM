@@ -1,8 +1,8 @@
-#' Fit an LLA-based Jointly Estimated Landmarking (JEL) model
+#' Fit a local joint model (LJM)
 #'
 #' Fits a landmarked joint model using Local Linear Approximation (LLA) for the
 #' longitudinal component and a Cox model for the survival component, following
-#' a `prep -> fit -> return` workflow producing a `"JEL"` object.
+#' a `prep -> fit -> return` workflow producing an `"LJM"` object.
 #'
 #' This function assumes the following helpers exist in the package namespace:
 #' \itemize{
@@ -33,12 +33,16 @@
 #' @param tol Convergence tolerance. Default is 0.01.
 #' @param diff.type Convergence criterion type passed to the EM routine. Default is \code{"abs.rel"}.
 #' @param collect.hist Logical; whether to collect iteration history. Default is TRUE.
+#' @param rho Non-negative transformation parameter of \eqn{G(x) = \log(1+\rho x)/\rho};
+#'   \code{0} (default) gives the Cox model and \code{1} the proportional odds model.
+#'   Implemented for the constant-coefficient model (\code{Bs = NULL}).
 #' @param Vcov Logical; whether to compute/post-process variance-covariance. Default is TRUE.
 #' @param verbose Logical; verbosity for the EM routine. Default is FALSE.
-#' @param h_init Optional bandwidth used only to construct the initial local-linear
-#'   BLUPs of the random effects, decoupled from the fitting bandwidth \code{h}.
-#'   If \code{NULL} (default) the fitting bandwidth \code{h} is reused for
-#'   initialization.
+#' @param init_pooled Logical; if \code{TRUE} (default), initial values of the
+#'   random-effect mean, covariance and error variance come from a pooled kernel
+#'   linear mixed model fitted at bandwidth \code{h} (falling back to the full
+#'   record, then to per-subject weighted least squares). If \code{FALSE}, the
+#'   per-subject weighted least-squares start is used.
 #'
 #' @details
 #' Internally, this function:
@@ -49,7 +53,7 @@
 #'   \item Builds indexing/design objects for the EM step.
 #'   \item Initializes survival parameters via \code{InitVal_LLAJEL()} and runs
 #'     the EM algorithm via \code{RefinedfastEM_LLA()}.
-#'   \item Returns an object of class \code{"JEL"} with estimates and optional diagnostics.
+#'   \item Returns an object of class \code{"LJM"} with estimates and optional diagnostics.
 #' }
 #'
 #' \strong{Time-varying associations.} When \code{Bs} is supplied (equivalently
@@ -67,10 +71,10 @@
 #' does not factor as \eqn{\Lambda_0(\tau)\exp(\cdot)} and is evaluated
 #' numerically. Pointwise confidence bands for the intercept function
 #' \eqn{\eta_0(u)} and the slope function \eqn{\eta_1(u)} are available via
-#' \code{\link{confBands.JEL}}.
+#' \code{\link{confBands.LJM}}.
 #'
 #' @return
-#' An object of class \code{"JEL"} (a list) containing at least:
+#' An object of class \code{"LJM"} (a list) containing at least:
 #' \itemize{
 #'   \item \code{coefficients}: estimated fixed effects / parameters (from EM output).
 #'   \item \code{Vcov}: estimated variance-covariance matrix (if computed).
@@ -85,16 +89,16 @@
 #'
 #' @examples
 #' \donttest{
-#' data("pbc2", package = "JEL")
+#' data("pbc2", package = "LJM")
 #' d <- pbc2; d$id <- as.numeric(d$id)
 #' d$Y.1 <- log(d$serBilir); d$Y.2 <- d$albumin
 #' vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
 #'
 #' ## 1) landmarked data at s = 5 (complete-case filter applied by default)
-#' td <- JEL_dat(d, s = 5, var_list = vl, h = 4, y_vars = c("Y.1", "Y.2"))
+#' td <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = c("Y.1", "Y.2"))
 #'
 #' ## 2) fit (Epanechnikov kernel, fixed bandwidth h = 4)
-#' fit <- JEL(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4,
+#' fit <- LJM(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4,
 #'            base_terms = "drug", ker = "epanechnikov")
 #' fit$coefficients$eta
 #'
@@ -105,22 +109,22 @@
 #'
 #' ## time-varying association (supply a B-spline basis) + confidence bands
 #' spl <- list(df = 3, degree = 1, knots = NULL, Bknots = NULL)
-#' fit_tv <- JEL(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4, base_terms = "drug",
+#' fit_tv <- LJM(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4, base_terms = "drug",
 #'               ker = "epanechnikov", Bs = list(spl, list(NULL)))
-#' cb <- confBands.JEL(fit_tv, K = 1)
+#' cb <- confBands.LJM(fit_tv, K = 1)
 #' }
 #'
-#' @seealso \code{\link{JEL_dat}} for building the input;
-#'   \code{\link[=predict.JEL]{predict}} for prediction;
+#' @seealso \code{\link{LJM_dat}} for building the input;
+#'   \code{\link[=predict.LJM]{predict}} for prediction;
 #'   \code{\link{AUCdyn}}, \code{\link{PEdyn}} for evaluation;
-#'   \code{\link{confBands.JEL}} for time-varying confidence bands;
+#'   \code{\link{confBands.LJM}} for time-varying confidence bands;
 #'   \code{\link{select_h_longitudinal}} for bandwidth selection.
 #'
 #' @export
 #'
 #' @importFrom survival coxph
 #' @importFrom stats model.frame model.matrix formula terms
-JEL <- function(train_dataset,
+LJM <- function(train_dataset,
                    y_vars,
                    s, h,
                    base_terms,
@@ -134,7 +138,13 @@ JEL <- function(train_dataset,
                    collect.hist = TRUE,
                    Vcov = TRUE,
                    verbose = FALSE,
-                   h_init = NULL) {
+                   init_pooled = TRUE,
+                   rho = 0) {
+
+  # rho: transformation parameter of G(x) = log(1 + rho x)/rho (0 = Cox,
+  # 1 = proportional odds).  Implemented for the constant-coefficient model.
+  if (!is.numeric(rho) || length(rho) != 1L || !is.finite(rho) || rho < 0)
+    stop("rho must be a single non-negative number.")
 
   # Determine model type from Bs
   if (!is.null(Bs)) {
@@ -143,6 +153,8 @@ JEL <- function(train_dataset,
     }
     model <- "TimeVar"
   }
+  if (model == "TimeVar" && rho != 0)
+    stop("rho != 0 is implemented for the constant-coefficient model only (Bs = NULL).")
   
   # 1) prep
   prep <- prep_LLA_landmark(
@@ -153,7 +165,7 @@ JEL <- function(train_dataset,
     h        = h,
     ker      = ker,
     var_list = train_dataset$var_list,
-    h_init   = h_init
+    init_pooled = init_pooled
   )
 
   surv_s2 <- prep$surv_s2
@@ -318,14 +330,20 @@ JEL <- function(train_dataset,
       tol        = tol,
       diff.type  = diff.type,
       post.process = Vcov,
-      verbose    = verbose
+      verbose    = verbose,
+      rho        = rho
     )
   }
 
-  # 5) Return a JEL-like object + attach prep/fitCOX for debugging
+  # 5) Return an LJM object + attach prep/fitCOX for debugging
   out <- list(
     coefficients = theta$coeffs,
+    rho          = rho,                     # transformation parameter used in the fit
     Vcov         = theta$Vcov,
+    init_h       = prep$h_init_used,        # bandwidth of the pooled initial fit (JEL 2.4: = h unless fallback)
+    init_mode    = prep$init_mode,
+    newton_guard = theta$newton_guard,      # guarded/damped (eta, phi) Newton steps (0 = untouched)
+    init_shrink  = surv.init$init_shrink,    # shrink factor applied to the Cox initial values (1 = none)
     Hessian      = theta$Hessian,   # diagnostic passthrough (raw PRES Hessian, tv)
     est.bi       = theta$REs,
     convergence  = if (!is.null(theta$history) && nrow(theta$history) < max.iter) "success" else "failure",
@@ -357,6 +375,6 @@ JEL <- function(train_dataset,
     var_list  = train_dataset$var_list
   )
 
-  class(out) <- "JEL"
+  class(out) <- "LJM"
   out
 }

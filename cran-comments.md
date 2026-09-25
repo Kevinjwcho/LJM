@@ -1,8 +1,7 @@
 ## Submission summary
 
-This is the first CRAN submission of `JEL`, an R package for dynamic survival
-prediction from longitudinal biomarkers using the Jointly Estimated Landmarking
-approach (compiled C++ via Rcpp / RcppArmadillo / RcppEigen).
+This is the first CRAN submission of `LJM`, an R package for dynamic survival
+prediction from longitudinal biomarkers using the local joint model (compiled C++ via Rcpp / RcppArmadillo / RcppEigen).
 
 ## Test environments
 

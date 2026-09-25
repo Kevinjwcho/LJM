@@ -2,7 +2,7 @@
 #'
 #' This function computes the dynamic prediction error (PE) for survival predictions at a specified landmark time and prediction horizon.
 #'
-#' @param pred_surv_result The result from the \code{predict.JEL} function. It can be a \code{data.frame} or a \code{list}:
+#' @param pred_surv_result The result from the \code{predict.LJM} function. It can be a \code{data.frame} or a \code{list}:
 #'
 #'   - If a \code{data.frame}, it should include columns for \code{id}, \code{tau}, and survival probabilities.
 #'
@@ -19,19 +19,19 @@
 #'   - \code{event}: Column name for the event status (default: \code{"event"}).
 #'
 #' @details
-#' The function calculates the dynamic PE by comparing the predicted survival probabilities from \code{predict.JEL} against actual survival outcomes at a specified landmark time and prediction horizon.
+#' The function calculates the dynamic PE by comparing the predicted survival probabilities from \code{predict.LJM} against actual survival outcomes at a specified landmark time and prediction horizon.
 #' The prediction error is computed using Kaplan-Meier estimates to adjust for censored cases.
 #'
 #' @return A numeric value representing the dynamic PE.
 #'
 #' @examples
 #' \dontrun{
-#' ## `pr` is the output of predict() on a fitted JEL object
+#' ## `pr` is the output of predict() on a fitted LJM object
 #' ev <- list(id = "id", EvTime = "years", event = "status2")
 #' PEdyn(pr, data = mydata, landmarks = 5, tau = 2, var_list = ev)
 #' }
 #'
-#' @seealso \code{\link{AUCdyn}}, \code{\link[=predict.JEL]{predict}}, \code{\link{JEL}}
+#' @seealso \code{\link{AUCdyn}}, \code{\link[=predict.LJM]{predict}}, \code{\link{LJM}}
 #'
 #'
 #' @export

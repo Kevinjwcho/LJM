@@ -1,5 +1,5 @@
 ############################################################
-## Kernel-local posterior JEL + Time-Varying: PRES score + Hessian
+## Kernel-local posterior LJM + Time-Varying: PRES score + Hessian
 ## (internal helper PRES_hessian_LLA_tv used by RefinedfastEM_LLA_tv)
 ## - NO X / NO beta
 ## - Kernel used ONLY to form local posterior via inv_omega_ker

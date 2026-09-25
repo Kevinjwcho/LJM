@@ -1,5 +1,5 @@
 # ============================================================
-# Refined Fast EM for Kernel-weighted LLA-JEL (Fixed effects)
+# Refined Fast EM for Kernel-weighted LJM (Fixed effects)
 # ------------------------------------------------------------
 # - Longitudinal part: Kernel-weighted Local Linear Approximation (LLA)
 #   * No X / No beta in the longitudinal likelihood
@@ -28,7 +28,8 @@ RefinedfastEM_LLA <- function(
     gh.nodes = 3, collect.hist = TRUE, max.iter = 200,
     tol = 0.01, diff.type = "abs.rel",
     post.process = FALSE, verbose = FALSE,
-    update_c = TRUE
+    update_c = TRUE,
+    rho = 0          # transformation parameter of G (0 = Cox)
 ){
   
   # ----------------------------------------------------------
@@ -261,7 +262,7 @@ RefinedfastEM_LLA <- function(
   v <- gh$nodes
   w <- gh$weights
   
-  message("Starting EM Algorithm (LLA JEL)")
+  message("Starting EM Algorithm (LJM)")
 
   EM.time <- numeric(0)
 
@@ -278,6 +279,7 @@ RefinedfastEM_LLA <- function(
   # ----------------------------------------------------------
   # EM loop
   # ----------------------------------------------------------
+  guard_hits <- 0L; guard_reset_done <- FALSE   # (eta, phi) Newton guard, see below
   while (diff > tol && iter < max.iter) {
     
     p1 <- proc.time()[3]
@@ -305,6 +307,7 @@ RefinedfastEM_LLA <- function(
           eta = eta,
           w = wker,
           c = c,
+          rho = rho,
           control = list(xtol = 1e-3, grtol = 1e-6)
         )$par
       },
@@ -334,10 +337,10 @@ RefinedfastEM_LLA <- function(
     # Posterior covariance approximation at mode
     .t <- proc.time()[3]
     Sigmai <- mapply(
-      function(bhat, Z, V, K, l0u, wker) {
-        solve(-1 * sdll_lla(bhat, Z, D, V, K, l0u, phi, eta, wker))
+      function(bhat, Z, V, K, l0u, wker, Delta) {
+        solve(-1 * sdll_lla(bhat, Z, D, V, K, l0u, phi, eta, wker, Delta = Delta, rho = rho))
       },
-      bhat = b.hat, Z = Z, V = V, K = K, l0u = l0u, wker = W_kernel,
+      bhat = b.hat, Z = Z, V = V, K = K, l0u = l0u, wker = W_kernel, Delta = Deltai.list,
       SIMPLIFY = FALSE
     )
 
@@ -368,7 +371,7 @@ RefinedfastEM_LLA <- function(
     Es_exp <- Esurv_exp(w, v,
                         mu = mu_surv, variance = Sigma2_surv,
                         mu_new = mu_surv, variance_new = Sigma2_surv,
-                        l0i = l0i, l0u = l0u)
+                        l0i = l0i, l0u = l0u, rho = rho)
     prof$expectations <- prof$expectations + (proc.time()[3] - .t)
 
     # Newton items for (eta, phi)
@@ -380,7 +383,7 @@ RefinedfastEM_LLA <- function(
                    nK, w, v,
                    mu_surv, Sigma2_surv,
                    eps = 0.0001,
-                   c_list = c)
+                   c_list = c, rho = rho)
     prof$Setaphi <- prof$Setaphi + (proc.time()[3] - .t)
 
     .t <- proc.time()[3]
@@ -391,8 +394,16 @@ RefinedfastEM_LLA <- function(
                    nK, w, v,
                    mu_surv, Sigma2_surv,
                    eps = 0.0001,
-                   c_list = c)
+                   c_list = c, rho = rho)
     prof$Hetaphi <- prof$Hetaphi + (proc.time()[3] - .t)
+
+    if (verbose && (!all(is.finite(Sge)) || !all(is.finite(Hge)))) {
+      .fin <- function(x) all(is.finite(unlist(x)))
+      .rng <- function(x) { x <- unlist(x); x <- x[is.finite(x)]; if (length(x)) sprintf("[%.3g, %.3g]", min(x), max(x)) else "none finite" }
+      message(sprintf("  [guard diag] finite: b.hat=%s Sigmai=%s D.newi=%s Ewe=%s mu_surv=%s Sigma2_surv=%s Es_exp=%s l0u=%s l0i=%s | ranges: b.hat %s, mu_surv %s, Sigma2_surv %s, Es_exp %s, l0u %s",
+        .fin(b.hat), .fin(Sigmai), .fin(D.newi), .fin(Ewe), .fin(mu_surv), .fin(Sigma2_surv), .fin(Es_exp), .fin(l0u), .fin(l0i),
+        .rng(b.hat), .rng(mu_surv), .rng(Sigma2_surv), .rng(Es_exp), .rng(l0u)))
+    }
     
     # ======================
     # M-step
@@ -424,7 +435,38 @@ RefinedfastEM_LLA <- function(
     # eta.new <- eta.phi.new[1:(2 * nK)]
     # phi.new <- eta.phi.new[(2 * nK + 1):length(eta.phi.new)]
 
-    eta.phi.new <- c(eta, phi) - solve(Hge, Sge)
+    # Guarded Newton step (JEL 2.3). On small risk sets or badly scaled markers
+    # the Cox-based initial (eta, phi) can be so extreme that the score and
+    # Hessian are non-finite (exp overflow), which turned (eta, phi) into NaN and
+    # stopped the EM with an uninformative error.
+    # (i) non-finite score/Hessian or singular Hessian: the first time this
+    #     happens (eta, phi) is restarted from zero, where the score is finite;
+    #     afterwards the update is skipped for that iteration;
+    # (ii) otherwise the largest coordinate move is capped at `max_step`.
+    # `guard_hits` counts interventions and is returned in the fit.
+    max_step <- 10
+    nr_step <- if (all(is.finite(Sge)) && all(is.finite(Hge)))
+      tryCatch(solve(Hge, Sge), error = function(e) rep(NA_real_, length(Sge)))
+    else rep(NA_real_, length(Sge))
+    if (!all(is.finite(nr_step))) {
+      guard_hits <- guard_hits + 1L
+      if (!guard_reset_done) {
+        guard_reset_done <- TRUE
+        if (verbose) message(sprintf(
+          "Iteration %d: (eta, phi) Newton step not finite; restarting (eta, phi) from zero. Initial eta = %s",
+          iter + 1, paste(signif(eta, 3), collapse = " ")))
+        nr_step <- c(eta, phi)                     # theta - theta = 0
+      } else {
+        if (verbose) message(sprintf("Iteration %d: (eta, phi) Newton step not finite; update skipped", iter + 1))
+        nr_step <- rep(0, length(Sge))
+      }
+    } else if (max(abs(nr_step)) > max_step) {
+      guard_hits <- guard_hits + 1L
+      if (verbose) message(sprintf("Iteration %d: (eta, phi) Newton step damped by %.3g",
+                                   iter + 1, max_step / max(abs(nr_step))))
+      nr_step <- nr_step * (max_step / max(abs(nr_step)))
+    }
+    eta.phi.new <- c(eta, phi) - nr_step
 
     q_eta <- length(eta)
 
@@ -562,6 +604,7 @@ RefinedfastEM_LLA <- function(
           eta = eta,
           w = wker,
           c = c,
+          rho = rho,
           control = list(xtol = 1e-3, grtol = 1e-6)
         )$par
       },
@@ -573,16 +616,16 @@ RefinedfastEM_LLA <- function(
     )
     
     Sigmai <- mapply(
-      function(bhat, Z, V, K, l0u, wker) {
-        solve(-1 * sdll_lla(bhat, Z, D, V, K, l0u, phi, eta, wker))
+      function(bhat, Z, V, K, l0u, wker, Delta) {
+        solve(-1 * sdll_lla(bhat, Z, D, V, K, l0u, phi, eta, wker, Delta = Delta, rho = rho))
       },
-      bhat = b.hat, Z = Z, V = V, K = K, l0u = l0u, wker = W_kernel,
+      bhat = b.hat, Z = Z, V = V, K = K, l0u = l0u, wker = W_kernel, Delta = Deltai.list,
       SIMPLIFY = FALSE
     )
     
     # IMPORTANT: dmats already includes W_kernel and w_longK
     H <- PRES_hessian(coeffs, dmats, V, b, b.hat, Sigmai, S,
-                      l0i, l0u, gh.nodes, n, q, nK, nev, Fi, delta = 0.0001)
+                      l0i, l0u, gh.nodes, n, q, nK, nev, Fi, delta = 0.0001, rho = rho)
 
     # Handle NaN/Inf in Hessian
     if (any(!is.finite(H))) {
@@ -617,6 +660,7 @@ RefinedfastEM_LLA <- function(
     rtn$postprocess.time <- round(pp.end - pp.start, 2)
     rtn$comp.time <- round(proc.time()[3] - start.time, 2)
   }
-  
+
+  rtn$newton_guard <- guard_hits   # number of guarded/damped (eta, phi) Newton steps (0 = untouched)
   rtn
 }

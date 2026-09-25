@@ -175,7 +175,7 @@ fitLLAJEL <- function(prep, fitCOX, train_dataset,
   converge <- if (!is.null(theta.refinedfastEM$history) && nrow(theta.refinedfastEM$history) < max.iter) 1 else 0
   
   # -----------------------------
-  # Output (keep JEL-style structure)
+  # Output (keep LJM-style structure)
   # -----------------------------
   result <- list()
   lamb.new <- as.data.frame(theta.refinedfastEM$coeffs$hazard)
@@ -201,7 +201,7 @@ fitLLAJEL <- function(prep, fitCOX, train_dataset,
   result$d <- d
   result$dataMat <- list(ID_surv = ID_surv, Indcs = Indcs)
   
-  class(result) <- "JEL"
+  class(result) <- "LJM"
   result
 }
 
@@ -392,7 +392,7 @@ fitLLAJEL_tv <- function(prep, fitCOX, train_dataset,
   converge <- if (!is.null(theta.refinedfastEM$history) && nrow(theta.refinedfastEM$history) < max.iter) 1 else 0
 
   # -----------------------------
-  # Output (keep JEL-style structure)
+  # Output (keep LJM-style structure)
   # -----------------------------
   result <- list()
   lamb.new <- as.data.frame(theta.refinedfastEM$coeffs$hazard)
@@ -419,6 +419,6 @@ fitLLAJEL_tv <- function(prep, fitCOX, train_dataset,
   result$d <- d
   result$dataMat <- list(B = theta.refinedfastEM$dmats$BB, ID_surv = ID_surv, Indcs = Indcs)
 
-  class(result) <- "JEL"
+  class(result) <- "LJM"
   result
 }

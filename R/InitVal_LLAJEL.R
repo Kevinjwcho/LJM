@@ -117,6 +117,32 @@ InitVal_LLAJEL <- function(
   
   phi.init <- if (ncw > 0) as.vector(fit$coefficients[seq_len(ncw)]) else numeric(0)
   eta.init <- as.vector(fit$coefficients[(ncw + 1):(ncw + n_eta)])
+
+  # Safeguard (JEL 2.3): the unpenalised Cox fit on the initial local intercepts
+  # and slopes can return extreme coefficients on small risk sets or badly scaled
+  # markers (e.g. a slope coefficient of 20 on a raw-scale biomarker). The EM then
+  # evaluates exp() of a linear predictor spanning hundreds of units, the first
+  # E-step returns non-finite expectations and the fit fails. If the centred
+  # initial linear predictor exceeds `lp_max` in absolute value, (eta, phi) are
+  # shrunk proportionally; the EM moves them freely afterwards. The factor is
+  # returned as `init_shrink` (1 = no intervention).
+  lp_max <- 10
+  init_shrink <- 1
+  lp0 <- as.vector(B_time %*% eta.init)
+  if (ncw > 0) lp0 <- lp0 + as.vector(W %*% phi.init)
+  lp0 <- lp0[is.finite(lp0)]
+  if (length(lp0)) {
+    spread <- max(abs(lp0 - stats::median(lp0)))
+    if (!is.finite(spread) || spread > lp_max) {
+      init_shrink <- if (is.finite(spread)) lp_max / spread else 0
+      message(sprintf("InitVal_LLAJEL: initial Cox (eta, phi) shrunk by %.3g (linear-predictor spread %.3g > %g)",
+                      init_shrink, spread, lp_max))
+      eta.init <- eta.init * init_shrink
+      phi.init <- phi.init * init_shrink
+    }
+  }
+  if (any(!is.finite(eta.init))) { eta.init[!is.finite(eta.init)] <- 0; init_shrink <- 0 }
+  if (any(!is.finite(phi.init))) { phi.init[!is.finite(phi.init)] <- 0; init_shrink <- 0 }
   
   # -------------------------
   # 4) baseline hazard increments lambda
@@ -139,6 +165,7 @@ InitVal_LLAJEL <- function(
     lamb  = lamb.init,
     bBLUP = bBLUP,
     eta_n = eta_n,
-    ph = fit
+    ph = fit,
+    init_shrink = init_shrink
   )
 }

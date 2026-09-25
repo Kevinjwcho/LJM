@@ -1,4 +1,4 @@
-test_that("JEL_dat complete-case filter (default and explicit)", {
+test_that("LJM_dat complete-case filter (default and explicit)", {
   data("pbc2")
   d <- pbc2
   d$id <- as.numeric(d$id)
@@ -6,12 +6,12 @@ test_that("JEL_dat complete-case filter (default and explicit)", {
   vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
 
   # No h/y_vars -> filter cannot apply -> all at-risk subjects kept.
-  base <- JEL_dat(d, s = 5, var_list = vl)
+  base <- LJM_dat(d, s = 5, var_list = vl)
   # Explicit filter.
-  filt <- JEL_dat(d, s = 5, var_list = vl,
+  filt <- LJM_dat(d, s = 5, var_list = vl,
                   h = 4, min_window_obs = 2, y_vars = "Y1")
   # min_window_obs defaults to 2, so supplying h + y_vars filters by default.
-  deflt <- JEL_dat(d, s = 5, var_list = vl, h = 4, y_vars = "Y1")
+  deflt <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = "Y1")
 
   base_ids  <- unique(base$Surv_dat$id)
   filt_ids  <- unique(filt$Surv_dat$id)
@@ -31,19 +31,19 @@ test_that("JEL_dat complete-case filter (default and explicit)", {
   expect_true(all(cnt >= 2))
 })
 
-test_that("JEL re-estimates the random-effect mean c (M-step, always on)", {
+test_that("LJM re-estimates the random-effect mean c (M-step, always on)", {
   data("pbc2")
   d <- pbc2
   d$id <- as.numeric(d$id)
   d$Y1 <- log(d$serBilir)
   vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
   # complete-case is applied by default here (h + y_vars supplied)
-  td <- JEL_dat(d, s = 5, var_list = vl, h = 4, y_vars = "Y1")
+  td <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = "Y1")
 
-  fit <- JEL(td, y_vars = "Y1", s = 5, h = 4, base_terms = c("drug"),
+  fit <- LJM(td, y_vars = "Y1", s = 5, h = 4, base_terms = c("drug"),
              ker = "epanechnikov", max.iter = 50, Vcov = FALSE, verbose = FALSE)
 
-  expect_s3_class(fit, "JEL")
+  expect_s3_class(fit, "LJM")
 
   # the EM always re-estimates c = mean(b_hat); check it is present and sane
   c_hat <- as.numeric(fit$coefficients$c)

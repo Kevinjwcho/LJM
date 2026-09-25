@@ -1,4 +1,4 @@
-#' Create landmarked longitudinal and survival datasets for JEL/JEL
+#' Create landmarked longitudinal and survival datasets for LJM/LJM
 #'
 #' Splits an individual-level longitudinal dataset into:
 #' \itemize{
@@ -11,7 +11,7 @@
 #' }
 #'
 #' The function also attaches \code{start/stop/event} back to \code{LMM_dat} (one row per
-#' longitudinal observation) to match older JEL-style workflows.
+#' longitudinal observation) to match older LJM-style workflows.
 #'
 #' @param data A data frame containing longitudinal rows with at least the columns in
 #'   \code{var_list} (\code{id}, \code{time}, \code{EvTime}, \code{event}).
@@ -26,6 +26,11 @@
 #'   \code{min_window_obs} to define the complete-case filter. The filter is
 #'   applied only when both \code{h} and \code{y_vars} are supplied. Default
 #'   \code{NULL}.
+#' @param min_subjects Integer; the smallest number of subjects the complete-case
+#'   filter may leave before the bandwidth is declared unusable. Falling below it
+#'   raises a condition of class \code{"jel_bandwidth_too_small"}, which callers
+#'   (e.g. bandwidth selection) can catch to skip that \code{h} rather than
+#'   treating it as a generic error. Default 20.
 #' @param min_window_obs Integer threshold for the complete-case filter, applied
 #'   \emph{by default}: a subject is retained only if it has at least
 #'   \code{min_window_obs} non-missing observations of \emph{every} marker in
@@ -62,7 +67,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' dat_split <- JEL_dat(
+#' dat_split <- LJM_dat(
 #'   data = dat,
 #'   s = 2,
 #'   negative = FALSE,
@@ -72,18 +77,19 @@
 #' head(dat_split$Surv_dat)
 #' }
 #'
-#' @seealso \code{\link{JEL}}, which consumes the returned dataset.
+#' @seealso \code{\link{LJM}}, which consumes the returned dataset.
 #'
 #' @export
 #'
 #' @importFrom dplyr group_by filter n ungroup summarise across everything last transmute left_join select any_of
 #' @importFrom rlang .data
-JEL_dat <- function(data, s, negative = FALSE,
+LJM_dat <- function(data, s, negative = FALSE,
                     var_list = list(id = "id", time = "time", EvTime = "EvTime", event = "event"),
-                    h = NULL, min_window_obs = 2, y_vars = NULL) {
+                    h = NULL, min_window_obs = 2, y_vars = NULL,
+                    min_subjects = 20L) {
   # min_window_obs : if set (e.g. 2), additionally keep only subjects that have at
   #   least this many observations inside the kernel window |time - s| <= h (non-NA
-  #   for every outcome in y_vars).  The JEL kernel local-linear fit needs >= 2
+  #   for every outcome in y_vars).  The LJM kernel local-linear fit needs >= 2
   #   in-window points to be defined; filtering here (rather than imputing later)
   #   keeps the whole train_dataset consistent.  Requires h and y_vars.
 
@@ -134,9 +140,35 @@ JEL_dat <- function(data, s, negative = FALSE,
       good <- as.numeric(names(cnt))[!is.na(cnt) & cnt >= min_window_obs]
       ok_ids <- intersect(ok_ids, good)
     }
+    n_before <- length(keep_ids)
     keep_ids <- ok_ids
-    if (length(keep_ids) < 2L)
-      stop("JEL_dat: < 2 subjects pass the min_window_obs filter at this landmark/bandwidth.")
+    n_after  <- length(keep_ids)
+
+    # A bandwidth that is small relative to the visit spacing starves the local
+    # fit: subjects without min_window_obs measurements inside |t - s| <= h are
+    # dropped, and once too few remain the EM fails with an opaque downstream
+    # error. Warn as soon as the filter bites hard, and raise a *classed*
+    # condition when the retained set is unusable so that callers -- bandwidth
+    # selection in particular -- can skip this h instead of treating it as a
+    # generic failure.
+    drop_frac <- if (n_before > 0L) 1 - n_after / n_before else 0
+    if (n_after < min_subjects) {
+      stop(structure(
+        class = c("jel_bandwidth_too_small", "error", "condition"),
+        list(message = sprintf(
+          paste0("LJM_dat: bandwidth h = %g is too small at landmark s = %g: only %d of %d ",
+                 "subjects have >= %d in-window observations of every marker (min_subjects = %d). ",
+                 "Skip this bandwidth or widen it."),
+          h, s, n_after, n_before, min_window_obs, min_subjects),
+          call = NULL)))
+    }
+    if (drop_frac >= 0.5)
+      warning(sprintf(
+        paste0("LJM_dat: bandwidth h = %g at landmark s = %g drops %.0f%% of subjects ",
+               "(%d of %d retained) through the min_window_obs = %d filter; ",
+               "the local fit may be unstable."),
+        h, s, 100 * drop_frac, n_after, n_before, min_window_obs), call. = FALSE)
+
     data_before_s <- data_before_s[data_before_s[[id]] %in% keep_ids, , drop = FALSE]
   }
 

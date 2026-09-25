@@ -1,5 +1,5 @@
 ############################################################
-## Kernel-local posterior JEL: PRES score + Hessian
+## Kernel-local posterior LJM: PRES score + Hessian
 ## (internal helpers used by RefinedfastEM_LLA and RefinedfastEM_LLA_tv)
 ## - Keep ORIGINAL function names: score_JEL(), PRES_hessian()
 ## - NO X / NO beta
@@ -20,7 +20,7 @@
 ## score_JEL()
 ############################################################
 score_JEL <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
-                      l0i, l0u, gh.nodes, n, q, nK, nev, Fi){
+                      l0i, l0u, gh.nodes, n, q, nK, nev, Fi, rho = 0){
   
   # ---- Extract fitted values (MLEs) ----
   var.e <- Omega$var.e
@@ -65,7 +65,7 @@ score_JEL <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
   Es_exp <- Esurv_exp(w, v,
                       mu = mu_surv, variance = Sigma2_surv,
                       mu_new = mu_surv, variance_new = Sigma2_surv,
-                      l0i = l0i, l0u = l0u)
+                      l0i = l0i, l0u = l0u, rho = rho)
   
   ########################################################
   # Baseline hazard update pieces (same logic as before)
@@ -151,7 +151,7 @@ score_JEL <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
                      nK, w, v,
                      mu_surv, Sigma2_surv,
                      eps = 0.0001,
-                     c_list = c_list)
+                     c_list = c_list, rho = rho)
   
   ########################################################
   # Full score vector (no beta block)
@@ -167,7 +167,7 @@ score_JEL <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
 ############################################################
 PRES_hessian <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
                          l0i, l0u, gh.nodes, n, q, nK, nev, Fi,
-                         delta = 0.0001){
+                         delta = 0.0001, rho = 0){
   
   # ---- Extract fitted values ----
   D     <- Omega$D
@@ -222,14 +222,38 @@ PRES_hessian <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
   }
   
   # ---- Finite-difference Hessian of score ----
+  # Step size (JEL 2.3): `delta` is scaled by the parameter magnitude, and for the
+  # entries of D it is halved until all four stencil points keep D positive-definite
+  # with a margin (smallest eigenvalue at least half of that of the fitted D). An
+  # absolute step of 1e-4 on a near-zero random-slope variance evaluated the score
+  # at a singular D and produced Hessian entries of order 1e15, which then ruined the
+  # standard errors of eta through the ridged inverse.
+  d_dim <- nrow(D); d_len <- d_dim * (d_dim + 1) / 2
+  var_e_len <- length(var.e)
+  lam_min_D <- min(eigen(D, symmetric = TRUE, only.values = TRUE)$values)
+  step_for <- function(i) {
+    d_i <- delta * max(1, abs(params[i]))
+    if (i <= d_len) {
+      pd_ok <- function(d_i) all(vapply(c(-2, -1, 1, 2), function(m) {
+        pp <- params; pp[i] <- pp[i] + m * d_i
+        ev <- eigen(vech_to_mat(pp[1:d_len], d_dim), symmetric = TRUE, only.values = TRUE)$values
+        min(ev) >= 0.5 * lam_min_D
+      }, logical(1)))
+      for (k in 1:40) { if (pd_ok(d_i)) break; d_i <- d_i / 2 }
+    } else if (i <= d_len + var_e_len) {
+      d_i <- min(d_i, abs(params[i]) / 4)          # keep sigma^2 - 2*step > 0
+    }
+    d_i
+  }
   H <- matrix(0, nrow = len, ncol = len)
   
   for (i in seq_len(len)) {
+    delta_i <- step_for(i)
     params1 <- params2 <- params3 <- params4 <- params
-    params1[i] <- params[i] - 2 * delta
-    params2[i] <- params[i] -     delta
-    params3[i] <- params[i] +     delta
-    params4[i] <- params[i] + 2 * delta
+    params1[i] <- params[i] - 2 * delta_i
+    params2[i] <- params[i] -     delta_i
+    params3[i] <- params[i] +     delta_i
+    params4[i] <- params[i] + 2 * delta_i
     
     Omega_new1 <- update_Omega(Omega, params1)
     Omega_new2 <- update_Omega(Omega, params2)
@@ -237,15 +261,15 @@ PRES_hessian <- function(Omega, data.mat, V, b, bhat, Sigmai, S,
     Omega_new4 <- update_Omega(Omega, params4)
     
     S1 <- score_JEL(Omega_new1, data.mat, V, b, bhat, Sigmai, S,
-                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi)
+                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi, rho = rho)
     S2 <- score_JEL(Omega_new2, data.mat, V, b, bhat, Sigmai, S,
-                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi)
+                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi, rho = rho)
     S3 <- score_JEL(Omega_new3, data.mat, V, b, bhat, Sigmai, S,
-                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi)
+                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi, rho = rho)
     S4 <- score_JEL(Omega_new4, data.mat, V, b, bhat, Sigmai, S,
-                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi)
+                    l0i, l0u, gh.nodes, n, q, nK, nev, Fi, rho = rho)
 
-    H[i, ] <- (S1 - 8 * S2 + 8 * S3 - S4) / (12 * delta)
+    H[i, ] <- (S1 - 8 * S2 + 8 * S3 - S4) / (12 * delta_i)
   }
   
   H

@@ -1,5 +1,5 @@
 
-#=============== Initial Value Calculation for JEL Time-Varying ===============#
+#=============== Initial Value Calculation for LJM Time-Varying ===============#
 # Extends InitVal_LLAJEL with B-spline time-varying association (eta)
 # Mirrors InitVal_multiJEL_tv logic but uses bBLUP from LLA (not LME)
 

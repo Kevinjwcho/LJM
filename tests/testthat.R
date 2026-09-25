@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(JEL)
+library(LJM)
 
-test_check("JEL")
+test_check("LJM")

@@ -40,22 +40,23 @@ Predict_BLUP_LLA <- function(prep_te, fitLLAJEL){
     Yi <- unlist(lapply(seq_len(nK), function(k) Y.st[[k]][[i]]))
     wi <- unlist(lapply(seq_len(nK), function(k) W.st[[k]][[i]]))
     
-    # Build R_i = diag( sigma_k^2 / w )
-    # replicate each sigma_k^2 by number of obs for that k
+    # Precision (information) form of the kernel-weighted BLUP / MAP predictor:
+    #   b_hat = (D^-1 + Z' Omega Z)^-1 (D^-1 c + Z' Omega y),   Omega = diag(w / sigma_k^2)
+    # This is the manuscript's Section 3.1 expression.  It is algebraically
+    # identical to the covariance form  c + D Z'(Omega^-1 + Z D Z')^-1 (y - Z c)
+    # used previously (Woodbury), but inverts a 2K x 2K matrix instead of an
+    # N_i x N_i one and never forms Omega^-1, so zero-weight observations no
+    # longer enter as sigma^2/1e-12 (~1e12) diagonal entries.
     m_ik <- sapply(seq_len(nK), function(k) nrow(Zi_blocks[[k]]))
     sig_rep <- rep(var.e, times = m_ik)
-    Ri <- diag(sig_rep / (wi + 1e-12))   # avoid division by 0
-    
-    # closed-form posterior
-    A <- Zi %*% D %*% t(Zi) + Ri
-    Ainv <- solve(A)
-    
-    # use (Y - Z c) instead of (Y - X beta)
-    resid <- Yi - as.vector(Zi %*% cvec)
-    
-    mu <- D %*% t(Zi) %*% Ainv %*% resid
-    mu_cb <- cvec + mu
-    Va <- D - D %*% t(Zi) %*% Ainv %*% Zi %*% D
+    om <- wi / sig_rep                    # Omega_i diagonal; zero weight -> zero information
+    ZtO <- crossprod(Zi, Zi * om)         # Z' Omega Z   (2K x 2K)
+    Dinv <- solve(D)
+    Ai <- Dinv + ZtO
+    Ai <- 0.5 * (Ai + t(Ai))              # enforce symmetry against round-off
+    rhs <- as.vector(Dinv %*% cvec) + as.vector(crossprod(Zi, Yi * om))
+    mu_cb <- as.numeric(solve(Ai, rhs))
+    Va <- solve(Ai)
     
     b_mean[[i]] <- as.numeric(mu_cb)
     b_var[[i]]  <- Va

@@ -1,23 +1,25 @@
-Package: JEL
-Title: Jointly Estimated Landmarking for Dynamic Survival Prediction
-Version: 2.2
+Package: LJM
+Title: Local Joint Models for Dynamic Survival Prediction
+Version: 1.0.0
 Authors@R: c(
-    person("Jinwoo", "Cho", email = "jinoojwcho@pitt.edu", role = c("aut", "cre")),
+    person("Jinwoo", "Cho", email = "jinoojwcho@cmu.edu", role = c("aut", "cre")),
     person("Kehui", "Chen", role = "aut"))
-Description: Dynamic prediction of survival outcomes from noisy longitudinal
-    biomarkers using the Jointly Estimated Landmarking (JEL) approach. A local
-    linear approximation summarises each biomarker trajectory around a landmark
-    time by its recent level (intercept) and change (slope), and a flexible
-    transformation survival model relates these summaries to the conditional
-    risk. The package supports time-varying association functions via B-splines
-    and multiple longitudinal processes through a fast EM algorithm, and provides
-    dynamic prediction with time-dependent AUC and prediction-error evaluation.
-    See Cho and Chen (2024) for methodological details.
+Description: Dynamic prediction of survival outcomes from multiple noisy
+    longitudinal biomarkers using the local joint model (LJM). Around a
+    landmark time, each biomarker trajectory is summarised by a kernel-weighted
+    local linear approximation, i.e. its recent level (intercept) and change
+    (slope), and a transformation survival model relates these summaries to the
+    conditional risk. Estimation uses a fast EM algorithm with one-dimensional
+    adaptive quadrature, so its cost does not grow exponentially with the
+    number of biomarkers. The package supports time-varying association
+    functions via B-splines and provides dynamic prediction with
+    time-dependent AUC and prediction-error evaluation. See Cho and Chen
+    (2026) for methodological details.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/kevinjwcho/JEL
-BugReports: https://github.com/kevinjwcho/JEL/issues
+URL: https://github.com/kevinjwcho/LJM
+BugReports: https://github.com/kevinjwcho/LJM/issues
 Depends: R (>= 4.1.0)
 Imports: dplyr, nlme, survival, splines, statmod, Rcpp (>= 1.0.0),
         ucminf, MASS, rlang, Matrix

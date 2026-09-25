@@ -1,19 +1,19 @@
-#' Confidence Bands for Time-Varying Coefficients in JEL Models
+#' Confidence Bands for Time-Varying Coefficients in LJM Models
 #'
-#' This function constructs confidence bands for the time-varying coefficients of a Jointly Estimated Landmarking (JEL) model.
+#' This function constructs confidence bands for the time-varying coefficients of a local joint model (LJM) model.
 #' It requires a B-spline configuration (\code{Bs}) to compute the confidence intervals for both slope and intercept terms.
 #'
-#' @param object A fitted time-varying JEL model object (class \code{"JEL"}), i.e. one fit with a B-spline basis (\code{Bs}).
+#' @param object A fitted time-varying LJM model object (class \code{"LJM"}), i.e. one fit with a B-spline basis (\code{Bs}).
 #' @param K A numeric value indicating the index of the longitudinal process for which confidence bands are computed.
 #'   - Default is 1, which applies to single-process models.
 #' @param alpha A numeric value specifying the significance level for the confidence bands. Default is 0.05 (95\% confidence level).
 #'
 #' @details
-#' The \code{confBands.JEL} function computes confidence bands for the time-varying slope and intercept coefficients in a JEL model using the following steps:
+#' The \code{confBands.LJM} function computes confidence bands for the time-varying slope and intercept coefficients in an LJM model using the following steps:
 #'
 #' 1. B-Spline Configuration:
 #'
-#'    - Extracts the B-spline configuration (\code{Bs}) from the fitted JEL model to construct the design matrix for the time variable.
+#'    - Extracts the B-spline configuration (\code{Bs}) from the fitted LJM model to construct the design matrix for the time variable.
 #'
 #'    - Ensures the spline configuration is properly indexed for multi-process models.
 #'
@@ -41,20 +41,20 @@
 #'
 #' @examples
 #' \dontrun{
-#' ## fit a time-varying JEL model (supply a B-spline basis Bs), then get bands
+#' ## fit a time-varying LJM model (supply a B-spline basis Bs), then get bands
 #' spl <- list(df = 3, degree = 1, knots = NULL, Bknots = NULL)
-#' fit_tv <- JEL(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4, base_terms = "drug",
+#' fit_tv <- LJM(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4, base_terms = "drug",
 #'               ker = "epanechnikov", Bs = list(spl, list(NULL)))
-#' cb <- confBands.JEL(fit_tv, K = 1)   # bands for marker 1
+#' cb <- confBands.LJM(fit_tv, K = 1)   # bands for marker 1
 #' cb$intercept; cb$slope
 #' }
 #'
-#' @seealso \code{\link{JEL}} (fit with \code{Bs} for a time-varying model)
+#' @seealso \code{\link{LJM}} (fit with \code{Bs} for a time-varying model)
 #'
 #' @export
-confBands.JEL <- function(object, K = 1, alpha = 0.05){
+confBands.LJM <- function(object, K = 1, alpha = 0.05){
 
-  # New JEL() returns a flat object; the legacy JEL1/JEL2 nested it under $fitJEL.
+  # New LJM() returns a flat object; the legacy JEL1/JEL2 nested it under $fitJEL.
   fit.JEL <- if (!is.null(object$fitJEL)) object$fitJEL else object
   fit.COX <- object$fitCOX
   B_conf_lst <- fit.JEL$dataMat$B

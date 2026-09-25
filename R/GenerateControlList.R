@@ -7,7 +7,7 @@ GenerateControlList <- function( control, ndim ) {
     controlVals <- list(tol.P = 10 ^ (-3), tol.L = 10 ^ (-6), max.iter = 250, SE.method = 'PRES', delta = 10 ^ (- 5),
                         nknot = 9)
   } else if ( as.character(sys.calls()[[cdIndex]])[1] == "GenerateControlList") {
-    warning("\n You called this function outside JEL(); using JEL() default values.\n")
+    warning("\n You called this function outside LJM(); using LJM() default values.\n")
     controlVals <- list(tol.P = 10 ^ (-3), tol.L = 10 ^ (-6), max.iter = 250, SE.method = 'PRES', delta = 10 ^ (- 5),
                         nknot = 9)
   } else {

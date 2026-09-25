@@ -1,8 +1,8 @@
 #' @keywords internal
 #'
 #' @description
-#' Jointly Estimated Landmarking (JEL) for dynamic prediction of survival
-#' outcomes from noisy longitudinal biomarkers. JEL uses a local-linear
+#' The local joint model (LJM) for dynamic prediction of survival
+#' outcomes from noisy longitudinal biomarkers. LJM uses a local-linear
 #' approximation of each biomarker trajectory around a landmark time \eqn{s} and
 #' jointly estimates the effect of the recent \emph{level} (intercept) and
 #' recent \emph{change} (slope) of the biomarkers on the conditional survival
@@ -11,23 +11,23 @@
 #' @details
 #' Typical workflow:
 #' \enumerate{
-#'   \item \code{\link{JEL_dat}} — build the landmarked longitudinal + survival
+#'   \item \code{\link{LJM_dat}} — build the landmarked longitudinal + survival
 #'     dataset at a landmark time \code{s} (with the default complete-case filter).
-#'   \item \code{\link{JEL}} — fit the model; supply \code{Bs} for a time-varying
+#'   \item \code{\link{LJM}} — fit the model; supply \code{Bs} for a time-varying
 #'     (B-spline) association model.
-#'   \item \code{\link[=predict.JEL]{predict}} — conditional survival / risk at a
+#'   \item \code{\link[=predict.LJM]{predict}} — conditional survival / risk at a
 #'     horizon \code{tau}.
 #'   \item \code{\link{AUCdyn}}, \code{\link{PEdyn}} — evaluate time-dependent AUC
 #'     and prediction error.
-#'   \item \code{\link{confBands.JEL}} — pointwise confidence bands for the
+#'   \item \code{\link{confBands.LJM}} — pointwise confidence bands for the
 #'     time-varying coefficient functions.
 #'   \item \code{\link{select_h_longitudinal}} — cross-validated bandwidth
 #'     selection for the local-linear step.
 #' }
-#' See \code{\link{JEL}} for the model specification and the example dataset
+#' See \code{\link{LJM}} for the model specification and the example dataset
 #' \code{\link{pbc2}} for a worked illustration.
 #'
-#' @useDynLib JEL, .registration = TRUE
+#' @useDynLib LJM, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
 #' @import dplyr
 #' @import survival

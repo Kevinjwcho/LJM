@@ -1,5 +1,5 @@
 ############################################################
-# JEL utilities + main function
+# LJM utilities + main function
 # - LLA (kernel-weighted local linear) summaries
 # - Cox fit on landmark survival data (optionally include b0/b1)
 # - InitVal_LLAJEL() + RefinedfastEM_LLA() pipeline
@@ -232,21 +232,113 @@ make_LLA_full <- function(LMM_dat, y_vars, s, h,
 }
 
 # ---------------------------------------------------------
+# Bandwidth that places EVERY longitudinal observation inside the kernel
+# support, so the initial values are built from the FULL longitudinal record
+# with the kernel's own shape (largest weight at the landmark, tapering to the
+# edges) rather than from a localized sub-window. Compact-support kernels
+# (Epanechnikov is zero at |u| = 1) need h strictly greater than the observed
+# range, hence the (1 + eps) factor; the Gaussian kernel has infinite support
+# so the range alone already retains every observation. The kernel itself is
+# always `ker`, i.e. the SAME kernel option the EM fit uses -- only the
+# bandwidth differs, and it is not user-tunable.
+# ---------------------------------------------------------
+# FULL_RANGE_PAD: how far past the observed range the initial-value bandwidth
+# is stretched. Only matters for compact-support kernels: with pad = 1 the
+# Epanechnikov weight at the far edge is exactly 0, and a pad barely above 1
+# makes it ~0, which `varFixed(~ 1/w)` turns into a near-infinite residual
+# variance for that observation. 1.05 keeps every observation at a usable
+# weight (edge/centre ratio about 11) while still covering the whole record.
+# The Gaussian kernel is insensitive to this (infinite support).
+FULL_RANGE_PAD <- 1.05
+
+full_range_h <- function(times, s, pad = FULL_RANGE_PAD) {
+  R <- max(abs(as.numeric(times) - s), na.rm = TRUE)
+  if (!is.finite(R) || R <= 0) return(1)
+  R * pad
+}
+
+# ---------------------------------------------------------
+# Pooled initialization via the kernel-weighted local linear mixed model.
+# For each biomarker, fit  y ~ 1 + (t - s)  with random intercept & slope and
+# residual variance sigma^2 / K(t - s) (varFixed on 1/weight), i.e. the
+# longitudinal sub-model of Section 2.1 over the FULL longitudinal record
+# (bandwidth full_range_h, kernel `ker`, no observation excluded). This is the pooled
+# ("kernel LMME") counterpart of the per-subject WLS start: pooling via
+# b_i ~ N(c, Sigma_b) stabilizes sparse subjects, and the model's own REML
+# estimates give consistent, non-shrunk starting values.
+# Returns (all aligned to subject_ids / stacked by (b0,b1) per marker):
+#   bLLA    : list of K (n_subject x 2) BLUP matrices (value & slope at s)
+#   cLLA    : list of K length-2 fixed effects  = c
+#   Bsigma  : 2K x 2K block-diagonal Sigma_b(s) from getVarCov (cross-marker 0)
+#   Ysigma2 : length-K residual variances sigma^2
+# NULL-safe: caller falls back to per-subject WLS init if this errors.
+# ---------------------------------------------------------
+make_pooled_init <- function(LMM_dat, y_vars, s, ker, subject_ids,
+                             var_list = list(id = "id", time = "time"),
+                             h_init = NULL) {
+  # h_init: bandwidth of the pooled kernel LMM (JEL 2.4: the EM bandwidth h by
+  # default; the caller falls back to full_range_h() if this fit fails).
+  if (is.null(h_init)) h_init <- full_range_h(LMM_dat[[var_list[["time"]]]], s)
+  idv <- var_list[["id"]]; tv <- var_list[["time"]]
+  sid <- as.character(subject_ids); nS <- length(sid); K <- length(y_vars)
+  bLLA <- vector("list", K); names(bLLA) <- y_vars
+  cLLA <- vector("list", K)
+  Ysigma2 <- numeric(K)
+  Bsigma  <- matrix(0, 2L * K, 2L * K)
+  for (k in seq_len(K)) {
+    tc <- as.numeric(LMM_dat[[tv]]) - s
+    w  <- kernel_weight(tc / h_init, kernel = ker)  # same kernel as the EM fit, at h_init
+    y  <- as.numeric(LMM_dat[[y_vars[k]]])
+    id <- as.character(LMM_dat[[idv]])
+    ok <- !is.na(y) & is.finite(w) & (w > 0)
+    d  <- data.frame(id = droplevels(factor(id[ok], levels = sid)),
+                     tc = tc[ok], y = y[ok], iw = 1 / w[ok],
+                     stringsAsFactors = FALSE)
+    ctl <- nlme::lmeControl(opt = "optim", returnObject = TRUE,
+                            msMaxIter = 200, msMaxEval = 400)
+    # Diagonal random effects (independent intercept & slope) are far more
+    # stable under kernel down-weighting than an unstructured 2x2; the
+    # intercept-slope covariance is left 0 in the initial value and filled in
+    # by the EM. Fall back to random-intercept-only, then error (-> WLS init).
+    fit <- tryCatch(
+      nlme::lme(y ~ tc, random = list(id = nlme::pdDiag(~ tc)), data = d,
+                weights = nlme::varFixed(~ iw), method = "REML", control = ctl),
+      error = function(e)
+        nlme::lme(y ~ tc, random = ~ 1 | id, data = d,
+                  weights = nlme::varFixed(~ iw), method = "REML", control = ctl))
+    cf <- nlme::fixef(fit)                   # (Intercept), tc = value & slope at s
+    co <- stats::coef(fit)                   # per-subject BLUPs
+    Graw <- as.matrix(nlme::getVarCov(fit))  # 1x1 (int only) or 2x2
+    G <- matrix(0, 2, 2)
+    if (all(dim(Graw) == c(2,2))) { G <- Graw } else { G[1,1] <- Graw[1,1]; G[2,2] <- var(co[["tc"]], na.rm=TRUE) }
+    M  <- matrix(rep(cf, each = nS), nrow = nS)   # default rows = population mean
+    idx <- match(rownames(co), sid); okk <- !is.na(idx)
+    M[idx[okk], 1] <- co[["(Intercept)"]][okk]
+    if ("tc" %in% names(co)) M[idx[okk], 2] <- co[["tc"]][okk]  # else keep population slope
+    colnames(M) <- c("b0", "b1")
+    bLLA[[k]] <- M
+    cLLA[[k]] <- as.numeric(cf)
+    Bsigma[(2L * k - 1L):(2L * k), (2L * k - 1L):(2L * k)] <- G
+    Ysigma2[k] <- fit$sigma^2
+  }
+  list(bLLA = bLLA, cLLA = cLLA, Bsigma = Bsigma, Ysigma2 = Ysigma2)
+}
+
+# ---------------------------------------------------------
 # Landmark preparation (returns prep list)
 # ---------------------------------------------------------
 prep_LLA_landmark <- function(LMM_dat, Surv_dat, y_vars, s, h, ker = "gaussian",
                               var_list = list(id = "id", time = "time"),
-                              h_init = NULL) {
+                              init_pooled = TRUE) {
 
   # h      : FITTING bandwidth -> EM kernel weights (Y/Z/W_ker) and residual var.
-  # h_init : bandwidth for the INITIAL values only (bLLA/cLLA/Bsigma, Cox init).
-  #          Decoupling lets a large, stable h_init seed the per-subject local
-  #          fits while the EM (pooled) is scored at a smaller fitting h. NULL
-  #          reproduces the coupled behavior (h_init = h).
-  # NOTE: the >= min_window_obs subject filter lives in JEL_dat() so that the
+  # Initial values (bLLA/cLLA/Bsigma, Cox init) are ALWAYS built from the full
+  # longitudinal record at full_range_h(), using the same kernel `ker` as the
+  # EM fit. The kernel shape is preserved, no observation is dropped, and there
+  # is no separate init-bandwidth argument; the EM then fits at the user's h.
+  # NOTE: the >= min_window_obs subject filter lives in LJM_dat() so that the
   #       whole train_dataset (LMM_dat + Surv_dat + all downstream indexing) is
   #       filtered consistently; do not filter here.
-  if (is.null(h_init)) h_init <- h
 
   subject_ids <- Surv_dat$id[!duplicated(Surv_dat$id)]
 
@@ -261,12 +353,13 @@ prep_LLA_landmark <- function(LMM_dat, Surv_dat, y_vars, s, h, ker = "gaussian",
     var_list = var_list
   )
 
-  # Initial-value summary at h_init (reuse LLA_full when the two coincide)
-  LLA_init <- if (isTRUE(all.equal(h_init, h))) LLA_full else make_LLA_full(
+  # Initial-value summary over the full record (same kernel, nothing dropped)
+  h_full <- full_range_h(LMM_dat[[var_list[["time"]]]], s)
+  LLA_init <- make_LLA_full(
     LMM_dat = LMM_dat,
     y_vars  = y_vars,
     s      = s,
-    h       = h_init,
+    h       = h_full,
     ker     = ker,
     subject_ids = subject_ids,
     var_list = var_list
@@ -284,6 +377,33 @@ prep_LLA_landmark <- function(LMM_dat, Surv_dat, y_vars, s, h, ker = "gaussian",
     subject_ids = subject_ids,
     require_ok  = FALSE
   )
+
+  # Pooled (kernel LMME) initialization: fit the longitudinal sub-model directly
+  # and take c, Sigma_b(s), sigma^2 and the BLUPs from its REML estimates. When
+  # this succeeds we use those values as-is and skip the moment-based summaries
+  # below (which underestimate Sigma_b from shrunk BLUPs).
+  pooled_init <- NULL; h_init_used <- NA_real_; init_mode <- "wls_full_range"
+  if (isTRUE(init_pooled)) {
+    # JEL 2.4 rule: the pooled kernel LMM is fitted at the SAME bandwidth h as the
+    # EM (pooling across subjects stabilises sparse subjects, so no wider window
+    # is needed). If that fit fails, or returns a degenerate variance component,
+    # fall back to the pooled fit over the full record (the 2.3 rule); only if
+    # that fails too do we use the per-subject WLS start.
+    .degenerate <- function(pi) !all(is.finite(pi$Ysigma2)) || any(pi$Ysigma2 <= 0) ||
+                                !all(is.finite(diag(pi$Bsigma))) || any(diag(pi$Bsigma) <= 1e-10)
+    for (cand in list(list(h = h, mode = "pooled_h"), list(h = h_full, mode = "pooled_full_range"))) {
+      pi <- tryCatch(make_pooled_init(LMM_dat, y_vars, s, ker, subject_ids, var_list, h_init = cand$h),
+                     error = function(e) { message("prep_LLA_landmark: pooled init at h=",
+                       signif(cand$h, 3), " failed (", conditionMessage(e), ")"); NULL })
+      if (!is.null(pi) && .degenerate(pi)) {
+        message("prep_LLA_landmark: pooled init at h=", signif(cand$h, 3), " degenerate (zero variance component); trying next")
+        pi <- NULL
+      }
+      if (!is.null(pi)) { pooled_init <- pi; h_init_used <- cand$h; init_mode <- cand$mode; break }
+    }
+    if (is.null(pooled_init)) message("prep_LLA_landmark: all pooled inits failed; using per-subject WLS init.")
+    if (!is.null(pooled_init)) bLLA <- pooled_init$bLLA
+  }
 
   # ------------------------------------------------------------------
   # NA-imputation for subjects whose kernel-weighted local LLA failed
@@ -350,11 +470,20 @@ prep_LLA_landmark <- function(LMM_dat, Surv_dat, y_vars, s, h, ker = "gaussian",
                                 integer(1))
   n_valid_min <- max(min(n_valid_per_outcome), 1L)
   Bsigma <- t(b_minus_c) %*% b_minus_c / max(n_valid_min - 1L, 1L)
+
+  # Prefer the kernel-LMME estimates for the initial c, Sigma_b and sigma^2.
+  if (!is.null(pooled_init)) {
+    cLLA    <- pooled_init$cLLA
+    Bsigma  <- pooled_init$Bsigma
+    Ysigma2 <- pooled_init$Ysigma2
+  }
   
   list(
     y_vars = y_vars,
     s = s, h = h, ker = ker,
-    h_init = h_init,
+    h_full = h_full,          # full-range bandwidth (fallback for the initial values)
+    h_init_used = h_init_used, # bandwidth actually used for the pooled initial values
+    init_mode = init_mode,     # pooled_h | pooled_full_range | wls_full_range
     subject_ids = subject_ids,
     LLA_list_s = LLA_list_s,
     surv_s2 = surv_s2,

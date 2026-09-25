@@ -23,19 +23,28 @@ using namespace Rcpp;
 using namespace arma;
 
 //////////////////////////////////////////////////////////////
+// Transformation model (rho >= 0, G(x) = log(1 + rho x)/rho; rho = 0: Cox).
+// The 1-D quadrature weights use the survival density
+//   f(V, Delta | zeta) = {l0 e^zeta G'(u)}^Delta exp{-G(u)},  u = Lambda0(V) e^zeta,
+// and Esurv_exp returns E[xi e^{zeta_new} | O] with
+//   E(xi | b, O) = (1 + Delta rho)/(1 + rho u)   (Zeng & Lin 2007).
+// Delta is read from l0i (l0i == 0 <=> censored), as before.  rho = 0 takes
+// the original Cox code path unchanged.
+//////////////////////////////////////////////////////////////
 // Esurv / Esurv_exp: 그대로 사용 (mu[[i]][0], var[[i]][0]만 사용)
 //////////////////////////////////////////////////////////////
 
 // [[Rcpp::export]]
 arma::vec Esurv(arma::vec w, arma::vec v, List mu, List variance,
-                List mu_new, List variance_new, arma::vec l0i, List l0u) {
+                List mu_new, List variance_new, arma::vec l0i, List l0u,
+                double rho = 0.0) {
 
   int n = mu.size();
-  int rho = w.n_elem;
+  int nq = w.n_elem;   // number of quadrature nodes
   arma::vec nom(n, fill::zeros);
   arma::vec denom(n, fill::zeros);
 
-  for (int l = 0; l < rho; l++) {
+  for (int l = 0; l < nq; l++) {
     double ww = w[l];
     double vv = v[l];
 
@@ -58,6 +67,12 @@ arma::vec Esurv(arma::vec w, arma::vec v, List mu, List variance,
       arma::vec l0u_i = l0u[i];
       double sum_l0u_exp = arma::sum(l0u_i * exp_mu);
       double secondTerm = std::exp(-sum_l0u_exp);
+      if (rho != 0.0) {
+        // G-model survival density: l0 e^zeta G'(u) for events, exp(-G(u))
+        double log1ru = std::log1p(rho * sum_l0u_exp);
+        if (l0i[i] != 0) firstTerm = exp_mu * l0i[i] / (1.0 + rho * sum_l0u_exp);
+        secondTerm = std::exp(-log1ru / rho);
+      }
 
       double denom_increment = ww * firstTerm * secondTerm;
       denom[i] += denom_increment;
@@ -74,14 +89,15 @@ arma::vec Esurv(arma::vec w, arma::vec v, List mu, List variance,
 
 // [[Rcpp::export]]
 arma::vec Esurv_exp(arma::vec w, arma::vec v, List mu, List variance,
-                    List mu_new, List variance_new, arma::vec l0i, List l0u) {
+                    List mu_new, List variance_new, arma::vec l0i, List l0u,
+                    double rho = 0.0) {
 
   int n = mu.size();
-  int rho = w.n_elem;
+  int nq = w.n_elem;   // number of quadrature nodes
   arma::vec nom(n, fill::zeros);
   arma::vec denom(n, fill::zeros);
 
-  for (int l = 0; l < rho; l++) {
+  for (int l = 0; l < nq; l++) {
     double ww = w[l];
     double vv = v[l];
 
@@ -105,9 +121,20 @@ arma::vec Esurv_exp(arma::vec w, arma::vec v, List mu, List variance,
       double sum_l0u_exp = arma::sum(l0u_i * exp_mu);
       double secondTerm = std::exp(-sum_l0u_exp);
 
-      double denom_increment = ww * firstTerm * secondTerm;
-      denom[i] += denom_increment;
-      nom[i] += ww * exp_mu_new * firstTerm * secondTerm;
+      if (rho == 0.0) {
+        double denom_increment = ww * firstTerm * secondTerm;
+        denom[i] += denom_increment;
+        nom[i] += ww * exp_mu_new * firstTerm * secondTerm;
+      } else {
+        double log1ru = std::log1p(rho * sum_l0u_exp);
+        double delta_i = (l0i[i] != 0) ? 1.0 : 0.0;
+        if (l0i[i] != 0) firstTerm = exp_mu * l0i[i] / (1.0 + rho * sum_l0u_exp);
+        secondTerm = std::exp(-log1ru / rho);
+        double xi_w = (1.0 + rho * delta_i) / (1.0 + rho * sum_l0u_exp);  // E(xi | zeta, O)
+        double denom_increment = ww * firstTerm * secondTerm;
+        denom[i] += denom_increment;
+        nom[i] += ww * xi_w * exp_mu_new * firstTerm * secondTerm;
+      }
     }
   }
 
@@ -210,7 +237,8 @@ static double Eetaphi_fast(const arma::vec& etaphi,
                            const arma::vec& l0i, const List& l0u,
                            const arma::vec& Di, int nK,
                            const arma::vec& w, const arma::vec& v,
-                           const List& mu_surv, const List& Sigma2_surv) {
+                           const List& mu_surv, const List& Sigma2_surv,
+                           double rho) {
   int n_etaphi = etaphi.n_elem;
   int q        = pc.q;
   int p_len    = pc.p_len;
@@ -250,10 +278,10 @@ static double Eetaphi_fast(const arma::vec& etaphi,
   }
 
   arma::vec Es_exp = Esurv_exp(w, v, mu_surv, Sigma2_surv,
-                               mu_surv_new, Sigma2_surv_new, l0i, l0u);
+                               mu_surv_new, Sigma2_surv_new, l0i, l0u, rho);
 
   arma::vec Es     = Esurv(w, v, mu_surv, Sigma2_surv,
-                           mu_surv_new, Sigma2_surv_new, l0i, l0u);
+                           mu_surv_new, Sigma2_surv_new, l0i, l0u, rho);
 
   double result = 0.0;
   for (uword i = 0; i < Di.n_elem; i++) {
@@ -270,12 +298,12 @@ static arma::vec Setaphi_core(const arma::vec& etaphi,
                               const arma::vec& Di, int nK,
                               const arma::vec& w, const arma::vec& v,
                               const List& mu_surv, const List& Sigma2_surv,
-                              double eps) {
+                              double eps, double rho) {
   int ep_size = etaphi.n_elem;
   arma::vec gradient(ep_size);
 
   double f0 = Eetaphi_fast(etaphi, pc, l0i, l0u, Di, nK,
-                           w, v, mu_surv, Sigma2_surv);
+                           w, v, mu_surv, Sigma2_surv, rho);
 
   for (int i = 0; i < ep_size; ++i) {
     arma::vec ep = etaphi;
@@ -285,7 +313,7 @@ static arma::vec Setaphi_core(const arma::vec& etaphi,
     ep[i] += h;
 
     double f1 = Eetaphi_fast(ep, pc, l0i, l0u, Di, nK,
-                             w, v, mu_surv, Sigma2_surv);
+                             w, v, mu_surv, Sigma2_surv, rho);
 
     gradient[i] = (f1 - f0) / h;
   }
@@ -305,7 +333,7 @@ double Eetaphi(arma::vec etaphi,
                arma::vec Di, int nK,
                arma::vec w, arma::vec v,
                List mu_surv, List Sigma2_surv,
-               List c_list) {
+               List c_list, double rho = 0.0) {
 
   int q     = D.n_rows;
   int p_len = etaphi.n_elem - q;
@@ -315,7 +343,7 @@ double Eetaphi(arma::vec etaphi,
   }
 
   EetaphiPrecomp pc = build_precomp(Y, Z, inv_omega, K, D, c_list, p_len);
-  return Eetaphi_fast(etaphi, pc, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv);
+  return Eetaphi_fast(etaphi, pc, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, rho);
 }
 
 // [[Rcpp::export]]
@@ -325,7 +353,7 @@ arma::vec Setaphi(arma::vec etaphi,
                   arma::vec l0i, List l0u, arma::vec Di,
                   int nK, arma::vec w, arma::vec v,
                   List mu_surv, List Sigma2_surv, double eps,
-                  List c_list) {
+                  List c_list, double rho = 0.0) {
 
   int q     = D.n_rows;
   int p_len = etaphi.n_elem - q;
@@ -336,7 +364,7 @@ arma::vec Setaphi(arma::vec etaphi,
 
   EetaphiPrecomp pc = build_precomp(Y, Z, inv_omega, K, D, c_list, p_len);
   return Setaphi_core(etaphi, pc, l0i, l0u, Di, nK, w, v,
-                      mu_surv, Sigma2_surv, eps);
+                      mu_surv, Sigma2_surv, eps, rho);
 }
 
 //////////////////////////////////////////////////////////////
@@ -348,7 +376,8 @@ static arma::vec Eetaphi_fast_perobs(const arma::vec& etaphi,
                                      const arma::vec& l0i, const List& l0u,
                                      const arma::vec& Di, int nK,
                                      const arma::vec& w, const arma::vec& v,
-                                     const List& mu_surv, const List& Sigma2_surv) {
+                                     const List& mu_surv, const List& Sigma2_surv,
+                                     double rho) {
   int n_etaphi = etaphi.n_elem;
   int q        = pc.q;
   int p_len    = pc.p_len;
@@ -373,9 +402,9 @@ static arma::vec Eetaphi_fast_perobs(const arma::vec& etaphi,
   }
 
   arma::vec Es_exp = Esurv_exp(w, v, mu_surv, Sigma2_surv,
-                               mu_surv_new, Sigma2_surv_new, l0i, l0u);
+                               mu_surv_new, Sigma2_surv_new, l0i, l0u, rho);
   arma::vec Es     = Esurv(w, v, mu_surv, Sigma2_surv,
-                           mu_surv_new, Sigma2_surv_new, l0i, l0u);
+                           mu_surv_new, Sigma2_surv_new, l0i, l0u, rho);
 
   arma::vec out(n);
   for (int i = 0; i < n; i++) {
@@ -397,7 +426,7 @@ arma::mat Setaphi_perobs(arma::vec etaphi,
                          arma::vec l0i, List l0u, arma::vec Di,
                          int nK, arma::vec w, arma::vec v,
                          List mu_surv, List Sigma2_surv, double eps,
-                         List c_list) {
+                         List c_list, double rho = 0.0) {
   int q     = D.n_rows;
   int p_len = etaphi.n_elem - q;
   if (p_len < 0) {
@@ -409,7 +438,7 @@ arma::mat Setaphi_perobs(arma::vec etaphi,
   int ep_size = etaphi.n_elem;
   int n       = pc.n;
   arma::vec f0 = Eetaphi_fast_perobs(etaphi, pc, l0i, l0u, Di, nK,
-                                     w, v, mu_surv, Sigma2_surv);
+                                     w, v, mu_surv, Sigma2_surv, rho);
   arma::mat U(n, ep_size);
   for (int j = 0; j < ep_size; ++j) {
     arma::vec ep = etaphi;
@@ -417,7 +446,7 @@ arma::mat Setaphi_perobs(arma::vec etaphi,
     double h  = xi * eps;
     ep[j] += h;
     arma::vec f1 = Eetaphi_fast_perobs(ep, pc, l0i, l0u, Di, nK,
-                                       w, v, mu_surv, Sigma2_surv);
+                                       w, v, mu_surv, Sigma2_surv, rho);
     U.col(j) = (f1 - f0) / h;
   }
   return U;
@@ -430,7 +459,7 @@ arma::mat Hetaphi(arma::vec etaphi,
                   arma::vec l0i, List l0u, arma::vec Di,
                   int nK, arma::vec w, arma::vec v,
                   List mu_surv, List Sigma2_surv, double eps,
-                  List c_list) {
+                  List c_list, double rho = 0.0) {
 
   int q       = D.n_rows;
   int ep_size = etaphi.n_elem;
@@ -446,7 +475,7 @@ arma::mat Hetaphi(arma::vec etaphi,
   arma::mat hessian(ep_size, ep_size);
 
   arma::vec f0 = Setaphi_core(etaphi, pc, l0i, l0u, Di, nK, w, v,
-                              mu_surv, Sigma2_surv, eps);
+                              mu_surv, Sigma2_surv, eps, rho);
 
   for (int i = 0; i < ep_size; ++i) {
     arma::vec ep = etaphi;
@@ -456,7 +485,7 @@ arma::mat Hetaphi(arma::vec etaphi,
     ep[i] += h;
 
     arma::vec f1 = Setaphi_core(ep, pc, l0i, l0u, Di, nK, w, v,
-                                mu_surv, Sigma2_surv, eps);
+                                mu_surv, Sigma2_surv, eps, rho);
 
     hessian.col(i) = (f1 - f0) / h;
   }

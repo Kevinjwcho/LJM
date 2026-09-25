@@ -1,5 +1,5 @@
 # ============================================================
-# Refined Fast EM for Kernel-weighted LLA-JEL (Time-Varying)
+# Refined Fast EM for Kernel-weighted LJM (Time-Varying)
 # ------------------------------------------------------------
 # Combines:
 #   - RefinedfastEM_LLA (kernel-weighted LLA, no X/beta, centered prior)
@@ -255,7 +255,7 @@ RefinedfastEM_LLA_tv <- function(
   v <- gh$nodes
   w <- gh$weights
 
-  message("Starting EM Algorithm (LLA JEL Time-Varying)")
+  message("Starting EM Algorithm (LJM, time-varying)")
 
   EM.time <- numeric(0)
 

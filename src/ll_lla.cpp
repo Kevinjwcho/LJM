@@ -18,6 +18,10 @@
 //   - w is kernel weights (length mi), aligned with stacked Y/Z rows.
 //   - c is center vector from cLLA (length q), used in prior (b - c).
 //   - Prefer filtering w>0 in R; we clamp to eps for safety.
+//   - rho >= 0 is the transformation parameter of G(x) = log(1 + rho x)/rho
+//     (rho = 0: Cox).  With u = Lambda0(V) exp(K phi + eta'b) the survival
+//     log-density is Delta{log l0 + lp - log(1 + rho u)} - G(u).  rho = 0 takes
+//     the original Cox code path unchanged, so results are bit-identical.
 // ============================================================
 
 #include <RcppArmadillo.h>
@@ -73,7 +77,8 @@ double ll_lla(
     const arma::vec& phi,          // ncw x 1 coefficients for K in survival model
     const arma::vec& eta,          // q x 1  coefficients for b in survival model
     const arma::vec& w,            // mi x 1 kernel weights: K_h(t_ij - s)
-    const arma::vec& c             // q x 1  LLA center (population-level intercept & slope at s)
+    const arma::vec& c,            // q x 1  LLA center (population-level intercept & slope at s)
+    const double rho = 0.0         // transformation parameter (0 = Cox)
 ){
   // ---- input dimension checks ----
   if ((int)Y.n_elem != mi) Rcpp::stop("ll_lla: length(Y) must equal mi.");
@@ -154,10 +159,22 @@ double ll_lla(
       double temp     = (Delta == 1) ? std::log(l0i) : 0.0;  // log(l0i) only if event occurred
       double sum_l0u  = arma::sum(l0u);                        // cumulative baseline hazard
       
-      double ll_surv =
+      double ll_surv;
+      if (rho == 0.0) {
+        ll_surv =
         temp
         + (double)Delta * (Kphi + etab)                    // Delta * linear predictor
         - sum_l0u * std::exp(Kphi) * std::exp(etab);       // expected cumulative hazard
+      } else {
+        // Transformation model: Delta{log l0 + lp + log G'(u)} - G(u),
+        // G'(u) = 1/(1 + rho u),  G(u) = log(1 + rho u)/rho.
+        double u      = sum_l0u * std::exp(Kphi) * std::exp(etab);
+        double log1ru = std::log1p(rho * u);
+        ll_surv = temp
+          + (double)Delta * (Kphi + etab)
+          - (double)Delta * log1ru
+          - log1ru / rho;
+      }
         
         // -------------------------------------------------------
         // Return NEGATIVE joint pseudo-log-likelihood (to minimize)
@@ -183,7 +200,8 @@ arma::colvec gradll_lla(
     const arma::vec& phi,
     const arma::vec& eta,
     const arma::vec& w,
-    const arma::vec& c
+    const arma::vec& c,
+    const double rho = 0.0
 ){
   // ---- minimal checks ----
   if ((int)Y.n_elem != mi) Rcpp::stop("gradll_lla: length(Y) must equal mi.");
@@ -216,11 +234,21 @@ arma::colvec gradll_lla(
   double logdetD_g;
   inv_logdet_spd_robust(D, D_inv_g, logdetD_g);
 
-  arma::colvec grad_loglik =
+  arma::colvec grad_loglik;
+  if (rho == 0.0) {
+    grad_loglik =
     Z.t() * A_resid
   - D_inv_g * (b - c)
     + Delta_vec % eta
     - haz_mult * eta;
+  } else {
+    // d/db [Delta{lp - log(1+rho u)} - G(u)] = eta (Delta - u)/(1 + rho u)
+    double gsurv = ((double)Delta - haz_mult) / (1.0 + rho * haz_mult);
+    grad_loglik =
+      Z.t() * A_resid
+      - D_inv_g * (b - c)
+      + gsurv * eta;
+  }
     
     // gradient of NEGATIVE log-likelihood
     return -1.0 * grad_loglik;
@@ -240,7 +268,9 @@ arma::mat sdll_lla(
     const arma::vec& l0u,
     const arma::vec& phi,
     const arma::vec& eta,
-    const arma::vec& w
+    const arma::vec& w,
+    const int Delta = 0,           // needed only when rho > 0
+    const double rho = 0.0
 ){
   int mi = (int)Z.n_rows;
   if ((int)w.n_elem != mi) Rcpp::stop("sdll_lla: length(w) must equal nrow(Z).");
@@ -266,7 +296,14 @@ arma::mat sdll_lla(
   * std::exp( arma::as_scalar(K * phi) )
     * std::exp( arma::as_scalar(eta.t() * b) );
     
-    arma::mat H_surv = - kernel * (eta * eta.t());
+    arma::mat H_surv;
+    if (rho == 0.0) {
+      H_surv = - kernel * (eta * eta.t());
+    } else {
+      // d2/db2 = - u (1 + rho Delta) / (1 + rho u)^2  eta eta'
+      double opr = 1.0 + rho * kernel;
+      H_surv = - (kernel * (1.0 + rho * (double)Delta) / (opr * opr)) * (eta * eta.t());
+    }
     
     return H_long + H_prior + H_surv;
 }

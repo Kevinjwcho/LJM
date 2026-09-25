@@ -14,7 +14,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // calc_mu_surv
 List calc_mu_surv(List X, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec beta, arma::vec phi, arma::vec eta, int nK);
-RcppExport SEXP _JEL_calc_mu_surv(SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_calc_mu_surv(SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -34,7 +34,7 @@ END_RCPP
 }
 // calc_Sigma2_surv
 List calc_Sigma2_surv(List X, List Z, List inv_omega, arma::mat D, arma::vec eta);
-RcppExport SEXP _JEL_calc_Sigma2_surv(SEXP XSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaSEXP) {
+RcppExport SEXP _LJM_calc_Sigma2_surv(SEXP XSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -49,7 +49,7 @@ END_RCPP
 }
 // calc_mu_surv_noX
 List calc_mu_surv_noX(List Y, List Z, List inv_omega, List K, const arma::mat& D, const arma::vec& phi, const arma::vec& eta, List c);
-RcppExport SEXP _JEL_calc_mu_surv_noX(SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP cSEXP) {
+RcppExport SEXP _LJM_calc_mu_surv_noX(SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -67,7 +67,7 @@ END_RCPP
 }
 // calc_Sigma2_surv_noX
 List calc_Sigma2_surv_noX(List Z, List inv_omega, const arma::mat& D, const arma::vec& eta);
-RcppExport SEXP _JEL_calc_Sigma2_surv_noX(SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaSEXP) {
+RcppExport SEXP _LJM_calc_Sigma2_surv_noX(SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -81,7 +81,7 @@ END_RCPP
 }
 // calc_mu_surv_noX_tv
 List calc_mu_surv_noX_tv(List Y, List Z, List inv_omega, List K, const arma::mat& D, const arma::vec& phi, List etaBB, List c);
-RcppExport SEXP _JEL_calc_mu_surv_noX_tv(SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP cSEXP) {
+RcppExport SEXP _LJM_calc_mu_surv_noX_tv(SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -99,7 +99,7 @@ END_RCPP
 }
 // calc_Sigma2_surv_noX_tv
 List calc_Sigma2_surv_noX_tv(List Z, List inv_omega, const arma::mat& D, List etaBB);
-RcppExport SEXP _JEL_calc_Sigma2_surv_noX_tv(SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaBBSEXP) {
+RcppExport SEXP _LJM_calc_Sigma2_surv_noX_tv(SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaBBSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -113,7 +113,7 @@ END_RCPP
 }
 // Eetaphi_lla_tv
 double Eetaphi_lla_tv(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, const List& BBi, const arma::vec& etaInd, List c_list);
-RcppExport SEXP _JEL_Eetaphi_lla_tv(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP c_listSEXP) {
+RcppExport SEXP _LJM_Eetaphi_lla_tv(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP c_listSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -140,7 +140,7 @@ END_RCPP
 }
 // Setaphi_lla_tv
 arma::vec Setaphi_lla_tv(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, const List& BBi, const arma::vec& etaInd, double eps, List c_list);
-RcppExport SEXP _JEL_Setaphi_lla_tv(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
+RcppExport SEXP _LJM_Setaphi_lla_tv(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -168,7 +168,7 @@ END_RCPP
 }
 // Hetaphi_lla_tv
 arma::mat Hetaphi_lla_tv(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, const List& BBi, const arma::vec& etaInd, double eps, List c_list);
-RcppExport SEXP _JEL_Hetaphi_lla_tv(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
+RcppExport SEXP _LJM_Hetaphi_lla_tv(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -196,7 +196,7 @@ END_RCPP
 }
 // calc_mu_surv_tv
 List calc_mu_surv_tv(List X, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec beta, arma::vec phi, List etaBB, int nK);
-RcppExport SEXP _JEL_calc_mu_surv_tv(SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_calc_mu_surv_tv(SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -216,7 +216,7 @@ END_RCPP
 }
 // calc_Sigma2_surv_tv
 List calc_Sigma2_surv_tv(List X, List Z, List inv_omega, arma::mat D, List etaBB);
-RcppExport SEXP _JEL_calc_Sigma2_surv_tv(SEXP XSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaBBSEXP) {
+RcppExport SEXP _LJM_calc_Sigma2_surv_tv(SEXP XSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP DSEXP, SEXP etaBBSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -231,7 +231,7 @@ END_RCPP
 }
 // subtract_one_from_uvec
 arma::uvec subtract_one_from_uvec(arma::uvec vec);
-RcppExport SEXP _JEL_subtract_one_from_uvec(SEXP vecSEXP) {
+RcppExport SEXP _LJM_subtract_one_from_uvec(SEXP vecSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -242,7 +242,7 @@ END_RCPP
 }
 // calc_inv_omega_kernel
 List calc_inv_omega_kernel(List mi_list, arma::vec var_e, List w_stack_list);
-RcppExport SEXP _JEL_calc_inv_omega_kernel(SEXP mi_listSEXP, SEXP var_eSEXP, SEXP w_stack_listSEXP) {
+RcppExport SEXP _LJM_calc_inv_omega_kernel(SEXP mi_listSEXP, SEXP var_eSEXP, SEXP w_stack_listSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -255,7 +255,7 @@ END_RCPP
 }
 // calc_Sigma_longK
 List calc_Sigma_longK(List Z_list, List S_list, int nK);
-RcppExport SEXP _JEL_calc_Sigma_longK(SEXP Z_listSEXP, SEXP S_listSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_calc_Sigma_longK(SEXP Z_listSEXP, SEXP S_listSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -268,7 +268,7 @@ END_RCPP
 }
 // calc_mu_longK_noX
 List calc_mu_longK_noX(List Y_list, List Z_list, List b_list, List b_inds, int nK);
-RcppExport SEXP _JEL_calc_mu_longK_noX(SEXP Y_listSEXP, SEXP Z_listSEXP, SEXP b_listSEXP, SEXP b_indsSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_calc_mu_longK_noX(SEXP Y_listSEXP, SEXP Z_listSEXP, SEXP b_listSEXP, SEXP b_indsSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -283,7 +283,7 @@ END_RCPP
 }
 // calc_Ee_kernel
 List calc_Ee_kernel(List mu_list, List Sigma_longK, List w_longK, int nK);
-RcppExport SEXP _JEL_calc_Ee_kernel(SEXP mu_listSEXP, SEXP Sigma_longKSEXP, SEXP w_longKSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_calc_Ee_kernel(SEXP mu_listSEXP, SEXP Sigma_longKSEXP, SEXP w_longKSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -297,7 +297,7 @@ END_RCPP
 }
 // calc_M1_M2_Hadamard
 void calc_M1_M2_Hadamard(Eigen::Map<Eigen::ArrayXd>& M1, const Eigen::Map<Eigen::ArrayXd>& M2);
-RcppExport SEXP _JEL_calc_M1_M2_Hadamard(SEXP M1SEXP, SEXP M2SEXP) {
+RcppExport SEXP _LJM_calc_M1_M2_Hadamard(SEXP M1SEXP, SEXP M2SEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Eigen::Map<Eigen::ArrayXd>& >::type M1(M1SEXP);
@@ -308,7 +308,7 @@ END_RCPP
 }
 // calc_M1_M2_Hadamard_a
 Eigen::MatrixXd calc_M1_M2_Hadamard_a(Eigen::Map<Eigen::ArrayXXd>& A1, const Eigen::Map<Eigen::ArrayXXd>& A2, const Eigen::Map<Eigen::VectorXd>& v3, const int a);
-RcppExport SEXP _JEL_calc_M1_M2_Hadamard_a(SEXP A1SEXP, SEXP A2SEXP, SEXP v3SEXP, SEXP aSEXP) {
+RcppExport SEXP _LJM_calc_M1_M2_Hadamard_a(SEXP A1SEXP, SEXP A2SEXP, SEXP v3SEXP, SEXP aSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -322,7 +322,7 @@ END_RCPP
 }
 // calc_M1_M2_M3_Hadamard
 void calc_M1_M2_M3_Hadamard(Eigen::Map<Eigen::MatrixXd>& M1, const Eigen::Map<Eigen::MatrixXd>& M2, const Eigen::Map<Eigen::MatrixXd>& M3, const Eigen::Map<Eigen::VectorXi>& v);
-RcppExport SEXP _JEL_calc_M1_M2_M3_Hadamard(SEXP M1SEXP, SEXP M2SEXP, SEXP M3SEXP, SEXP vSEXP) {
+RcppExport SEXP _LJM_calc_M1_M2_M3_Hadamard(SEXP M1SEXP, SEXP M2SEXP, SEXP M3SEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXd>& >::type M1(M1SEXP);
@@ -335,7 +335,7 @@ END_RCPP
 }
 // calc_M1_a_M2_Hadamard
 void calc_M1_a_M2_Hadamard(Eigen::Map<Eigen::MatrixXd>& M1, const Eigen::Map<Eigen::MatrixXd>& M2, const double a, const Eigen::Map<Eigen::VectorXi>& v);
-RcppExport SEXP _JEL_calc_M1_a_M2_Hadamard(SEXP M1SEXP, SEXP M2SEXP, SEXP aSEXP, SEXP vSEXP) {
+RcppExport SEXP _LJM_calc_M1_a_M2_Hadamard(SEXP M1SEXP, SEXP M2SEXP, SEXP aSEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXd>& >::type M1(M1SEXP);
@@ -348,7 +348,7 @@ END_RCPP
 }
 // calc_M1timesM2v
 Eigen::MatrixXd calc_M1timesM2v(const Eigen::Map<Eigen::MatrixXd>& M1, const Eigen::Map<Eigen::MatrixXd>& M2, const Eigen::Map<Eigen::ArrayXd>& v);
-RcppExport SEXP _JEL_calc_M1timesM2v(SEXP M1SEXP, SEXP M2SEXP, SEXP vSEXP) {
+RcppExport SEXP _LJM_calc_M1timesM2v(SEXP M1SEXP, SEXP M2SEXP, SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -361,7 +361,7 @@ END_RCPP
 }
 // calc_MVND
 double calc_MVND(const Eigen::Map<Eigen::VectorXd>& x, const Eigen::Map<Eigen::VectorXd>& mu, const Eigen::Map<Eigen::MatrixXd>& K);
-RcppExport SEXP _JEL_calc_MVND(SEXP xSEXP, SEXP muSEXP, SEXP KSEXP) {
+RcppExport SEXP _LJM_calc_MVND(SEXP xSEXP, SEXP muSEXP, SEXP KSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -374,7 +374,7 @@ END_RCPP
 }
 // calc_M_v
 Eigen::VectorXd calc_M_v(const Eigen::Map<Eigen::VectorXd>& v, const Eigen::Map<Eigen::MatrixXd>& M);
-RcppExport SEXP _JEL_calc_M_v(SEXP vSEXP, SEXP MSEXP) {
+RcppExport SEXP _LJM_calc_M_v(SEXP vSEXP, SEXP MSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -386,7 +386,7 @@ END_RCPP
 }
 // calc_VB
 Eigen::MatrixXd calc_VB(const Eigen::Map<Eigen::MatrixXd>& M1, const Eigen::Map<Eigen::MatrixXd>& M2, const Eigen::Map<Eigen::MatrixXd>& M3);
-RcppExport SEXP _JEL_calc_VB(SEXP M1SEXP, SEXP M2SEXP, SEXP M3SEXP) {
+RcppExport SEXP _LJM_calc_VB(SEXP M1SEXP, SEXP M2SEXP, SEXP M3SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -399,7 +399,7 @@ END_RCPP
 }
 // calc_VY
 Eigen::MatrixXd calc_VY(const Eigen::Map<Eigen::MatrixXd>& M, const Eigen::Map<Eigen::MatrixXd>& A, const double b);
-RcppExport SEXP _JEL_calc_VY(SEXP MSEXP, SEXP ASEXP, SEXP bSEXP) {
+RcppExport SEXP _LJM_calc_VY(SEXP MSEXP, SEXP ASEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -412,7 +412,7 @@ END_RCPP
 }
 // calc_bi_st
 Eigen::MatrixXd calc_bi_st(const Eigen::Map<Eigen::VectorXd>& v0, const Eigen::Map<Eigen::MatrixXd>& m, const Eigen::Map<Eigen::MatrixXd>& M);
-RcppExport SEXP _JEL_calc_bi_st(SEXP v0SEXP, SEXP mSEXP, SEXP MSEXP) {
+RcppExport SEXP _LJM_calc_bi_st(SEXP v0SEXP, SEXP mSEXP, SEXP MSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -425,7 +425,7 @@ END_RCPP
 }
 // calc_expM2
 void calc_expM2(Eigen::Map<Eigen::ArrayXd>& A);
-RcppExport SEXP _JEL_calc_expM2(SEXP ASEXP) {
+RcppExport SEXP _LJM_calc_expM2(SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Eigen::Map<Eigen::ArrayXd>& >::type A(ASEXP);
@@ -435,7 +435,7 @@ END_RCPP
 }
 // calc_muB
 Eigen::MatrixXd calc_muB(const Eigen::Map<Eigen::MatrixXd>& BSold, const Eigen::Map<Eigen::MatrixXd>& VY, const Eigen::Map<Eigen::MatrixXd>& Xst, const Eigen::Map<Eigen::MatrixXd>& Zst, const Eigen::Map<Eigen::VectorXd>& Yst, const Eigen::Map<Eigen::VectorXd>& betaold);
-RcppExport SEXP _JEL_calc_muB(SEXP BSoldSEXP, SEXP VYSEXP, SEXP XstSEXP, SEXP ZstSEXP, SEXP YstSEXP, SEXP betaoldSEXP) {
+RcppExport SEXP _LJM_calc_muB(SEXP BSoldSEXP, SEXP VYSEXP, SEXP XstSEXP, SEXP ZstSEXP, SEXP YstSEXP, SEXP betaoldSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -451,7 +451,7 @@ END_RCPP
 }
 // calc_muBMult
 Eigen::VectorXd calc_muBMult(const Eigen::Map<Eigen::MatrixXd>& BSold, const Eigen::Map<Eigen::MatrixXd>& VY, const Eigen::Map<Eigen::VectorXd>& BTg, const Eigen::Map<Eigen::VectorXd>& Yst);
-RcppExport SEXP _JEL_calc_muBMult(SEXP BSoldSEXP, SEXP VYSEXP, SEXP BTgSEXP, SEXP YstSEXP) {
+RcppExport SEXP _LJM_calc_muBMult(SEXP BSoldSEXP, SEXP VYSEXP, SEXP BTgSEXP, SEXP YstSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -465,7 +465,7 @@ END_RCPP
 }
 // calc_mult_rowsum1
 Eigen::MatrixXd calc_mult_rowsum1(const Eigen::Map<Eigen::VectorXi>& v, const Eigen::Map<Eigen::VectorXd>& u, const Eigen::Map<Eigen::MatrixXd>& M, const Eigen::Map<Eigen::ArrayXXd>& A);
-RcppExport SEXP _JEL_calc_mult_rowsum1(SEXP vSEXP, SEXP uSEXP, SEXP MSEXP, SEXP ASEXP) {
+RcppExport SEXP _LJM_calc_mult_rowsum1(SEXP vSEXP, SEXP uSEXP, SEXP MSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -479,7 +479,7 @@ END_RCPP
 }
 // calc_mult_rowsum2
 Eigen::MatrixXd calc_mult_rowsum2(const Eigen::Map<Eigen::VectorXi>& v, const Eigen::Map<Eigen::MatrixXd>& L, const Eigen::Map<Eigen::MatrixXd>& M, const Eigen::Map<Eigen::ArrayXXd>& A);
-RcppExport SEXP _JEL_calc_mult_rowsum2(SEXP vSEXP, SEXP LSEXP, SEXP MSEXP, SEXP ASEXP) {
+RcppExport SEXP _LJM_calc_mult_rowsum2(SEXP vSEXP, SEXP LSEXP, SEXP MSEXP, SEXP ASEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -493,7 +493,7 @@ END_RCPP
 }
 // calc_mult_rowsum3
 Rcpp::List calc_mult_rowsum3(const Eigen::Map<Eigen::ArrayXi>& v, const Eigen::Map<Eigen::ArrayXXd>& B, const Eigen::Map<Eigen::ArrayXXd>& M, const Eigen::Map<Eigen::ArrayXXd>& A, const double ncb2);
-RcppExport SEXP _JEL_calc_mult_rowsum3(SEXP vSEXP, SEXP BSEXP, SEXP MSEXP, SEXP ASEXP, SEXP ncb2SEXP) {
+RcppExport SEXP _LJM_calc_mult_rowsum3(SEXP vSEXP, SEXP BSEXP, SEXP MSEXP, SEXP ASEXP, SEXP ncb2SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -508,7 +508,7 @@ END_RCPP
 }
 // calc_rowsum
 Eigen::MatrixXd calc_rowsum(const Eigen::Map<Eigen::VectorXi>& v, const Eigen::Map<Eigen::MatrixXd>& M);
-RcppExport SEXP _JEL_calc_rowsum(SEXP vSEXP, SEXP MSEXP) {
+RcppExport SEXP _LJM_calc_rowsum(SEXP vSEXP, SEXP MSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -520,7 +520,7 @@ END_RCPP
 }
 // calc_rowsum_mult
 Eigen::MatrixXd calc_rowsum_mult(const Eigen::Map<Eigen::VectorXi>& v, const Eigen::Map<Eigen::VectorXd>& u, const Eigen::Map<Eigen::MatrixXd>& M);
-RcppExport SEXP _JEL_calc_rowsum_mult(SEXP vSEXP, SEXP uSEXP, SEXP MSEXP) {
+RcppExport SEXP _LJM_calc_rowsum_mult(SEXP vSEXP, SEXP uSEXP, SEXP MSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -533,7 +533,7 @@ END_RCPP
 }
 // calc_tapply_vect_sum
 Eigen::ArrayXd calc_tapply_vect_sum(const Eigen::Map<Eigen::ArrayXd>& v1, const Eigen::Map<Eigen::ArrayXi>& v2);
-RcppExport SEXP _JEL_calc_tapply_vect_sum(SEXP v1SEXP, SEXP v2SEXP) {
+RcppExport SEXP _LJM_calc_tapply_vect_sum(SEXP v1SEXP, SEXP v2SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -545,7 +545,7 @@ END_RCPP
 }
 // calc_v_a
 void calc_v_a(Eigen::Map<Eigen::ArrayXd>& v, const double& a);
-RcppExport SEXP _JEL_calc_v_a(SEXP vSEXP, SEXP aSEXP) {
+RcppExport SEXP _LJM_calc_v_a(SEXP vSEXP, SEXP aSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Eigen::Map<Eigen::ArrayXd>& >::type v(vSEXP);
@@ -555,8 +555,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // Esurv
-arma::vec Esurv(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u);
-RcppExport SEXP _JEL_Esurv(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
+arma::vec Esurv(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u, double rho);
+RcppExport SEXP _LJM_Esurv(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -568,13 +568,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type variance_new(variance_newSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type l0i(l0iSEXP);
     Rcpp::traits::input_parameter< List >::type l0u(l0uSEXP);
-    rcpp_result_gen = Rcpp::wrap(Esurv(w, v, mu, variance, mu_new, variance_new, l0i, l0u));
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(Esurv(w, v, mu, variance, mu_new, variance_new, l0i, l0u, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // Esurv_exp
-arma::vec Esurv_exp(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u);
-RcppExport SEXP _JEL_Esurv_exp(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
+arma::vec Esurv_exp(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u, double rho);
+RcppExport SEXP _LJM_Esurv_exp(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -586,13 +587,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type variance_new(variance_newSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type l0i(l0iSEXP);
     Rcpp::traits::input_parameter< List >::type l0u(l0uSEXP);
-    rcpp_result_gen = Rcpp::wrap(Esurv_exp(w, v, mu, variance, mu_new, variance_new, l0i, l0u));
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(Esurv_exp(w, v, mu, variance, mu_new, variance_new, l0i, l0u, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // Eetaphi
-double Eetaphi(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, List c_list);
-RcppExport SEXP _JEL_Eetaphi(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP c_listSEXP) {
+double Eetaphi(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, List c_list, double rho);
+RcppExport SEXP _LJM_Eetaphi(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP c_listSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -611,13 +613,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type mu_surv(mu_survSEXP);
     Rcpp::traits::input_parameter< List >::type Sigma2_surv(Sigma2_survSEXP);
     Rcpp::traits::input_parameter< List >::type c_list(c_listSEXP);
-    rcpp_result_gen = Rcpp::wrap(Eetaphi(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, c_list));
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(Eetaphi(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, c_list, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // Setaphi
-arma::vec Setaphi(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, double eps, List c_list);
-RcppExport SEXP _JEL_Setaphi(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
+arma::vec Setaphi(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, double eps, List c_list, double rho);
+RcppExport SEXP _LJM_Setaphi(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP epsSEXP, SEXP c_listSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -637,13 +640,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type Sigma2_surv(Sigma2_survSEXP);
     Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
     Rcpp::traits::input_parameter< List >::type c_list(c_listSEXP);
-    rcpp_result_gen = Rcpp::wrap(Setaphi(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, eps, c_list));
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(Setaphi(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, eps, c_list, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // Setaphi_perobs
-arma::mat Setaphi_perobs(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, double eps, List c_list);
-RcppExport SEXP _JEL_Setaphi_perobs(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
+arma::mat Setaphi_perobs(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, double eps, List c_list, double rho);
+RcppExport SEXP _LJM_Setaphi_perobs(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP epsSEXP, SEXP c_listSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -663,13 +667,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type Sigma2_surv(Sigma2_survSEXP);
     Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
     Rcpp::traits::input_parameter< List >::type c_list(c_listSEXP);
-    rcpp_result_gen = Rcpp::wrap(Setaphi_perobs(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, eps, c_list));
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(Setaphi_perobs(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, eps, c_list, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // Hetaphi
-arma::mat Hetaphi(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, double eps, List c_list);
-RcppExport SEXP _JEL_Hetaphi(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP epsSEXP, SEXP c_listSEXP) {
+arma::mat Hetaphi(arma::vec etaphi, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, double eps, List c_list, double rho);
+RcppExport SEXP _LJM_Hetaphi(SEXP etaphiSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP epsSEXP, SEXP c_listSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -689,13 +694,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< List >::type Sigma2_surv(Sigma2_survSEXP);
     Rcpp::traits::input_parameter< double >::type eps(epsSEXP);
     Rcpp::traits::input_parameter< List >::type c_list(c_listSEXP);
-    rcpp_result_gen = Rcpp::wrap(Hetaphi(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, eps, c_list));
+    Rcpp::traits::input_parameter< double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(Hetaphi(etaphi, Y, Z, inv_omega, K, D, l0i, l0u, Di, nK, w, v, mu_surv, Sigma2_surv, eps, c_list, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // scaleMatricesByEta
 List scaleMatricesByEta(const List& BBi, const arma::vec& eta);
-RcppExport SEXP _JEL_scaleMatricesByEta(SEXP BBiSEXP, SEXP etaSEXP) {
+RcppExport SEXP _LJM_scaleMatricesByEta(SEXP BBiSEXP, SEXP etaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -707,7 +713,7 @@ END_RCPP
 }
 // createResultMatrix
 arma::mat createResultMatrix(const arma::mat& A, const arma::vec& etaInd);
-RcppExport SEXP _JEL_createResultMatrix(SEXP ASEXP, SEXP etaIndSEXP) {
+RcppExport SEXP _LJM_createResultMatrix(SEXP ASEXP, SEXP etaIndSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -719,7 +725,7 @@ END_RCPP
 }
 // etaBBs_compute
 List etaBBs_compute(const List& BBi, const arma::vec& eta, const arma::vec& etaInd);
-RcppExport SEXP _JEL_etaBBs_compute(SEXP BBiSEXP, SEXP etaSEXP, SEXP etaIndSEXP) {
+RcppExport SEXP _LJM_etaBBs_compute(SEXP BBiSEXP, SEXP etaSEXP, SEXP etaIndSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -732,7 +738,7 @@ END_RCPP
 }
 // Esurv_tv
 arma::vec Esurv_tv(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u);
-RcppExport SEXP _JEL_Esurv_tv(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
+RcppExport SEXP _LJM_Esurv_tv(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -750,7 +756,7 @@ END_RCPP
 }
 // Esurv_exp_tv
 arma::vec Esurv_exp_tv(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u);
-RcppExport SEXP _JEL_Esurv_exp_tv(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
+RcppExport SEXP _LJM_Esurv_exp_tv(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -768,7 +774,7 @@ END_RCPP
 }
 // Esurv_exp_t
 List Esurv_exp_t(arma::vec w, arma::vec v, List mu, List variance, List mu_new, List variance_new, arma::vec l0i, List l0u);
-RcppExport SEXP _JEL_Esurv_exp_t(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
+RcppExport SEXP _LJM_Esurv_exp_t(SEXP wSEXP, SEXP vSEXP, SEXP muSEXP, SEXP varianceSEXP, SEXP mu_newSEXP, SEXP variance_newSEXP, SEXP l0iSEXP, SEXP l0uSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -786,7 +792,7 @@ END_RCPP
 }
 // Eetaphi_t
 double Eetaphi_t(arma::vec etaphi, List X, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec beta, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, const List& BBi, const arma::vec& etaInd);
-RcppExport SEXP _JEL_Eetaphi_t(SEXP etaphiSEXP, SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP) {
+RcppExport SEXP _LJM_Eetaphi_t(SEXP etaphiSEXP, SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -814,7 +820,7 @@ END_RCPP
 }
 // Setaphi_t
 arma::vec Setaphi_t(arma::vec etaphi, List X, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec beta, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, const List& BBi, const arma::vec& etaInd, double eps);
-RcppExport SEXP _JEL_Setaphi_t(SEXP etaphiSEXP, SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP) {
+RcppExport SEXP _LJM_Setaphi_t(SEXP etaphiSEXP, SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -843,7 +849,7 @@ END_RCPP
 }
 // Hetaphi_t
 arma::mat Hetaphi_t(arma::vec etaphi, List X, List Y, List Z, List inv_omega, List K, arma::mat D, arma::vec beta, arma::vec l0i, List l0u, arma::vec Di, int nK, arma::vec w, arma::vec v, List mu_surv, List Sigma2_surv, const List& BBi, const arma::vec& etaInd, double eps);
-RcppExport SEXP _JEL_Hetaphi_t(SEXP etaphiSEXP, SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP) {
+RcppExport SEXP _LJM_Hetaphi_t(SEXP etaphiSEXP, SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP inv_omegaSEXP, SEXP KSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP DiSEXP, SEXP nKSEXP, SEXP wSEXP, SEXP vSEXP, SEXP mu_survSEXP, SEXP Sigma2_survSEXP, SEXP BBiSEXP, SEXP etaIndSEXP, SEXP epsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -872,7 +878,7 @@ END_RCPP
 }
 // fast_lapply_length
 Eigen::MatrixXd fast_lapply_length(Rcpp::List const input1, Rcpp::List const input2, Rcpp::NumericVector const Ind);
-RcppExport SEXP _JEL_fast_lapply_length(SEXP input1SEXP, SEXP input2SEXP, SEXP IndSEXP) {
+RcppExport SEXP _LJM_fast_lapply_length(SEXP input1SEXP, SEXP input2SEXP, SEXP IndSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -885,7 +891,7 @@ END_RCPP
 }
 // fast_rbind_lapply_outerprod
 Eigen::MatrixXd fast_rbind_lapply_outerprod(Rcpp::List const input);
-RcppExport SEXP _JEL_fast_rbind_lapply_outerprod(SEXP inputSEXP) {
+RcppExport SEXP _LJM_fast_rbind_lapply_outerprod(SEXP inputSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -896,7 +902,7 @@ END_RCPP
 }
 // ll
 double ll(arma::vec b, const arma::colvec Y, const arma::mat X, const arma::mat Z, const arma::mat V, const arma::mat D, int mi, const arma::rowvec K, const int Delta, const double l0i, const arma::rowvec l0u, const arma::vec beta, const arma::vec phi, const arma::vec eta, const int nK, const int q);
-RcppExport SEXP _JEL_ll(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP, SEXP qSEXP) {
+RcppExport SEXP _LJM_ll(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP, SEXP qSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -922,7 +928,7 @@ END_RCPP
 }
 // gradll
 arma::colvec gradll(arma::vec b, const arma::colvec Y, const arma::mat X, const arma::mat Z, const arma::mat V, const arma::mat D, int mi, const arma::rowvec K, const int Delta, const double l0i, const arma::rowvec l0u, const arma::vec beta, const arma::vec phi, const arma::vec eta, const int nK, const int q);
-RcppExport SEXP _JEL_gradll(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP, SEXP qSEXP) {
+RcppExport SEXP _LJM_gradll(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP, SEXP qSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -948,7 +954,7 @@ END_RCPP
 }
 // sdll
 arma::mat sdll(arma::vec b, const arma::mat Z, const arma::mat D, const arma::mat V, const arma::rowvec K, const arma::vec l0u, const arma::vec phi, const arma::vec eta, const int nK);
-RcppExport SEXP _JEL_sdll(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_sdll(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -966,8 +972,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // ll_lla
-double ll_lla(const arma::vec& b, const arma::colvec& Y, const arma::mat& Z, const arma::mat& V, const arma::mat& D, const int mi, const arma::rowvec& K, const int Delta, const double l0i, const arma::rowvec& l0u, const arma::vec& phi, const arma::vec& eta, const arma::vec& w, const arma::vec& c);
-RcppExport SEXP _JEL_ll_lla(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP wSEXP, SEXP cSEXP) {
+double ll_lla(const arma::vec& b, const arma::colvec& Y, const arma::mat& Z, const arma::mat& V, const arma::mat& D, const int mi, const arma::rowvec& K, const int Delta, const double l0i, const arma::rowvec& l0u, const arma::vec& phi, const arma::vec& eta, const arma::vec& w, const arma::vec& c, const double rho);
+RcppExport SEXP _LJM_ll_lla(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP wSEXP, SEXP cSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -985,13 +991,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::vec& >::type eta(etaSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type w(wSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type c(cSEXP);
-    rcpp_result_gen = Rcpp::wrap(ll_lla(b, Y, Z, V, D, mi, K, Delta, l0i, l0u, phi, eta, w, c));
+    Rcpp::traits::input_parameter< const double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(ll_lla(b, Y, Z, V, D, mi, K, Delta, l0i, l0u, phi, eta, w, c, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // gradll_lla
-arma::colvec gradll_lla(const arma::vec& b, const arma::colvec& Y, const arma::mat& Z, const arma::mat& V, const arma::mat& D, const int mi, const arma::rowvec& K, const int Delta, const double l0i, const arma::rowvec& l0u, const arma::vec& phi, const arma::vec& eta, const arma::vec& w, const arma::vec& c);
-RcppExport SEXP _JEL_gradll_lla(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP wSEXP, SEXP cSEXP) {
+arma::colvec gradll_lla(const arma::vec& b, const arma::colvec& Y, const arma::mat& Z, const arma::mat& V, const arma::mat& D, const int mi, const arma::rowvec& K, const int Delta, const double l0i, const arma::rowvec& l0u, const arma::vec& phi, const arma::vec& eta, const arma::vec& w, const arma::vec& c, const double rho);
+RcppExport SEXP _LJM_gradll_lla(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP wSEXP, SEXP cSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1009,13 +1016,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::vec& >::type eta(etaSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type w(wSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type c(cSEXP);
-    rcpp_result_gen = Rcpp::wrap(gradll_lla(b, Y, Z, V, D, mi, K, Delta, l0i, l0u, phi, eta, w, c));
+    Rcpp::traits::input_parameter< const double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(gradll_lla(b, Y, Z, V, D, mi, K, Delta, l0i, l0u, phi, eta, w, c, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // sdll_lla
-arma::mat sdll_lla(const arma::vec& b, const arma::mat& Z, const arma::mat& D, const arma::mat& V, const arma::rowvec& K, const arma::vec& l0u, const arma::vec& phi, const arma::vec& eta, const arma::vec& w);
-RcppExport SEXP _JEL_sdll_lla(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP wSEXP) {
+arma::mat sdll_lla(const arma::vec& b, const arma::mat& Z, const arma::mat& D, const arma::mat& V, const arma::rowvec& K, const arma::vec& l0u, const arma::vec& phi, const arma::vec& eta, const arma::vec& w, const int Delta, const double rho);
+RcppExport SEXP _LJM_sdll_lla(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaSEXP, SEXP wSEXP, SEXP DeltaSEXP, SEXP rhoSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1028,13 +1036,15 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::vec& >::type phi(phiSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type eta(etaSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type w(wSEXP);
-    rcpp_result_gen = Rcpp::wrap(sdll_lla(b, Z, D, V, K, l0u, phi, eta, w));
+    Rcpp::traits::input_parameter< const int >::type Delta(DeltaSEXP);
+    Rcpp::traits::input_parameter< const double >::type rho(rhoSEXP);
+    rcpp_result_gen = Rcpp::wrap(sdll_lla(b, Z, D, V, K, l0u, phi, eta, w, Delta, rho));
     return rcpp_result_gen;
 END_RCPP
 }
 // ll_lla_tv
 double ll_lla_tv(const arma::vec& b, const arma::colvec& Y, const arma::mat& Z, const arma::mat& V, const arma::mat& D, const int mi, const arma::rowvec& K, const int Delta, const double l0i, const arma::rowvec& l0u, const arma::vec& phi, const arma::mat& etaBB, const arma::vec& w, const arma::vec& c);
-RcppExport SEXP _JEL_ll_lla_tv(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP wSEXP, SEXP cSEXP) {
+RcppExport SEXP _LJM_ll_lla_tv(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP wSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1058,7 +1068,7 @@ END_RCPP
 }
 // gradll_lla_tv
 arma::colvec gradll_lla_tv(const arma::vec& b, const arma::colvec& Y, const arma::mat& Z, const arma::mat& V, const arma::mat& D, const int mi, const arma::rowvec& K, const int Delta, const double l0i, const arma::rowvec& l0u, const arma::vec& phi, const arma::mat& etaBB, const arma::vec& w, const arma::vec& c);
-RcppExport SEXP _JEL_gradll_lla_tv(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP wSEXP, SEXP cSEXP) {
+RcppExport SEXP _LJM_gradll_lla_tv(SEXP bSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP wSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1082,7 +1092,7 @@ END_RCPP
 }
 // sdll_lla_tv
 arma::mat sdll_lla_tv(const arma::vec& b, const arma::mat& Z, const arma::mat& D, const arma::mat& V, const arma::rowvec& K, const arma::vec& l0u, const arma::vec& phi, const arma::mat& etaBB, const arma::vec& w);
-RcppExport SEXP _JEL_sdll_lla_tv(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP wSEXP) {
+RcppExport SEXP _LJM_sdll_lla_tv(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP wSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1101,7 +1111,7 @@ END_RCPP
 }
 // ll_tv
 double ll_tv(arma::vec b, const arma::colvec Y, const arma::mat X, const arma::mat Z, const arma::mat V, const arma::mat D, int mi, const arma::rowvec K, const int Delta, const double l0i, const arma::colvec l0u, const arma::vec beta, const arma::vec phi, const arma::mat etaBB, const int nK, const int q);
-RcppExport SEXP _JEL_ll_tv(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP, SEXP qSEXP) {
+RcppExport SEXP _LJM_ll_tv(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP, SEXP qSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1127,7 +1137,7 @@ END_RCPP
 }
 // elementwise_multiply
 arma::mat elementwise_multiply(const arma::mat mat, const arma::vec vec);
-RcppExport SEXP _JEL_elementwise_multiply(SEXP matSEXP, SEXP vecSEXP) {
+RcppExport SEXP _LJM_elementwise_multiply(SEXP matSEXP, SEXP vecSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1139,7 +1149,7 @@ END_RCPP
 }
 // gradll_tv
 arma::colvec gradll_tv(arma::vec b, const arma::colvec Y, const arma::mat X, const arma::mat Z, const arma::mat V, const arma::mat D, int mi, const arma::rowvec K, const int Delta, const double l0i, const arma::colvec l0u, const arma::vec beta, const arma::vec phi, const arma::mat etaBB, const int nK, const int q);
-RcppExport SEXP _JEL_gradll_tv(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP, SEXP qSEXP) {
+RcppExport SEXP _LJM_gradll_tv(SEXP bSEXP, SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP miSEXP, SEXP KSEXP, SEXP DeltaSEXP, SEXP l0iSEXP, SEXP l0uSEXP, SEXP betaSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP, SEXP qSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1165,7 +1175,7 @@ END_RCPP
 }
 // sdll_tv
 arma::mat sdll_tv(arma::vec b, const arma::mat Z, const arma::mat D, const arma::mat V, const arma::rowvec K, const arma::vec l0u, const arma::vec phi, const arma::mat etaBB, const int nK);
-RcppExport SEXP _JEL_sdll_tv(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP) {
+RcppExport SEXP _LJM_sdll_tv(SEXP bSEXP, SEXP ZSEXP, SEXP DSEXP, SEXP VSEXP, SEXP KSEXP, SEXP l0uSEXP, SEXP phiSEXP, SEXP etaBBSEXP, SEXP nKSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1184,7 +1194,7 @@ END_RCPP
 }
 // rcpp_e
 double rcpp_e(const arma::colvec Yik, const arma::mat Xik, const arma::mat Zik, const arma::vec beta, const arma::vec b);
-RcppExport SEXP _JEL_rcpp_e(SEXP YikSEXP, SEXP XikSEXP, SEXP ZikSEXP, SEXP betaSEXP, SEXP bSEXP) {
+RcppExport SEXP _LJM_rcpp_e(SEXP YikSEXP, SEXP XikSEXP, SEXP ZikSEXP, SEXP betaSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1199,7 +1209,7 @@ END_RCPP
 }
 // Ee
 NumericVector Ee(const Rcpp::List Y, const Rcpp::List X, const Rcpp::List Z, const arma::mat beta, const Rcpp::List b, const Rcpp::List bbT, const int ids, const int K);
-RcppExport SEXP _JEL_Ee(SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP betaSEXP, SEXP bSEXP, SEXP bbTSEXP, SEXP idsSEXP, SEXP KSEXP) {
+RcppExport SEXP _LJM_Ee(SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP betaSEXP, SEXP bSEXP, SEXP bbTSEXP, SEXP idsSEXP, SEXP KSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1217,7 +1227,7 @@ END_RCPP
 }
 // Eb
 List Eb(const List Y, const List X, const List Z, const List V, const arma::mat D, const arma::vec beta, const int ids);
-RcppExport SEXP _JEL_Eb(SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP idsSEXP) {
+RcppExport SEXP _LJM_Eb(SEXP YSEXP, SEXP XSEXP, SEXP ZSEXP, SEXP VSEXP, SEXP DSEXP, SEXP betaSEXP, SEXP idsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1234,7 +1244,7 @@ END_RCPP
 }
 // covb
 List covb(const List Z, const List V, const arma::mat Dinv, const int ids);
-RcppExport SEXP _JEL_covb(SEXP ZSEXP, SEXP VSEXP, SEXP DinvSEXP, SEXP idsSEXP) {
+RcppExport SEXP _LJM_covb(SEXP ZSEXP, SEXP VSEXP, SEXP DinvSEXP, SEXP idsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1248,7 +1258,7 @@ END_RCPP
 }
 // EbbT
 List EbbT(const List b, const List Sigma, const int ids);
-RcppExport SEXP _JEL_EbbT(SEXP bSEXP, SEXP SigmaSEXP, SEXP idsSEXP) {
+RcppExport SEXP _LJM_EbbT(SEXP bSEXP, SEXP SigmaSEXP, SEXP idsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1261,7 +1271,7 @@ END_RCPP
 }
 // betaRHS
 List betaRHS(const List X, const List Y, const List Z, const List b, const int ids);
-RcppExport SEXP _JEL_betaRHS(SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP bSEXP, SEXP idsSEXP) {
+RcppExport SEXP _LJM_betaRHS(SEXP XSEXP, SEXP YSEXP, SEXP ZSEXP, SEXP bSEXP, SEXP idsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1276,7 +1286,7 @@ END_RCPP
 }
 // update_lambda
 List update_lambda(NumericVector Es_exp, List l0u, NumericVector l0, int n);
-RcppExport SEXP _JEL_update_lambda(SEXP Es_expSEXP, SEXP l0uSEXP, SEXP l0SEXP, SEXP nSEXP) {
+RcppExport SEXP _LJM_update_lambda(SEXP Es_expSEXP, SEXP l0uSEXP, SEXP l0SEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1290,7 +1300,7 @@ END_RCPP
 }
 // update_lambda_tv
 List update_lambda_tv(List Es_exp, NumericVector l0, int n);
-RcppExport SEXP _JEL_update_lambda_tv(SEXP Es_expSEXP, SEXP l0SEXP, SEXP nSEXP) {
+RcppExport SEXP _LJM_update_lambda_tv(SEXP Es_expSEXP, SEXP l0SEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -1303,84 +1313,84 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_JEL_calc_mu_surv", (DL_FUNC) &_JEL_calc_mu_surv, 10},
-    {"_JEL_calc_Sigma2_surv", (DL_FUNC) &_JEL_calc_Sigma2_surv, 5},
-    {"_JEL_calc_mu_surv_noX", (DL_FUNC) &_JEL_calc_mu_surv_noX, 8},
-    {"_JEL_calc_Sigma2_surv_noX", (DL_FUNC) &_JEL_calc_Sigma2_surv_noX, 4},
-    {"_JEL_calc_mu_surv_noX_tv", (DL_FUNC) &_JEL_calc_mu_surv_noX_tv, 8},
-    {"_JEL_calc_Sigma2_surv_noX_tv", (DL_FUNC) &_JEL_calc_Sigma2_surv_noX_tv, 4},
-    {"_JEL_Eetaphi_lla_tv", (DL_FUNC) &_JEL_Eetaphi_lla_tv, 17},
-    {"_JEL_Setaphi_lla_tv", (DL_FUNC) &_JEL_Setaphi_lla_tv, 18},
-    {"_JEL_Hetaphi_lla_tv", (DL_FUNC) &_JEL_Hetaphi_lla_tv, 18},
-    {"_JEL_calc_mu_surv_tv", (DL_FUNC) &_JEL_calc_mu_surv_tv, 10},
-    {"_JEL_calc_Sigma2_surv_tv", (DL_FUNC) &_JEL_calc_Sigma2_surv_tv, 5},
-    {"_JEL_subtract_one_from_uvec", (DL_FUNC) &_JEL_subtract_one_from_uvec, 1},
-    {"_JEL_calc_inv_omega_kernel", (DL_FUNC) &_JEL_calc_inv_omega_kernel, 3},
-    {"_JEL_calc_Sigma_longK", (DL_FUNC) &_JEL_calc_Sigma_longK, 3},
-    {"_JEL_calc_mu_longK_noX", (DL_FUNC) &_JEL_calc_mu_longK_noX, 5},
-    {"_JEL_calc_Ee_kernel", (DL_FUNC) &_JEL_calc_Ee_kernel, 4},
-    {"_JEL_calc_M1_M2_Hadamard", (DL_FUNC) &_JEL_calc_M1_M2_Hadamard, 2},
-    {"_JEL_calc_M1_M2_Hadamard_a", (DL_FUNC) &_JEL_calc_M1_M2_Hadamard_a, 4},
-    {"_JEL_calc_M1_M2_M3_Hadamard", (DL_FUNC) &_JEL_calc_M1_M2_M3_Hadamard, 4},
-    {"_JEL_calc_M1_a_M2_Hadamard", (DL_FUNC) &_JEL_calc_M1_a_M2_Hadamard, 4},
-    {"_JEL_calc_M1timesM2v", (DL_FUNC) &_JEL_calc_M1timesM2v, 3},
-    {"_JEL_calc_MVND", (DL_FUNC) &_JEL_calc_MVND, 3},
-    {"_JEL_calc_M_v", (DL_FUNC) &_JEL_calc_M_v, 2},
-    {"_JEL_calc_VB", (DL_FUNC) &_JEL_calc_VB, 3},
-    {"_JEL_calc_VY", (DL_FUNC) &_JEL_calc_VY, 3},
-    {"_JEL_calc_bi_st", (DL_FUNC) &_JEL_calc_bi_st, 3},
-    {"_JEL_calc_expM2", (DL_FUNC) &_JEL_calc_expM2, 1},
-    {"_JEL_calc_muB", (DL_FUNC) &_JEL_calc_muB, 6},
-    {"_JEL_calc_muBMult", (DL_FUNC) &_JEL_calc_muBMult, 4},
-    {"_JEL_calc_mult_rowsum1", (DL_FUNC) &_JEL_calc_mult_rowsum1, 4},
-    {"_JEL_calc_mult_rowsum2", (DL_FUNC) &_JEL_calc_mult_rowsum2, 4},
-    {"_JEL_calc_mult_rowsum3", (DL_FUNC) &_JEL_calc_mult_rowsum3, 5},
-    {"_JEL_calc_rowsum", (DL_FUNC) &_JEL_calc_rowsum, 2},
-    {"_JEL_calc_rowsum_mult", (DL_FUNC) &_JEL_calc_rowsum_mult, 3},
-    {"_JEL_calc_tapply_vect_sum", (DL_FUNC) &_JEL_calc_tapply_vect_sum, 2},
-    {"_JEL_calc_v_a", (DL_FUNC) &_JEL_calc_v_a, 2},
-    {"_JEL_Esurv", (DL_FUNC) &_JEL_Esurv, 8},
-    {"_JEL_Esurv_exp", (DL_FUNC) &_JEL_Esurv_exp, 8},
-    {"_JEL_Eetaphi", (DL_FUNC) &_JEL_Eetaphi, 15},
-    {"_JEL_Setaphi", (DL_FUNC) &_JEL_Setaphi, 16},
-    {"_JEL_Setaphi_perobs", (DL_FUNC) &_JEL_Setaphi_perobs, 16},
-    {"_JEL_Hetaphi", (DL_FUNC) &_JEL_Hetaphi, 16},
-    {"_JEL_scaleMatricesByEta", (DL_FUNC) &_JEL_scaleMatricesByEta, 2},
-    {"_JEL_createResultMatrix", (DL_FUNC) &_JEL_createResultMatrix, 2},
-    {"_JEL_etaBBs_compute", (DL_FUNC) &_JEL_etaBBs_compute, 3},
-    {"_JEL_Esurv_tv", (DL_FUNC) &_JEL_Esurv_tv, 8},
-    {"_JEL_Esurv_exp_tv", (DL_FUNC) &_JEL_Esurv_exp_tv, 8},
-    {"_JEL_Esurv_exp_t", (DL_FUNC) &_JEL_Esurv_exp_t, 8},
-    {"_JEL_Eetaphi_t", (DL_FUNC) &_JEL_Eetaphi_t, 18},
-    {"_JEL_Setaphi_t", (DL_FUNC) &_JEL_Setaphi_t, 19},
-    {"_JEL_Hetaphi_t", (DL_FUNC) &_JEL_Hetaphi_t, 19},
-    {"_JEL_fast_lapply_length", (DL_FUNC) &_JEL_fast_lapply_length, 3},
-    {"_JEL_fast_rbind_lapply_outerprod", (DL_FUNC) &_JEL_fast_rbind_lapply_outerprod, 1},
-    {"_JEL_ll", (DL_FUNC) &_JEL_ll, 16},
-    {"_JEL_gradll", (DL_FUNC) &_JEL_gradll, 16},
-    {"_JEL_sdll", (DL_FUNC) &_JEL_sdll, 9},
-    {"_JEL_ll_lla", (DL_FUNC) &_JEL_ll_lla, 14},
-    {"_JEL_gradll_lla", (DL_FUNC) &_JEL_gradll_lla, 14},
-    {"_JEL_sdll_lla", (DL_FUNC) &_JEL_sdll_lla, 9},
-    {"_JEL_ll_lla_tv", (DL_FUNC) &_JEL_ll_lla_tv, 14},
-    {"_JEL_gradll_lla_tv", (DL_FUNC) &_JEL_gradll_lla_tv, 14},
-    {"_JEL_sdll_lla_tv", (DL_FUNC) &_JEL_sdll_lla_tv, 9},
-    {"_JEL_ll_tv", (DL_FUNC) &_JEL_ll_tv, 16},
-    {"_JEL_elementwise_multiply", (DL_FUNC) &_JEL_elementwise_multiply, 2},
-    {"_JEL_gradll_tv", (DL_FUNC) &_JEL_gradll_tv, 16},
-    {"_JEL_sdll_tv", (DL_FUNC) &_JEL_sdll_tv, 9},
-    {"_JEL_rcpp_e", (DL_FUNC) &_JEL_rcpp_e, 5},
-    {"_JEL_Ee", (DL_FUNC) &_JEL_Ee, 8},
-    {"_JEL_Eb", (DL_FUNC) &_JEL_Eb, 7},
-    {"_JEL_covb", (DL_FUNC) &_JEL_covb, 4},
-    {"_JEL_EbbT", (DL_FUNC) &_JEL_EbbT, 3},
-    {"_JEL_betaRHS", (DL_FUNC) &_JEL_betaRHS, 5},
-    {"_JEL_update_lambda", (DL_FUNC) &_JEL_update_lambda, 4},
-    {"_JEL_update_lambda_tv", (DL_FUNC) &_JEL_update_lambda_tv, 3},
+    {"_LJM_calc_mu_surv", (DL_FUNC) &_LJM_calc_mu_surv, 10},
+    {"_LJM_calc_Sigma2_surv", (DL_FUNC) &_LJM_calc_Sigma2_surv, 5},
+    {"_LJM_calc_mu_surv_noX", (DL_FUNC) &_LJM_calc_mu_surv_noX, 8},
+    {"_LJM_calc_Sigma2_surv_noX", (DL_FUNC) &_LJM_calc_Sigma2_surv_noX, 4},
+    {"_LJM_calc_mu_surv_noX_tv", (DL_FUNC) &_LJM_calc_mu_surv_noX_tv, 8},
+    {"_LJM_calc_Sigma2_surv_noX_tv", (DL_FUNC) &_LJM_calc_Sigma2_surv_noX_tv, 4},
+    {"_LJM_Eetaphi_lla_tv", (DL_FUNC) &_LJM_Eetaphi_lla_tv, 17},
+    {"_LJM_Setaphi_lla_tv", (DL_FUNC) &_LJM_Setaphi_lla_tv, 18},
+    {"_LJM_Hetaphi_lla_tv", (DL_FUNC) &_LJM_Hetaphi_lla_tv, 18},
+    {"_LJM_calc_mu_surv_tv", (DL_FUNC) &_LJM_calc_mu_surv_tv, 10},
+    {"_LJM_calc_Sigma2_surv_tv", (DL_FUNC) &_LJM_calc_Sigma2_surv_tv, 5},
+    {"_LJM_subtract_one_from_uvec", (DL_FUNC) &_LJM_subtract_one_from_uvec, 1},
+    {"_LJM_calc_inv_omega_kernel", (DL_FUNC) &_LJM_calc_inv_omega_kernel, 3},
+    {"_LJM_calc_Sigma_longK", (DL_FUNC) &_LJM_calc_Sigma_longK, 3},
+    {"_LJM_calc_mu_longK_noX", (DL_FUNC) &_LJM_calc_mu_longK_noX, 5},
+    {"_LJM_calc_Ee_kernel", (DL_FUNC) &_LJM_calc_Ee_kernel, 4},
+    {"_LJM_calc_M1_M2_Hadamard", (DL_FUNC) &_LJM_calc_M1_M2_Hadamard, 2},
+    {"_LJM_calc_M1_M2_Hadamard_a", (DL_FUNC) &_LJM_calc_M1_M2_Hadamard_a, 4},
+    {"_LJM_calc_M1_M2_M3_Hadamard", (DL_FUNC) &_LJM_calc_M1_M2_M3_Hadamard, 4},
+    {"_LJM_calc_M1_a_M2_Hadamard", (DL_FUNC) &_LJM_calc_M1_a_M2_Hadamard, 4},
+    {"_LJM_calc_M1timesM2v", (DL_FUNC) &_LJM_calc_M1timesM2v, 3},
+    {"_LJM_calc_MVND", (DL_FUNC) &_LJM_calc_MVND, 3},
+    {"_LJM_calc_M_v", (DL_FUNC) &_LJM_calc_M_v, 2},
+    {"_LJM_calc_VB", (DL_FUNC) &_LJM_calc_VB, 3},
+    {"_LJM_calc_VY", (DL_FUNC) &_LJM_calc_VY, 3},
+    {"_LJM_calc_bi_st", (DL_FUNC) &_LJM_calc_bi_st, 3},
+    {"_LJM_calc_expM2", (DL_FUNC) &_LJM_calc_expM2, 1},
+    {"_LJM_calc_muB", (DL_FUNC) &_LJM_calc_muB, 6},
+    {"_LJM_calc_muBMult", (DL_FUNC) &_LJM_calc_muBMult, 4},
+    {"_LJM_calc_mult_rowsum1", (DL_FUNC) &_LJM_calc_mult_rowsum1, 4},
+    {"_LJM_calc_mult_rowsum2", (DL_FUNC) &_LJM_calc_mult_rowsum2, 4},
+    {"_LJM_calc_mult_rowsum3", (DL_FUNC) &_LJM_calc_mult_rowsum3, 5},
+    {"_LJM_calc_rowsum", (DL_FUNC) &_LJM_calc_rowsum, 2},
+    {"_LJM_calc_rowsum_mult", (DL_FUNC) &_LJM_calc_rowsum_mult, 3},
+    {"_LJM_calc_tapply_vect_sum", (DL_FUNC) &_LJM_calc_tapply_vect_sum, 2},
+    {"_LJM_calc_v_a", (DL_FUNC) &_LJM_calc_v_a, 2},
+    {"_LJM_Esurv", (DL_FUNC) &_LJM_Esurv, 9},
+    {"_LJM_Esurv_exp", (DL_FUNC) &_LJM_Esurv_exp, 9},
+    {"_LJM_Eetaphi", (DL_FUNC) &_LJM_Eetaphi, 16},
+    {"_LJM_Setaphi", (DL_FUNC) &_LJM_Setaphi, 17},
+    {"_LJM_Setaphi_perobs", (DL_FUNC) &_LJM_Setaphi_perobs, 17},
+    {"_LJM_Hetaphi", (DL_FUNC) &_LJM_Hetaphi, 17},
+    {"_LJM_scaleMatricesByEta", (DL_FUNC) &_LJM_scaleMatricesByEta, 2},
+    {"_LJM_createResultMatrix", (DL_FUNC) &_LJM_createResultMatrix, 2},
+    {"_LJM_etaBBs_compute", (DL_FUNC) &_LJM_etaBBs_compute, 3},
+    {"_LJM_Esurv_tv", (DL_FUNC) &_LJM_Esurv_tv, 8},
+    {"_LJM_Esurv_exp_tv", (DL_FUNC) &_LJM_Esurv_exp_tv, 8},
+    {"_LJM_Esurv_exp_t", (DL_FUNC) &_LJM_Esurv_exp_t, 8},
+    {"_LJM_Eetaphi_t", (DL_FUNC) &_LJM_Eetaphi_t, 18},
+    {"_LJM_Setaphi_t", (DL_FUNC) &_LJM_Setaphi_t, 19},
+    {"_LJM_Hetaphi_t", (DL_FUNC) &_LJM_Hetaphi_t, 19},
+    {"_LJM_fast_lapply_length", (DL_FUNC) &_LJM_fast_lapply_length, 3},
+    {"_LJM_fast_rbind_lapply_outerprod", (DL_FUNC) &_LJM_fast_rbind_lapply_outerprod, 1},
+    {"_LJM_ll", (DL_FUNC) &_LJM_ll, 16},
+    {"_LJM_gradll", (DL_FUNC) &_LJM_gradll, 16},
+    {"_LJM_sdll", (DL_FUNC) &_LJM_sdll, 9},
+    {"_LJM_ll_lla", (DL_FUNC) &_LJM_ll_lla, 15},
+    {"_LJM_gradll_lla", (DL_FUNC) &_LJM_gradll_lla, 15},
+    {"_LJM_sdll_lla", (DL_FUNC) &_LJM_sdll_lla, 11},
+    {"_LJM_ll_lla_tv", (DL_FUNC) &_LJM_ll_lla_tv, 14},
+    {"_LJM_gradll_lla_tv", (DL_FUNC) &_LJM_gradll_lla_tv, 14},
+    {"_LJM_sdll_lla_tv", (DL_FUNC) &_LJM_sdll_lla_tv, 9},
+    {"_LJM_ll_tv", (DL_FUNC) &_LJM_ll_tv, 16},
+    {"_LJM_elementwise_multiply", (DL_FUNC) &_LJM_elementwise_multiply, 2},
+    {"_LJM_gradll_tv", (DL_FUNC) &_LJM_gradll_tv, 16},
+    {"_LJM_sdll_tv", (DL_FUNC) &_LJM_sdll_tv, 9},
+    {"_LJM_rcpp_e", (DL_FUNC) &_LJM_rcpp_e, 5},
+    {"_LJM_Ee", (DL_FUNC) &_LJM_Ee, 8},
+    {"_LJM_Eb", (DL_FUNC) &_LJM_Eb, 7},
+    {"_LJM_covb", (DL_FUNC) &_LJM_covb, 4},
+    {"_LJM_EbbT", (DL_FUNC) &_LJM_EbbT, 3},
+    {"_LJM_betaRHS", (DL_FUNC) &_LJM_betaRHS, 5},
+    {"_LJM_update_lambda", (DL_FUNC) &_LJM_update_lambda, 4},
+    {"_LJM_update_lambda_tv", (DL_FUNC) &_LJM_update_lambda_tv, 3},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_JEL(DllInfo *dll) {
+RcppExport void R_init_LJM(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

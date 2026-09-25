@@ -13,7 +13,7 @@ AUCdyn(
 )
 }
 \arguments{
-\item{pred_surv_result}{The result from the \code{predict.JEL} function. It can be a \code{data.frame} or a \code{list}:
+\item{pred_surv_result}{The result from the \code{predict.LJM} function. It can be a \code{data.frame} or a \code{list}:
 
   - If a \code{data.frame}, it should include columns for \code{id}, \code{tau}, and survival probabilities.
 
@@ -40,16 +40,16 @@ A numeric value representing the dynamic AUC.
 This function computes the dynamic area under the curve (AUC) for survival predictions at a specified landmark time and prediction horizon.
 }
 \details{
-The function calculates the dynamic AUC by comparing predicted survival probabilities from \code{predict.JEL} against actual survival outcomes at the specified landmark and prediction horizon. It uses Kaplan-Meier estimates to adjust survival probabilities for specific cases.
+The function calculates the dynamic AUC by comparing predicted survival probabilities from \code{predict.LJM} against actual survival outcomes at the specified landmark and prediction horizon. It uses Kaplan-Meier estimates to adjust survival probabilities for specific cases.
 }
 \examples{
 \dontrun{
-## `pr` is the output of predict() on a fitted JEL object
+## `pr` is the output of predict() on a fitted LJM object
 ev <- list(id = "id", EvTime = "years", event = "status2")
 AUCdyn(pr, data = mydata, landmarks = 5, tau = 2, var_list = ev)
 }
 
 }
 \seealso{
-\code{\link{PEdyn}}, \code{\link[=predict.JEL]{predict}}, \code{\link{JEL}}
+\code{\link{PEdyn}}, \code{\link[=predict.LJM]{predict}}, \code{\link{LJM}}
 }
