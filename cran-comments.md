@@ -1,3 +1,9 @@
+<!-- Before submission (not part of the comments sent to CRAN):
+  1. Replace "See Cho and Chen (2026)" in DESCRIPTION with a DOI or arXiv link,
+     in the form "Cho and Chen (2026) <doi:...>" or "<arXiv:...>".
+  2. Run win-builder (devel and release) and R-hub, and update "Test environments".
+-->
+
 ## Submission summary
 
 This is the first CRAN submission of `LJM`, an R package for dynamic survival

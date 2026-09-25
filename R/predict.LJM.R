@@ -53,9 +53,18 @@
 #'   - If \code{tau} is specified, the function returns predictions filtered at or before the given time horizon.
 #'
 #' @examples
-#' \dontrun{
-#' ## `fit` is a fitted LJM object (see ?LJM)
-#' pr <- predict(fit, testdat = mydata, tau = 2)   # conditional risk within tau = 2
+#' \donttest{
+#' data("pbc2", package = "LJM")
+#' d <- pbc2; d$id <- as.numeric(d$id)
+#' d$Y.1 <- log(d$serBilir); d$Y.2 <- d$albumin
+#' vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
+#' td  <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = c("Y.1", "Y.2"))
+#' fit <- LJM(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4,
+#'            base_terms = "drug", ker = "epanechnikov", Vcov = FALSE)
+#'
+#' ## conditional survival within tau = 2 years, from measurements up to s = 5
+#' pr <- predict(fit, testdat = d, tau = 2)
+#' head(pr)
 #' }
 #'
 #' @seealso \code{\link{LJM}} to fit the model; \code{\link{AUCdyn}},
@@ -83,8 +92,7 @@ predict.LJM <- function(object,
   if (is.null(fitLLAJEL$fitCOX)) stop("fitLLAJEL must contain $fitCOX.")
   if (is.null(fitLLAJEL$prep)) stop("the fitted object must contain $prep (from LJM()).")
   if (is.null(fitLLAJEL$dataset)) {
-    # 너 fitLLAJEL 리턴에서 dataset 저장 안 했으면 여기서 안내
-    # (LJM() 리턴에 dataset=train_dataset 넣으면 가장 깔끔)
+    # the fit does not carry its training dataset, so testdat must be given
     if (is.null(testdat)) stop("fitLLAJEL$dataset is missing. Provide testdat explicitly.")
   }
   
@@ -148,7 +156,7 @@ predict.LJM <- function(object,
     # blup_te$mean: (n_subject x 2*nK) matrix
     b_new <- blup_te$mean
     
-    # rownames를 subject id로 강제 (뒤에서 매칭하려고)
+    # use subject ids as row names (matched below)
     if (is.null(rownames(b_new))) {
       rownames(b_new) <- as.character(sort(unique(Cox_dat.te$id)))
     }

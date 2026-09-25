@@ -240,7 +240,7 @@ arma::mat sdll_lla_tv(
   arma::mat A_Z = VinvZ.each_col() % wpos;
   arma::mat H_long = - (Z.t() * A_Z);
 
-  // Prior Hessian: -D^{-1} (robust against near-singular D — see helper)
+  // Prior Hessian: -D^{-1} (robust against near-singular D -- see helper)
   arma::mat D_inv;
   double logdetD_unused;
   inv_logdet_spd_robust_tv(D, D_inv, logdetD_unused);

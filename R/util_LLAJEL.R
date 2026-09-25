@@ -508,12 +508,12 @@ make_cox_formula_from_LLA <- function(LLA_list, base_terms = NULL) {
   
   rhs_terms <- base_terms
   
-  # base_terms가 NULL / character(0) / "" 섞여있을 때 정리
+  # normalise base_terms given as NULL, character(0) or ""
   if (is.null(rhs_terms)) rhs_terms <- character(0)
   rhs_terms <- rhs_terms[!is.na(rhs_terms) & nzchar(rhs_terms)]
   
   rhs <- if (length(rhs_terms) == 0) {
-    "1"                 # baseline covariate 완전 제외
+    "1"                 # no baseline covariates
   } else {
     paste(rhs_terms, collapse = " + ")
   }

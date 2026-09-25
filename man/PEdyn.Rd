@@ -44,11 +44,18 @@ The function calculates the dynamic PE by comparing the predicted survival proba
 The prediction error is computed using Kaplan-Meier estimates to adjust for censored cases.
 }
 \examples{
-\dontrun{
-## `pr` is the output of predict() on a fitted LJM object
+data("pbc2", package = "LJM")
+d <- pbc2; d$id <- as.numeric(d$id)
+
+## a simple illustrative predictor for the subjects at risk at s = 5:
+## survival probability decreasing in the last observed log bilirubin
+last <- d[d$year <= 5 & d$years > 5, ]
+last <- last[!duplicated(last$id, fromLast = TRUE), ]
+pr <- data.frame(id = last$id, tau = 2,
+                 pred_surv = exp(-0.1 * last$serBilir))
+
 ev <- list(id = "id", EvTime = "years", event = "status2")
-PEdyn(pr, data = mydata, landmarks = 5, tau = 2, var_list = ev)
-}
+PEdyn(pr, data = d, landmarks = 5, tau = 2, var_list = ev)
 
 }
 \seealso{

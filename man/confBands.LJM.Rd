@@ -51,13 +51,19 @@ The \code{confBands.LJM} function computes confidence bands for the time-varying
    - Confidence bands are calculated based on the chi-square distribution, with critical values determined by the specified significance level (\code{alpha}) and the degrees of freedom (\code{df}) derived from the B-spline configuration.
 }
 \examples{
-\dontrun{
-## fit a time-varying LJM model (supply a B-spline basis Bs), then get bands
-spl <- list(df = 3, degree = 1, knots = NULL, Bknots = NULL)
+\donttest{
+data("pbc2", package = "LJM")
+d <- pbc2; d$id <- as.numeric(d$id)
+d$Y.1 <- log(d$serBilir); d$Y.2 <- d$albumin
+vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
+td  <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = c("Y.1", "Y.2"))
+
+## time-varying association for marker 1 (B-spline basis), constant for marker 2
+spl    <- list(df = 3, degree = 1, knots = NULL, Bknots = NULL)
 fit_tv <- LJM(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4, base_terms = "drug",
               ker = "epanechnikov", Bs = list(spl, list(NULL)))
-cb <- confBands.LJM(fit_tv, K = 1)   # bands for marker 1
-cb$intercept; cb$slope
+cb <- confBands.LJM(fit_tv, K = 1)
+str(cb, max.level = 1)
 }
 
 }

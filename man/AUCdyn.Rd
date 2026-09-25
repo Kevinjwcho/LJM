@@ -43,11 +43,18 @@ This function computes the dynamic area under the curve (AUC) for survival predi
 The function calculates the dynamic AUC by comparing predicted survival probabilities from \code{predict.LJM} against actual survival outcomes at the specified landmark and prediction horizon. It uses Kaplan-Meier estimates to adjust survival probabilities for specific cases.
 }
 \examples{
-\dontrun{
-## `pr` is the output of predict() on a fitted LJM object
+data("pbc2", package = "LJM")
+d <- pbc2; d$id <- as.numeric(d$id)
+
+## a simple illustrative predictor for the subjects at risk at s = 5:
+## survival probability decreasing in the last observed log bilirubin
+last <- d[d$year <= 5 & d$years > 5, ]
+last <- last[!duplicated(last$id, fromLast = TRUE), ]
+pr <- data.frame(id = last$id, tau = 2,
+                 pred_surv = exp(-0.1 * last$serBilir))
+
 ev <- list(id = "id", EvTime = "years", event = "status2")
-AUCdyn(pr, data = mydata, landmarks = 5, tau = 2, var_list = ev)
-}
+AUCdyn(pr, data = d, landmarks = 5, tau = 2, var_list = ev)
 
 }
 \seealso{

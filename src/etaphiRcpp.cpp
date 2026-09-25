@@ -31,7 +31,7 @@ using namespace arma;
 // Delta is read from l0i (l0i == 0 <=> censored), as before.  rho = 0 takes
 // the original Cox code path unchanged.
 //////////////////////////////////////////////////////////////
-// Esurv / Esurv_exp: 그대로 사용 (mu[[i]][0], var[[i]][0]만 사용)
+// Esurv / Esurv_exp: used as is (only mu[[i]][0] and var[[i]][0] are used)
 //////////////////////////////////////////////////////////////
 
 // [[Rcpp::export]]

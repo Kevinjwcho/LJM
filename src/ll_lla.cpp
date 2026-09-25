@@ -229,7 +229,7 @@ arma::colvec gradll_lla(
   
   arma::vec Delta_vec = (double)Delta * arma::ones<vec>(eta.n_elem);
   
-  // grad of LOG-likelihood wrt b (use robust D^{-1} — see helper at top):
+  // grad of LOG-likelihood wrt b (use robust D^{-1} -- see helper at top):
   arma::mat D_inv_g;
   double logdetD_g;
   inv_logdet_spd_robust(D, D_inv_g, logdetD_g);
@@ -284,7 +284,7 @@ arma::mat sdll_lla(
   arma::mat A_Z   = VinvZ.each_col() % wpos;                  // diag(w) * (V^{-1} Z)
   arma::mat H_long = - (Z.t() * A_Z);
   
-  // Prior Hessian: -D^{-1} (robust against near-singular D — see helper)
+  // Prior Hessian: -D^{-1} (robust against near-singular D -- see helper)
   arma::mat D_inv;
   double logdetD_unused;
   inv_logdet_spd_robust(D, D_inv, logdetD_unused);

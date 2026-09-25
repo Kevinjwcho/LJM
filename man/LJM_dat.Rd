@@ -92,16 +92,15 @@ Steps performed:
 }
 }
 \examples{
-\dontrun{
-dat_split <- LJM_dat(
-  data = dat,
-  s = 2,
-  negative = FALSE,
-  var_list = list(id="id", time="time", EvTime="Time", event="event")
-)
-head(dat_split$LMM_dat)
-head(dat_split$Surv_dat)
-}
+data("pbc2", package = "LJM")
+d <- pbc2; d$id <- as.numeric(d$id)
+d$Y.1 <- log(d$serBilir)
+vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
+
+## subjects at risk at s = 5 with >= 2 measurements of Y.1 in |year - 5| <= 4
+td <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = "Y.1")
+head(td$LMM_dat)
+head(td$Surv_dat)
 
 }
 \seealso{

@@ -81,9 +81,18 @@ The workflow involves:
 3. Filtering by \code{tau} (if provided): Returns survival probabilities up to the specified time horizon.
 }
 \examples{
-\dontrun{
-## `fit` is a fitted LJM object (see ?LJM)
-pr <- predict(fit, testdat = mydata, tau = 2)   # conditional risk within tau = 2
+\donttest{
+data("pbc2", package = "LJM")
+d <- pbc2; d$id <- as.numeric(d$id)
+d$Y.1 <- log(d$serBilir); d$Y.2 <- d$albumin
+vl <- list(id = "id", time = "year", EvTime = "years", event = "status2")
+td  <- LJM_dat(d, s = 5, var_list = vl, h = 4, y_vars = c("Y.1", "Y.2"))
+fit <- LJM(td, y_vars = c("Y.1", "Y.2"), s = 5, h = 4,
+           base_terms = "drug", ker = "epanechnikov", Vcov = FALSE)
+
+## conditional survival within tau = 2 years, from measurements up to s = 5
+pr <- predict(fit, testdat = d, tau = 2)
+head(pr)
 }
 
 }
