@@ -1,6 +1,6 @@
 Package: LJM
 Title: Local Joint Models for Dynamic Survival Prediction
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
     person("Jinwoo", "Cho", email = "jinoojwcho@cmu.edu", role = c("aut", "cre")),
     person("Kehui", "Chen", role = "aut"))

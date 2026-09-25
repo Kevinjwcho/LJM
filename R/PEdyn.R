@@ -51,8 +51,10 @@ PEdyn <- function(pred_surv_result, data, landmarks, tau,
     stop("pred_surv_dat should be list or data.frame")
   }
 
-  # KM_est compute
-  KM_est <- survfit(Surv(data[[var_list$EvTime]], data[[var_list$event]]) ~ 1)
+  # KM_est compute: one row per subject. `data` is usually in long format (one
+  # row per visit); fitting the KM on it would count each subject once per visit.
+  subj_dat <- data[!duplicated(data[[var_list$id]]), , drop = FALSE]
+  KM_est <- survfit(Surv(subj_dat[[var_list$EvTime]], subj_dat[[var_list$event]]) ~ 1)
 
   # test data
   survdata <- data %>% dplyr::select(var_list$id, var_list$EvTime, var_list$event) %>% unique() %>% filter(.[[var_list$EvTime]] >= landmarks)

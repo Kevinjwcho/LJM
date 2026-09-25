@@ -51,3 +51,19 @@ test_that("LJM re-estimates the random-effect mean c (M-step, always on)", {
   expect_true(all(is.finite(c_hat)))
   expect_length(c_hat, 2L)   # intercept + slope for a single marker
 })
+
+test_that("AUCdyn/PEdyn fit the censoring KM with one row per subject", {
+  data("pbc2")
+  d <- pbc2
+  d$id <- as.numeric(d$id)
+  one <- d[!duplicated(d$id), ]
+  ids <- one$id[one$years > 3]
+  set.seed(1)
+  pr <- data.frame(id = ids, tau = 2, pred_surv = runif(length(ids), 0.5, 1))
+  ev <- list(id = "id", EvTime = "years", event = "status2")
+  # long format (several rows per subject) must give the same result as one row per subject
+  expect_equal(AUCdyn(pr, data = d,   landmarks = 3, tau = 2, var_list = ev),
+               AUCdyn(pr, data = one, landmarks = 3, tau = 2, var_list = ev))
+  expect_equal(PEdyn(pr, data = d,   landmarks = 3, tau = 2, var_list = ev),
+               PEdyn(pr, data = one, landmarks = 3, tau = 2, var_list = ev))
+})

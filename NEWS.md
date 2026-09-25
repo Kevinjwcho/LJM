@@ -1,3 +1,13 @@
+# LJM 1.0.1
+
+* `AUCdyn()` and `PEdyn()` fit the Kaplan--Meier estimate of the censoring
+  weights with one row per subject. Before, it was fitted on the data as
+  passed, which is usually in long format (one row per visit), so subjects
+  with more visits carried more weight. For the PBC data (312 patients, 1,945
+  rows) the KM survival at 5 years changes from 0.847 to 0.712. Re-evaluating
+  the saved PBC and Simulation 2 predictions changed AUC by at most 0.006 and
+  PE by at most 0.005, and did not change which method is best in any cell.
+
 # LJM 1.0.0
 
 * The package is renamed from `JEL` to `LJM` (local joint model), matching the
